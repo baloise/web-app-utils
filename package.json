@@ -4,8 +4,9 @@
   "description": "Utilities for Baloise Web Applications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "semantic-release": "semantic-release"
+    "test": "echo \"Error: no test specified\"",
+    "semantic-release": "semantic-release",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
