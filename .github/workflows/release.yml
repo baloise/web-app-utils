@@ -22,10 +22,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Fetch all Tags and Pull
-        run: |
-          git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-          git pull
+      # - name: Fetch all Tags and Pull
+      #   run: |
+      #     git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+      #     git pull
 
       - name: Authenticate with Registry
         run: |
