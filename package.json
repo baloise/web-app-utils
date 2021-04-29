@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/baloise/web-app-utils.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
