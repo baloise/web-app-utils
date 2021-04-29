@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-utils",
-  "version": "0.0.0-development",
+  "version": "1.0.2",
   "description": "Utilities for Baloise Web Applications",
   "main": "index.js",
   "scripts": {
