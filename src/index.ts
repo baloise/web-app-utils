@@ -1,4 +1,4 @@
-export const scrollToAnchorElement = (referenceName: string) => {
+export const scrollToAnchorElement = (referenceName: string): void => {
   const nodes = document.querySelectorAll(`[data-ref="${referenceName}"]`);
   if (nodes.length > 0) {
     nodes[0].scrollIntoView();
@@ -18,7 +18,7 @@ export const openInNewWindow = (url: string): Window => {
 };
 
 const openWindowSafely = (url: string, target: string): Window => {
-  let newWindow = window.open(url, target);
+  const newWindow = window.open(url, target);
   // prevent a security hazard: the new window is able to access window.opener (e.g. replace window.opener.location)
   if (newWindow != null && newWindow.opener != null) {
     newWindow.opener = undefined;
@@ -28,9 +28,12 @@ const openWindowSafely = (url: string, target: string): Window => {
 
 export const getBrowserLanguage = (): string => {
   // e.g. de-CH
-  // userLanguage is only for IE11
-  let browserLocale =
-    window.navigator.language || (window.navigator as any)["userLanguage"];
+  const browserLocale =
+    window.navigator.language ||
+    // userLanguage is only for IE11
+    // eslint-disable-next-line
+    ((window.navigator as any)["userLanguage"] as string);
+
   if (browserLocale.indexOf("-") === 2) {
     return browserLocale.substr(0, 2);
   } else {
@@ -60,6 +63,6 @@ export const getBrowserInfo = (): BrowserInfo => {
 };
 
 function getBrowserTimezone(): string {
-  let timezoneOffset = new Date().getTimezoneOffset();
+  const timezoneOffset = new Date().getTimezoneOffset();
   return timezoneOffset >= 0 ? `+${timezoneOffset}` : `-${timezoneOffset * -1}`;
 }
