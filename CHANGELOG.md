@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/baloise/web-app-utils/compare/v1.1.0...v1.2.0) (2021-05-25)
+
+
+### Features
+
+* add languages ([95265a4](https://github.com/baloise/web-app-utils/commit/95265a4d63dae16c57eb754a70f5c643e9951064))
+
 # [1.1.0](https://github.com/baloise/web-app-utils/compare/v1.0.3...v1.1.0) (2021-05-19)
 
 
