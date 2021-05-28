@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/baloise/web-app-utils/compare/v1.2.0...v1.2.1) (2021-05-28)
+
+
+### Bug Fixes
+
+* remove husky from postinstall ([1f5f707](https://github.com/baloise/web-app-utils/commit/1f5f707a201457728ccc37eeaf0ce2e294dc3db2))
+
 # [1.2.0](https://github.com/baloise/web-app-utils/compare/v1.1.0...v1.2.0) (2021-05-25)
 
 
