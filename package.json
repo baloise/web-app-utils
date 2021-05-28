@@ -13,8 +13,7 @@
     "format": "npm run prettier:write",
     "prettier:write": "prettier --write \"./src\"",
     "prettier:check": "prettier --check \"./src\"",
-    "semantic-release": "semantic-release",
-    "postinstall": "husky install"
+    "semantic-release": "semantic-release"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
