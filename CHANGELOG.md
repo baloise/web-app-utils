@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/baloise/web-app-utils/compare/v1.3.0...v1.3.1) (2021-07-07)
+
+
+### Bug Fixes
+
+* cms path ([9ad1451](https://github.com/baloise/web-app-utils/commit/9ad14513af60aa7661c5da0d34d8dbefa26bff46))
+
 # [1.3.0](https://github.com/baloise/web-app-utils/compare/v1.2.1...v1.3.0) (2021-07-07)
 
 
