@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/baloise/web-app-utils/compare/v1.2.1...v1.3.0) (2021-07-07)
+
+
+### Features
+
+* add integration ([8dd9efd](https://github.com/baloise/web-app-utils/commit/8dd9efd5b200cf19c44a47cdf23c377145c53850))
+
 ## [1.2.1](https://github.com/baloise/web-app-utils/compare/v1.2.0...v1.2.1) (2021-05-28)
 
 
