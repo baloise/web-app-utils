@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/baloise/web-app-utils/compare/v1.3.1...v1.4.0) (2021-09-06)
+
+
+### Features
+
+* **models:** add request state ([3a8f51a](https://github.com/baloise/web-app-utils/commit/3a8f51a6a44fab44da9f2f171822a3aad1869751))
+
 ## [1.3.1](https://github.com/baloise/web-app-utils/compare/v1.3.0...v1.3.1) (2021-07-07)
 
 
