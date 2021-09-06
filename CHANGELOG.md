@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/baloise/web-app-utils/compare/v1.4.0...v1.4.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* **models:** Update index.ts ([ed1b4ee](https://github.com/baloise/web-app-utils/commit/ed1b4ee40a5c1ac63c0740418feabc8af0a01b2c))
+
 # [1.4.0](https://github.com/baloise/web-app-utils/compare/v1.3.1...v1.4.0) (2021-09-06)
 
 
