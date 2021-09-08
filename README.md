@@ -110,7 +110,17 @@ Scrolls to the ancor element with the attribute `data-ref="heading"`.
 `scrollToAnchorElement(referenceName: string): void`
 
 **Example**
-`scrollToAnchorElement('heading')`
+
+```html
+<div data-ref="heading">
+  ...
+  <div></div>
+</div>
+```
+
+```typescript
+scrollToAnchorElement("heading");
+```
 
 #### `scrollToTopOfBody`
 
@@ -119,9 +129,6 @@ Scrolls to the top of the body.
 **Signature**
 `scrollToTopOfBody(): void`
 
-**Example**
-`scrollToTopOfBody()`
-
 #### `open`
 
 Opens a new location in the current tab.
@@ -129,18 +136,12 @@ Opens a new location in the current tab.
 **Signature**
 `open(url: string): void`
 
-**Example**
-`open('http://www.google.com')`
-
 #### `openInNewWindow`
 
 Opens the new location in a new tab.
 
 **Signature**
 `openInNewWindow(url: string): void`
-
-**Example**
-`openInNewWindow('http://www.google.com')`
 
 #### `getBrowserLanguage`
 
@@ -150,7 +151,12 @@ Returns the main language key. For example if the browser has the language `de-C
 `getBrowserLanguage(): string`
 
 **Example**
-`getBrowserLanguage()`
+
+```typescript
+const langKey = getBrowserLanguage()
+if(LanguagesOfSwitzerland.isValidKey(langKey)) { ... }
+...
+```
 
 #### `disableDragAndDropFiles`
 
@@ -159,18 +165,12 @@ Disables for the whole web application drag and drop.
 **Signature**
 `disableDragAndDropFiles(): void`
 
-**Example**
-`disableDragAndDropFiles()`
-
 #### `getBrowserInfo`
 
 Returns some useful information from the browser.
 
 **Signature**
 `getBrowserInfo(): BrowserInfo`
-
-**Example**
-`getBrowserInfo()`
 
 ```typescript
 interface BrowserInfo {
@@ -191,9 +191,6 @@ Loads the one trust script directly from our main cms system with the necessary 
 
 **Signature**
 `loadOneTrustBaloiseSwitzerland(): void`
-
-**Example**
-`loadOneTrustBaloiseSwitzerland()`
 
 ## Common Model Utils
 
