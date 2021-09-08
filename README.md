@@ -112,10 +112,7 @@ Scrolls to the ancor element with the attribute `data-ref="heading"`.
 **Example**
 
 ```html
-<div data-ref="heading">
-  ...
-  <div></div>
-</div>
+<div data-ref="heading">...</div>
 ```
 
 ```typescript
