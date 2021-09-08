@@ -23,7 +23,13 @@ Returns the Language of the given language key or if the lauage is not registere
 `valueOf(key: string): Language | undefined`
 
 **Example**
-`valueOf('de')`
+
+```typescript
+const language = LanguageModel.valueOf("de");
+if (language === undefined) {
+  // language is not registered
+}
+```
 
 #### `valueOfOrDefault`
 
@@ -33,7 +39,10 @@ Returns the Language of the given language key or if the language is not registe
 `valueOfOrDefault(key: string): Language`
 
 **Example**
-`valueOf('de')`
+
+```typescript
+const language = LanguageModel.valueOfOrDefault("de");
+```
 
 #### `isValidKey`
 
@@ -43,15 +52,29 @@ Verifies if the given language key is registered as a supported language or not.
 `isValidKey(key: string): boolean`
 
 **Example**
-`isValidKey('de')`
+
+```typescript
+if (LanguageModel.isValidKey("de")) {
+  // language key is valid
+} else {
+  // language key is not valid
+}
+```
 
 #### Languages
 
-We provide various set of language list for our supported countries.
+We provide various set of language list for our supported countries. Those Languages have the type `LanguageModel`.
 
 ##### `LanguagesOfSwitzerland`
 
 List of german, french, italien & english with the default language german.
+
+**Example**
+
+```typescript
+LanguagesOfSwitzerland.isValidKey("de"); // true
+LanguagesOfSwitzerland.isValidKey("be"); // false
+```
 
 ##### `LanguagesOfGermany`
 
@@ -182,10 +205,10 @@ The `RequestState` enum helps to have a state variable to show the current stand
 
 ```typescript
 export enum RequestState {
-    INIT,
-    RUNNING,
-    SUCCESS,
-    ERROR
+  INIT,
+  RUNNING,
+  SUCCESS,
+  ERROR,
 }
 ```
 
@@ -194,12 +217,15 @@ export enum RequestState {
 ```typescript
 import { Component, OnInit } from "@angular/core";
 import { RequestState } from "@baloise/web-app-utils";
-import { ConfirmEmailService, EmailConfirmationResponse } from "../confirm-email.service";
+import {
+  ConfirmEmailService,
+  EmailConfirmationResponse,
+} from "../confirm-email.service";
 
 @Component({
-  selector: 'confirm-email-page',
-  templateUrl: './confirm-email.page.component.html',
-  styleUrls: ['./confirm-email.page.component.scss']
+  selector: "confirm-email-page",
+  templateUrl: "./confirm-email.page.component.html",
+  styleUrls: ["./confirm-email.page.component.scss"],
 })
 export class ConfirmEmailPageComponent implements OnInit {
   confirmEmailResponse: EmailConfirmationResponse;
@@ -209,12 +235,16 @@ export class ConfirmEmailPageComponent implements OnInit {
 
   confirmEmail() {
     this.requestState = RequestState.RUNNING;
-    this.confirmEmailService.confirmEmail().toPromise().then(resp => {
-      this.requestState = RequestState.SUCCESS;
-      this.confirmEmailResponse = resp;
-    }).catch(() => {
-      this.requestState = RequestState.ERROR;
-    });
+    this.confirmEmailService
+      .confirmEmail()
+      .toPromise()
+      .then((resp) => {
+        this.requestState = RequestState.SUCCESS;
+        this.confirmEmailResponse = resp;
+      })
+      .catch(() => {
+        this.requestState = RequestState.ERROR;
+      });
   }
 }
 ```
