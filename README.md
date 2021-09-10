@@ -1,6 +1,23 @@
-# Web-App Utils
+# @baloise/web-app-utils
 
 Javascript utilities for Baloise Web Applications.
+
+[![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
+[![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
+
+![npm](https://img.shields.io/npm/v/@baloise/web-app-utils)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-utils)
+![npm](https://img.shields.io/npm/dt/@baloise/web-app-utils)
+![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
+![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
+
+## Installation guide
+
+### Using npm
+
+```bash
+npm i @baloise/web-app-utils
+```
 
 ## Table of Content
 
