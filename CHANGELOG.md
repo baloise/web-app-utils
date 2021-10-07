@@ -1,3 +1,10 @@
+## [1.4.6](https://github.com/baloise/web-app-utils/compare/v1.4.5...v1.4.6) (2021-10-07)
+
+
+### Bug Fixes
+
+* update npm token ([2472dff](https://github.com/baloise/web-app-utils/commit/2472dffd91fb5677c8316717ba41428fc8c0c6ab))
+
 ## [1.4.5](https://github.com/baloise/web-app-utils/compare/v1.4.4...v1.4.5) (2021-10-07)
 
 
