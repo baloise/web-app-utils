@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/baloise/web-app-utils/compare/v1.4.4...v1.4.5) (2021-10-07)
+
+
+### Bug Fixes
+
+* update deps ([217f6ab](https://github.com/baloise/web-app-utils/commit/217f6abe4080d44852bf3478296adc8ac8d1a381))
+
 ## [1.4.4](https://github.com/baloise/web-app-utils/compare/v1.4.3...v1.4.4) (2021-10-07)
 
 
