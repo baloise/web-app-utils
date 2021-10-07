@@ -35,7 +35,5 @@ interface CMSData {
 const loadCMSDataSwitzerland = (): Promise<CMSData[]> => {
   return fetch(CMS_CH_API)
   .then(res => res.json())
-  .then(res => {
-    return res as CMSData[];
-  });
+  .then(res => res as CMSData[]);
 }
