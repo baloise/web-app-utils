@@ -1,3 +1,11 @@
+## [1.4.8](https://github.com/baloise/web-app-utils/compare/v1.4.7...v1.4.8) (2021-10-07)
+
+
+### Bug Fixes
+
+* remove line space ([3fdd647](https://github.com/baloise/web-app-utils/commit/3fdd647bfe525b59cb83212dde3df57564d86260))
+* remove line space ([2ef65f0](https://github.com/baloise/web-app-utils/commit/2ef65f0377773d11e9de993a66d3841d144ffdaf))
+
 ## [1.4.7](https://github.com/baloise/web-app-utils/compare/v1.4.6...v1.4.7) (2021-10-07)
 
 
