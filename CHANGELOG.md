@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/baloise/web-app-utils/compare/v1.4.2...v1.4.3) (2021-10-07)
+
+
+### Bug Fixes
+
+* index ([f3e0010](https://github.com/baloise/web-app-utils/commit/f3e00107078924c85b84f5300c7c9f011c99bba6))
+
 ## [1.4.2](https://github.com/baloise/web-app-utils/compare/v1.4.1...v1.4.2) (2021-10-07)
 
 
