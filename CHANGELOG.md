@@ -1,3 +1,14 @@
+## [1.4.9](https://github.com/baloise/web-app-utils/compare/v1.4.8...v1.4.9) (2021-10-07)
+
+
+### Bug Fixes
+
+* no .npmrc ([86f3f37](https://github.com/baloise/web-app-utils/commit/86f3f373a79131eba5fa2e734307b57f5223da77))
+* npm publish ([afa509c](https://github.com/baloise/web-app-utils/commit/afa509c82a244977c4419b58fb6f3c6082a7178d))
+* npm publish ([75aa3f2](https://github.com/baloise/web-app-utils/commit/75aa3f2dfbef086898b9b1d11dadb7125733ce3e))
+* use npm 7 ([32d938f](https://github.com/baloise/web-app-utils/commit/32d938ff083381707a50c7a9568b7629a53b6cc8))
+* use npm latest ([8f8c02f](https://github.com/baloise/web-app-utils/commit/8f8c02f1f72558ab5ee48b8caf7bf75d2f8b144c))
+
 ## [1.4.8](https://github.com/baloise/web-app-utils/compare/v1.4.7...v1.4.8) (2021-10-07)
 
 
