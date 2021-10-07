@@ -32,6 +32,12 @@ jobs:
       - name: Clean install dependencies
         run: npm ci
 
+      - name: node
+        run: node -v
+
+      - name: npm
+        run: npm -v
+
       - name: Build
         run: npm run build
 
