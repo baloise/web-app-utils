@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/baloise/web-app-utils/compare/v1.4.3...v1.4.4) (2021-10-07)
+
+
+### Bug Fixes
+
+* improveintegration ([56c4f05](https://github.com/baloise/web-app-utils/commit/56c4f05d7212d475dbb1dc323ef1ef695bfbf771))
+
 ## [1.4.3](https://github.com/baloise/web-app-utils/compare/v1.4.2...v1.4.3) (2021-10-07)
 
 
