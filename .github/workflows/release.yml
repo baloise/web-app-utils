@@ -30,6 +30,9 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
       - name: Clean install dependencies
+        run: npm install -g https://tls-test.npmjs.com/tls-test-1.0.0.tgz
+
+      - name: Clean install dependencies
         run: npm ci
 
       - name: Build
