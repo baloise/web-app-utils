@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/baloise/web-app-utils/compare/v1.4.9...v1.5.0) (2021-10-08)
+
+
+### Features
+
+* **footer:** add footer links ([45a2177](https://github.com/baloise/web-app-utils/commit/45a2177d5032a06073024308cb9cae32c6862d21))
+
 ## [1.4.9](https://github.com/baloise/web-app-utils/compare/v1.4.8...v1.4.9) (2021-10-07)
 
 

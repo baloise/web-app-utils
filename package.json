@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-utils",
-  "version": "1.4.9",
+  "version": "1.5.0",
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
     "test": "jest",
