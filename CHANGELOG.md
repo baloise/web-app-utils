@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/baloise/web-app-utils/compare/v1.6.0...v1.6.1) (2021-10-08)
+
+
+### Bug Fixes
+
+* footer links ([0ce19bd](https://github.com/baloise/web-app-utils/commit/0ce19bd6c00cc1549465d37076d74ce3160f12fe))
+
 # [1.6.0](https://github.com/baloise/web-app-utils/compare/v1.5.0...v1.6.0) (2021-10-08)
 
 
