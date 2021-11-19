@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/baloise/web-app-utils/compare/v1.9.0...v1.9.1) (2021-11-19)
+
+
+### Bug Fixes
+
+* remove lodash export due to type errors ([9cc03fb](https://github.com/baloise/web-app-utils/commit/9cc03fbfa8770aeb4866f0853502a456a44c55dc))
+
 # [1.9.0](https://github.com/baloise/web-app-utils/compare/v1.8.0...v1.9.0) (2021-11-19)
 
 
