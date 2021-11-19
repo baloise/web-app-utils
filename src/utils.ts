@@ -1,8 +1,4 @@
-import isNil from "lodash.isnil";
-import isString from "lodash.isstring";
-import isArray from "lodash.isarray";
-import isBoolean from "lodash.isboolean";
-import isObject from "lodash.isobject";
+import { isNil, isArray, isString, isBoolean, isObject } from "./lodash";
 
 /**
  * Returns `true` if the value is empty

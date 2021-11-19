@@ -1,0 +1,21 @@
+import isnil from "lodash.isnil";
+import isequal from "lodash.isequal";
+import isnumber from "lodash.isnumber";
+import isstring from "lodash.isstring";
+import isdate from "lodash.isdate";
+import padstart from "lodash.padstart";
+import isnan from "lodash.isnan";
+import isarray from "lodash.isarray";
+import isboolean from "lodash.isboolean";
+import isobject from "lodash.isobject";
+
+export const isNil = isnil;
+export const isEqual = isequal;
+export const isNumber = isnumber;
+export const isString = isstring;
+export const isDate = isdate;
+export const padStart = padstart;
+export const isNaN = isnan;
+export const isArray = isarray;
+export const isBoolean = isboolean;
+export const isObject = isobject;
