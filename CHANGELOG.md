@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/baloise/web-app-utils/compare/v1.6.1...v1.7.0) (2021-11-19)
+
+
+### Features
+
+* add utils from the design system ([14b95a2](https://github.com/baloise/web-app-utils/commit/14b95a2cb49acdae3571ba0a8d71dc75dbb4d04c))
+
 ## [1.6.1](https://github.com/baloise/web-app-utils/compare/v1.6.0...v1.6.1) (2021-10-08)
 
 
