@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/baloise/web-app-utils/compare/v1.7.0...v1.8.0) (2021-11-19)
+
+
+### Features
+
+* add common lodash functions ([0349be5](https://github.com/baloise/web-app-utils/commit/0349be536f7648d637c3b0562b28a85258d0e8d7))
+
 # [1.7.0](https://github.com/baloise/web-app-utils/compare/v1.6.1...v1.7.0) (2021-11-19)
 
 
