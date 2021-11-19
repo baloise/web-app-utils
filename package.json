@@ -36,7 +36,6 @@
   "homepage": "https://github.com/baloise/web-app-utils#readme",
   "dependencies": {
     "lodash.camelcase": "^4.3.0",
-    "lodash.capitalize": "^4.2.1",
     "lodash.isarray": "^4.0.0",
     "lodash.isboolean": "^3.0.3",
     "lodash.isdate": "^4.0.1",
@@ -46,10 +45,7 @@
     "lodash.isnumber": "^3.0.3",
     "lodash.isobject": "^3.0.2",
     "lodash.isstring": "^4.0.1",
-    "lodash.lowercase": "^4.3.0",
     "lodash.padstart": "^4.6.1",
-    "lodash.round": "^4.0.4",
-    "lodash.trim": "^4.5.1",
     "lodash.upperfirst": "^4.3.1"
   },
   "devDependencies": {
@@ -59,10 +55,6 @@
     "@types/lodash.isboolean": "^3.0.6",
     "@types/lodash.isdate": "^4.0.6",
     "@types/lodash.camelcase": "^4.3.6",
-    "@types/lodash.capitalize": "^4.2.6",
-    "@types/lodash.lowercase": "^4.3.6",
-    "@types/lodash.round": "^4.0.6",
-    "@types/lodash.trim": "^4.5.6",
     "@types/lodash.upperfirst": "^4.3.6",
     "@types/lodash.isnan": "^3.0.6",
     "@types/lodash.isnumber": "^3.0.6",

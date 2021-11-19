@@ -1,5 +1,3 @@
-export * from "./lodash";
-
 export * from "./languages";
 export * from "./language";
 export * from "./browser";

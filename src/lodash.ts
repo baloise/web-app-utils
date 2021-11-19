@@ -27,7 +27,3 @@ export const isBoolean = isboolean;
 export const isObject = isobject;
 export const upperFirst = upperfirst;
 export const camelCase = camelcase;
-export const lowerCase = lowercase;
-export const trim = trimLodash;
-export const capitalize = capitalizeLodash;
-export const round = roundLodash;
