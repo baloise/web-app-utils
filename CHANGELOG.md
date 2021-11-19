@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/baloise/web-app-utils/compare/v1.8.0...v1.9.0) (2021-11-19)
+
+
+### Features
+
+* add more lodash fun ([5ff3e57](https://github.com/baloise/web-app-utils/commit/5ff3e57f6c61295f372f36e63923ced0e444e212))
+
 # [1.8.0](https://github.com/baloise/web-app-utils/compare/v1.7.0...v1.8.0) (2021-11-19)
 
 
