@@ -10,10 +10,6 @@ import isboolean from "lodash.isboolean";
 import isobject from "lodash.isobject";
 import upperfirst from "lodash.upperfirst";
 import camelcase from "lodash.camelcase";
-import lowercase from "lodash.lowercase";
-import trimLodash from "lodash.trim";
-import capitalizeLodash from "lodash.capitalize";
-import roundLodash from "lodash.round";
 
 export const isNil = isnil;
 export const isEqual = isequal;
