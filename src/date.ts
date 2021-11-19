@@ -36,8 +36,8 @@ export function today(): Date {
  * // Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
  * ```
  */
-export function floorTime(date: Date) {
-  let result = new Date(date);
+export function floorTime(date: Date): Date {
+  const result = new Date(date);
   result.setHours(0, 0, 0, 0);
   return result;
 }
@@ -49,8 +49,8 @@ export function floorTime(date: Date) {
  * const date = ceilTime(new Date())
  * ```
  */
-export function ceilTime(date: Date) {
-  let result = new Date(date);
+export function ceilTime(date: Date): Date {
+  const result = new Date(date);
   result.setHours(23, 59, 59, 999);
   return result;
 }
@@ -269,7 +269,7 @@ export function newDateString(
   if (isDate(yearOrDate)) {
     date = localDatetime(yearOrDate);
   } else {
-    date = new Date(Date.UTC(yearOrDate, (month as number) - 1, day as number));
+    date = new Date(Date.UTC(yearOrDate, month - 1, day));
   }
   return isoString(date);
 }
@@ -402,8 +402,8 @@ function validateTwoDates(
     return false;
   }
 
-  const _first: Date = new Date(first as string | Date);
-  const _second: Date = new Date(second as string | Date);
+  const _first: Date = new Date(first);
+  const _second: Date = new Date(second);
 
   if (!isValidDate(_first) || !isValidDate(_second)) {
     return false;
