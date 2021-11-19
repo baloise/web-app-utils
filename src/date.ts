@@ -1,8 +1,4 @@
-import isNil from "lodash.isnil";
-import isNumber from "lodash.isnumber";
-import isString from "lodash.isstring";
-import isDate from "lodash.isdate";
-import padStart from "lodash.padstart";
+import { isNil, isNumber, isString, isDate, padStart } from "./lodash";
 
 /**
  * Returns a JS Date instance of the exact moment

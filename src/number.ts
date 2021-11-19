@@ -1,6 +1,4 @@
-import isNil from "lodash.isnil";
-import isNaN from "lodash.isnan";
-import isString from "lodash.isstring";
+import { isNil, isNaN, isString } from "./lodash";
 
 /**
  * Returns `true` if the arrays are equal

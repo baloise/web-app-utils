@@ -1,5 +1,4 @@
-import isNil from "lodash.isnil";
-import isEqual from "lodash.isequal";
+import { isNil, isEqual } from "./lodash";
 
 /**
  * Returns `true` if the arrays are equal
