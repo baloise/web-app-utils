@@ -1,95 +1,39 @@
 {
-  "name": "@baloise/web-app-utils",
-  "version": "1.9.1",
-  "description": "Utilities for Baloise Web Applications",
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "build": "npm run build:clean && npm run build:compile && npm run build:bundle",
-    "build:clean": "rimraf dist && rimraf dist-transpiled",
-    "build:compile": "tsc -p .",
-    "build:bundle": "rollup --config rollup.config.js",
-    "lint": "eslint src --ext .ts,vue",
-    "format": "npm run prettier:write",
-    "prettier:write": "prettier --write \"./src\"",
-    "prettier:check": "prettier --check \"./src\"",
-    "semantic-release": "semantic-release"
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/types/index.d.ts",
-  "files": [
-    "dist/"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/baloise/web-app-utils.git"
-  },
+  "name": "root",
+  "private": true,
   "publishConfig": {
     "access": "public"
   },
-  "author": "",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/baloise/web-app-utils/issues"
   },
-  "homepage": "https://github.com/baloise/web-app-utils#readme",
-  "dependencies": {
-    "lodash.camelcase": "^4.3.0",
-    "lodash.isarray": "^4.0.0",
-    "lodash.isboolean": "^3.0.3",
-    "lodash.isdate": "^4.0.1",
-    "lodash.isequal": "^4.5.0",
-    "lodash.isnan": "^3.0.2",
-    "lodash.isnil": "^4.0.0",
-    "lodash.isnumber": "^3.0.3",
-    "lodash.isobject": "^3.0.2",
-    "lodash.isstring": "^4.0.1",
-    "lodash.padstart": "^4.6.1",
-    "lodash.upperfirst": "^4.3.1"
+  "homepage": "https://github.com/baloise/web-app-utils",
+  "author": {
+    "name": "Gery Hirschfeld",
+    "email": "gerhard.hirschfeld@baloise.ch",
+    "url": "https://github.com/hirsch88"
+  },
+  "scripts": {
+    "postinstall": "npm run bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "release": "lerna publish --yes --force-publish --conventional-commits --exact",
+    "canary": "lerna publish --canary --preid beta --dist-tag beta --yes --force-publish --exact",
+    "update:lock": "lerna exec -- npm install --package-lock-only"
   },
   "devDependencies": {
-    "@types/lodash.isequal": "^4.5.5",
-    "@types/lodash.isnil": "^4.0.6",
-    "@types/lodash.isarray": "^4.0.6",
-    "@types/lodash.isboolean": "^3.0.6",
-    "@types/lodash.isdate": "^4.0.6",
-    "@types/lodash.camelcase": "^4.3.6",
-    "@types/lodash.upperfirst": "^4.3.6",
-    "@types/lodash.isnan": "^3.0.6",
-    "@types/lodash.isnumber": "^3.0.6",
-    "@types/lodash.isobject": "^3.0.6",
-    "@types/lodash.isstring": "^4.0.6",
-    "@types/lodash.padstart": "^4.6.6",
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "@semantic-release/changelog": "^6.0.0",
-    "@semantic-release/git": "^10.0.0",
-    "@semantic-release/github": "^8.0.1",
-    "@semantic-release/npm": "^8.0.0",
-    "@types/jest": "^26.0.24",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "husky": "^6.0.0",
-    "jest": "^26.6.3",
-    "prettier": "^2.4.1",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "chalk": "^4.1.2",
+    "figlet": "^1.5.2",
+    "glob": "^7.1.7",
+    "lerna": "^4.0.0",
     "rimraf": "^3.0.2",
-    "rollup": "^2.58.0",
-    "semantic-release": "^18.0.0",
-    "ts-jest": "^26.5.6",
-    "typescript": "^4.4.3"
+    "typescript": "^4.3.5"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "resolutions": {
+    "tar": ">=4.4.18"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  }
+  "dependencies": {}
 }

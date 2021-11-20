@@ -1,0 +1,65 @@
+{
+  "name": "@baloise/web-app-pipes",
+  "version": "0.0.1",
+  "description": "Utilities for Baloise Web Applications",
+  "scripts": {
+    "banner": "node ../../.scripts/banner.js pipes",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "npm run banner && npm run build:clean && npm run build:docs && npm run build:index && npm run build:compile && npm run build:bundle",
+    "build:clean": "rimraf dist && rimraf dist-transpiled",
+    "build:compile": "tsc -p .",
+    "build:bundle": "rollup --config rollup.config.js",
+    "build:index": "node .scripts/pipes.index.js",
+    "build:docs": "node .scripts/pipes.docs.js",
+    "lint": "eslint src --ext .ts,vue",
+    "format": "npm run prettier:write",
+    "prettier:write": "prettier --write \"./src\"",
+    "prettier:check": "prettier --check \"./src\""
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baloise/web-app-utils.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/baloise/web-app-utils/issues"
+  },
+  "homepage": "https://github.com/baloise/web-app-utils",
+  "dependencies": {
+    "@baloise/web-app-utils": "^2.0.0",
+    "lodash.capitalize": "^4.2.1",
+    "lodash.isarray": "^4.0.0",
+    "lodash.isstring": "^4.0.1",
+    "lodash.round": "^4.0.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/lodash.capitalize": "^4.2.6",
+    "@types/lodash.isarray": "^4.0.6",
+    "@types/lodash.isempty": "^4.4.6",
+    "@types/lodash.isstring": "^4.0.6",
+    "@types/lodash.round": "^4.0.6",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.58.0",
+    "ts-jest": "^26.5.6",
+    "typescript": "4.3.5"
+  }
+}
