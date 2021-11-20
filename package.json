@@ -18,8 +18,8 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
-    "release": "lerna publish --yes --force-publish --conventional-commits --exact",
-    "canary": "lerna publish --canary --preid beta --dist-tag beta --yes --force-publish --exact",
+    "release": "lerna publish --conventional-commits --exact --force-publish --yes",
+    "prerelease": "lerna publish --canary --preid beta --dist-tag beta --exact --force-publish --yes",
     "update:lock": "lerna exec -- npm install --package-lock-only"
   },
   "devDependencies": {
