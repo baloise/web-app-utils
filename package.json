@@ -19,7 +19,7 @@
     "build": "lerna run build",
     "test": "lerna run test",
     "release": "lerna publish --conventional-commits --exact --force-publish --yes",
-    "prerelease": "lerna publish --canary --preid beta --dist-tag beta --exact --force-publish --yes",
+    "prerelease": "lerna publish --conventional-commits --canary --preid beta --dist-tag beta --exact --force-publish --yes",
     "update:lock": "lerna exec -- npm install --package-lock-only"
   },
   "devDependencies": {

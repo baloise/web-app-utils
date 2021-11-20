@@ -1,7 +1,7 @@
 import { BalValidatorFn } from './validator.type'
 
 /**
- * Returns `true` if the value date is before the given date
+ * Returns `true` if the value date is before the given date.
  *
  * ```typescript
  * BalValidators.isCustom((value) => value > 2)(3) // true
