@@ -1,0 +1,76 @@
+{
+  "name": "@baloise/web-app-pipes-angular",
+  "version": "2.0.1",
+  "description": "Utilities for Baloise Web Applications",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baloise/web-app-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baloise/web-app-utils/issues"
+  },
+  "homepage": "https://github.com/baloise/web-app-utils",
+  "author": {
+    "name": "Gery Hirschfeld",
+    "email": "gerhard.hirschfeld@baloise.ch",
+    "url": "https://github.com/hirsch88"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "banner": "node ../../.scripts/banner.js pipes-angular",
+    "build": "npm run banner && npm run clean && npm run build:generator && npm run build:compile",
+    "build:generator": "node .scripts/generator.script.js",
+    "build:compile": "ng-packagr -p package.json",
+    "clean": "rimraf src/pipes.ts && rimraf dist"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@baloise/web-app-pipes": "2.0.1",
+    "tslib": "^2.2.0"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=10.2.4",
+    "@angular/core": ">=10.2.4",
+    "@angular/forms": ">=10.2.4",
+    "@angular/platform-browser": ">=10.2.4",
+    "zone.js": ">=0.8.26"
+  },
+  "gitHead": "8bb3a41da0b577e5606f49a45e588a7bd4521eca",
+  "devDependencies": {
+    "@angular/common": "^10.2.5",
+    "@angular/compiler": "^10.2.5",
+    "@angular/compiler-cli": "^10.2.5",
+    "@angular/core": "^10.2.5",
+    "@angular/forms": "^10.2.5",
+    "@angular/platform-browser": "^10.2.5",
+    "ng-packagr": "^10.1.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.7",
+    "zone.js": "^0.10.3"
+  },
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/bundles/baloise-web-app-pipes-angular.umd.js",
+  "module": "dist/fesm2015/baloise-web-app-pipes-angular.js",
+  "es2015": "dist/fesm2015/baloise-web-app-pipes-angular.js",
+  "esm2015": "dist/esm2015/baloise-web-app-pipes-angular.js",
+  "fesm2015": "dist/fesm2015/baloise-web-app-pipes-angular.js",
+  "typings": "dist/baloise-web-app-pipes-angular.d.ts",
+  "metadata": "dist/baloise-web-app-pipes-angular.metadata.json",
+  "sideEffects": false,
+  "$schema": "./node_modules/ng-packagr/package.schema.json",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/index.ts",
+      "umdModuleIds": {
+        "@baloise/web-app-pipes": "@baloise/web-app-pipes"
+      }
+    },
+    "whitelistedNonPeerDependencies": [
+      "@baloise/web-app-pipes"
+    ]
+  }
+}

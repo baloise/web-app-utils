@@ -1,0 +1,51 @@
+{
+  "name": "@baloise/web-app-pipes-vue",
+  "version": "2.0.1",
+  "description": "Utilities for Baloise Web Applications",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baloise/web-app-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baloise/web-app-utils/issues"
+  },
+  "homepage": "https://github.com/baloise/web-app-utils",
+  "author": {
+    "name": "Gery Hirschfeld",
+    "email": "gerhard.hirschfeld@baloise.ch",
+    "url": "https://github.com/hirsch88"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "banner": "node ../../.scripts/banner.js pipes-vue",
+    "build": "npm run banner && npm run build:clean && npm run build:generator && npm run build:compile && npm run build:bundle",
+    "build:clean": "rimraf dist && rimraf dist-transpiled",
+    "build:generator": "node .scripts/generator.script.js",
+    "build:compile": "tsc -p .",
+    "build:bundle": "rollup --config rollup.config.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/lodash": "^4.14.172",
+    "change-case": "^4.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.56.2",
+    "typescript": "^4.3.5",
+    "vue": "^3.2.4"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.5"
+  },
+  "gitHead": "e0d380309b487bcedee06d025645f5aab37ab192",
+  "dependencies": {
+    "@baloise/web-app-pipes": "2.0.1"
+  }
+}

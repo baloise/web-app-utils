@@ -49,6 +49,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+.npmrc
 
 # Optional eslint cache
 .eslintcache
@@ -83,6 +84,7 @@ typings/
 dist
 dist-transpiled
 
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
@@ -103,3 +105,8 @@ dist-transpiled
 
 # TernJS port file
 .tern-port
+.idea
+/docs
+/temp
+/templates
+.vscode

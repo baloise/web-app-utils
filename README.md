@@ -1,590 +1,226 @@
-# @baloise/web-app-utils
-
-Javascript utilities for Baloise Web Applications.
+# Web App Utilities
 
 [![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
 [![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
-
-![npm](https://img.shields.io/npm/v/@baloise/web-app-utils)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-utils)
-![npm](https://img.shields.io/npm/dt/@baloise/web-app-utils)
 ![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
 ![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
 
-## Installation guide
+## About
 
-### Using npm
+A collection of utilities for Baloise web applications.
 
-```bash
-npm i @baloise/web-app-utils
-```
+- [Utils](./packages/utils/README.md)
+- [Pipes](./packages/pipes/README.md)
+- [Validators](./packages/validators/README.md)
 
 ## Table of Content
 
-- [Language Utils](#language-utils)
-- [Browser Utils](#browser-utils)
-- [Integration Utils](#integration-utils)
-- [Common Model Utils](#common-model-utils)
-- [Common Utils](#common-utils)
+- [Packages](#packages)
+- [Contributing](#contributing)
 
-## Language Utils
+## Packages
 
-The language utils helps to list the common languages and to detect the correct ones.
+| Library                                                                                                                           | Status                                                                   | Description                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| [@baloise/web-app-utils](https://github.com/baloise/web-app-utils/blob/master/packages/utils/README.md)                           | ![npm](https://img.shields.io/npm/v/@baloise/web-app-utils)              | A collection of JavaScript utilities like simple functions, models and integration logic. |
+| [@baloise/web-app-pipes](https://github.com/baloise/web-app-utils/blob/master/packages/pipes/README.md)                           | ![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes)              | A collection of pipe function to transform raw values in a certain format.                |
+| [@baloise/web-app-pipes-angular](https://github.com/baloise/web-app-utils/blob/master/packages/pipes-angular/README.md)           | ![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes-angular)      | Proxy package for angular applications.                                                   |
+| [@baloise/web-app-pipes-vue](https://github.com/baloise/web-app-utils/blob/master/packages/pipes-vue/README.md)                   | ![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes-vue)          | Proxy package for vue applications.                                                       |
+| [@baloise/web-app-validators](https://github.com/baloise/web-app-utils/blob/master/packages/validators/README.md)                 | ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators)         | A collection of validator functions.                                                      |
+| [@baloise/web-app-validators-angular](https://github.com/baloise/web-app-utils/blob/master/packages/validators-angular/README.md) | ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators-angular) | Proxy package for angular applications.                                                   |
+| [@baloise/web-app-validators-vue](https://github.com/baloise/web-app-utils/blob/master/packages/validators-vue/README.md)         | ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators-vue)     | Proxy package for vue applications.                                                       |
 
-### LanguageModel
+## Contribution
 
-#### `valueOf`
+We gratefully accept contributions to the Baloise Web App Utilites, but expect new feature requests and changes to be approved by the Baloise Web Community before creating a [pull request](https://github.com/baloise/web-app-utils/pulls).
 
-Returns the Language of the given language key or if the lauage is not registered it returns undefined.
+### Introduction
 
-**Signature**
-`valueOf(key: string): Language | undefined`
+Baloise Web App Utilities is free to use for anybody building a Baloise product or website, and the Baloise community is always working to make it better. Contributors like you help to make Baloise Web App Utilities great, and so we’re glad you’re here.
 
-**Example**
+Contributions are not limited to code. We also encourage feedback, documentation, new designs, and tools.
 
-```typescript
-const language = LanguageModel.valueOf("de");
-if (language === undefined) {
-  // language is not registered
+All you need is a [public GitHub account](https://github.com/) to get started. Most contributions begin with a GitHub issue using one of these templates:
+
+- [Ask a question](https://github.com/baloise/web-app-utils/issues/new?assignees=&labels=question&template=question.md)
+- [Report a bug](https://github.com/baloise/web-app-utils/issues/new?assignees=&labels=bug&template=bug-report.md&title=)
+- [Request a feature](https://github.com/baloise/web-app-utils/issues/new?assignees=&labels=enhancement&template=feature-request.md&title=)
+
+### Community
+
+#### Users
+
+Users are members of the community who use Baloise Web App Utilities guidelines, assets, and tooling. Anyone can be a user, and we encourage users to participate in the community as much as possible.
+
+#### Contributors
+
+Contributors are members of the community who contribute to Baloise Web App Utilities in a material way. Anyone can be a contributor. In addition to participating as a user, you can also contribute by:
+
+- Reporting bugs or missing features through GitHub issues
+- Fixing bugs, adding features, and improving documentation
+
+#### Maintainers
+
+Maintainers are members of the community who are committed to the success of individual Baloise Web App Utilities projects. In addition to their participation as a contributor, maintainers:
+
+- Label, close, and manage GitHub issues
+- Close and merge GitHub pull requests
+
+### Workflow
+
+The Baloise Web App Utilities typically use a [fork and pull request workflow](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) for contributions
+
+### Dev Setup
+
+Baloise Design System is divided into multiple NPM packages. Development for all of the packages happens inside one mono repository. Follow the below steps to get the dev environment up and running.
+
+#### Prerequisite - NodeJS
+
+To work with this project a recent LTS version of NodeJS and npm is required. Make sure you've installed and/or updated [Node](https://nodejs.org/en/) before continuing.
+
+### How to's
+
+To start building a new utilities, clone this repo to a new directory:
+
+```bash
+git clone https://github.com/baloise/web-app-utils.git web-app-utils
+cd web-app-utils
+```
+
+- Run `npm install` in the root directory to install all dependencies of the packages
+- Run `npm run build` in the root directory to build all packages
+- Run `npm run test` in the root directory to run all tests of packages
+- Run `npm run docs` in the root directory to generate the api documentation of the utilities
+
+#### Write your own Utility
+
+All our validators are located in the `packages/utils` dir.
+
+##### Getting Started
+
+Navigate into the component package:
+
+```bash
+cd packages/utils
+```
+
+To run the test use this command:
+
+```bash
+npm run test
+```
+
+##### Structure
+
+The structure of the utils in the folder `utils` is importend, because out of it the documentation is automatically generate as well as the adapter for our supported frameworks like angular.
+
+The comment block has a short description and an example part for the documentaion.
+
+Each utility function needs to be exported.
+
+````typescript
+/**
+ * Returns `true` if the arrays are equal
+ *
+ * ```typescript
+ * isValidMonetaryNumber(`1'000.99`) // true
+ * ```
+ */
+export function isValidMonetaryNumber(stringValue: string): boolean {
+  // utility logic
+  return any
 }
+````
+
+#### Write your own Validator
+
+All our validators are located in the `packages/validators` dir.
+
+##### Getting Started
+
+Navigate into the component package:
+
+```bash
+cd packages/validators
 ```
 
-#### `valueOfOrDefault`
+Each validator has its own test file.
 
-Returns the Language of the given language key or if the language is not registered it returns the default one.
+To run the test use this command:
 
-**Signature**
-`valueOfOrDefault(key: string): Language`
-
-**Example**
-
-```typescript
-const language = LanguageModel.valueOfOrDefault("de");
+```bash
+npm run test
 ```
 
-#### `isValidKey`
-
-Verifies if the given language key is registered as a supported language or not.
-
-**Signature**
-`isValidKey(key: string): boolean`
-
-**Example**
-
-```typescript
-if (LanguageModel.isValidKey("de")) {
-  // language key is valid
-} else {
-  // language key is not valid
-}
-```
-
-#### Languages
-
-We provide various set of language list for our supported countries. Those Languages have the type `LanguageModel`.
-
-##### `LanguagesOfSwitzerland`
-
-List of german, french, italien & english with the default language german.
-
-**Example**
-
-```typescript
-LanguagesOfSwitzerland.isValidKey("de"); // true
-LanguagesOfSwitzerland.isValidKey("be"); // false
-```
-
-##### `LanguagesOfGermany`
-
-List of german & english with the default language german.
-
-##### `LanguagesOfBelgium`
-
-List of dutch, french, italien & english with the default language dutch.
-
-##### `LanguagesOfLuxembourg`
-
-List of luxembourgish, french & english with the default language luxembourgish.
-
-#### Language
-
-The language object has only one property the `key` which has the language key like `en`.
-
-## Browser Utils
-
-The browser utils solve some common request when working with the broser api.
-
-> For working with cookies we recommand to use the library [js-cookie](https://www.npmjs.com/package/js-cookie).
-
-> For working with the url we recommand to use the library [query-string](https://www.npmjs.com/package/query-string).
-
-### Functions
-
-#### `scrollToAnchorElement`
-
-Scrolls to the ancor element with the attribute `data-ref="heading"`.
-
-**Signature**
-`scrollToAnchorElement(referenceName: string): void`
-
-**Example**
-
-```html
-<div data-ref="heading">...</div>
-```
-
-```typescript
-scrollToAnchorElement("heading");
-```
-
-#### `scrollToTopOfBody`
-
-Scrolls to the top of the body.
-
-**Signature**
-`scrollToTopOfBody(): void`
-
-#### `open`
-
-Opens a new location in the current tab.
-
-**Signature**
-`open(url: string): void`
-
-#### `openInNewWindow`
-
-Opens the new location in a new tab.
-
-**Signature**
-`openInNewWindow(url: string): void`
-
-#### `getBrowserLanguage`
-
-Returns the main language key. For example if the browser has the language `de-CH` this function return the language key `de`, so we can use our `LangaugeModel`.
-
-**Signature**
-`getBrowserLanguage(): string`
-
-**Example**
-
-```typescript
-const langKey = getBrowserLanguage()
-if(LanguagesOfSwitzerland.isValidKey(langKey)) { ... }
-...
-```
-
-#### `disableDragAndDropFiles`
-
-Disables for the whole web application drag and drop.
-
-**Signature**
-`disableDragAndDropFiles(): void`
-
-#### `getBrowserInfo`
-
-Returns some useful information from the browser.
-
-**Signature**
-`getBrowserInfo(): BrowserInfo`
-
-```typescript
-interface BrowserInfo {
-  cookiesEnabled?: boolean;
-  language?: string;
-  timezone?: string;
-  userAgent?: string;
-}
-```
-
-## Integration Utils
-
-The integration utils helps to work with our integration tools like one trust.
-
-### `loadOneTrustBaloiseSwitzerland`
-
-Loads the one trust script directly from our main cms system with the necessary parameters.
-
-**Signature**
-`loadOneTrustBaloiseSwitzerland(): void`
-
-## Common Model Utils
-
-Some useful models to use in the daily business.
-
-### RequestState
-
-The `RequestState` enum helps to have a state variable to show the current stand of an api call.
-
-```typescript
-export enum RequestState {
-  INIT,
-  RUNNING,
-  SUCCESS,
-  ERROR,
-}
-```
-
-**Example (Angular)**
-
-```typescript
-import { Component, OnInit } from "@angular/core";
-import { RequestState } from "@baloise/web-app-utils";
-import {
-  ConfirmEmailService,
-  EmailConfirmationResponse,
-} from "../confirm-email.service";
-
-@Component({
-  selector: "confirm-email-page",
-  templateUrl: "./confirm-email.page.component.html",
-  styleUrls: ["./confirm-email.page.component.scss"],
-})
-export class ConfirmEmailPageComponent implements OnInit {
-  confirmEmailResponse: EmailConfirmationResponse;
-  requestState: RequestState = RequestState.INIT;
-
-  constructor(private confirmEmailService: ConfirmEmailService) {}
-
-  confirmEmail() {
-    this.requestState = RequestState.RUNNING;
-    this.confirmEmailService
-      .confirmEmail()
-      .toPromise()
-      .then((resp) => {
-        this.requestState = RequestState.SUCCESS;
-        this.confirmEmailResponse = resp;
-      })
-      .catch(() => {
-        this.requestState = RequestState.ERROR;
-      });
+##### Structure
+
+The structure of the validator is importend, because out of it the documentation is automatically generate as well as the adapter for our supported frameworks like angular.
+
+The comment block has a short description and an example part for the documentaion.
+
+The first function receivs the options parameter and the second function gets the value to validate.
+
+````typescript
+import { BalValidatorFn } from './validator.type'
+
+/**
+ * Returns `true` if the value date is before the given date
+ *
+ * ```typescript
+ * BalValidators.isCustom((value) => value > 2)(3) // true
+ * ```
+ */
+export function isCustom(validatorFn: BalValidatorFn): BalValidatorFn {
+  return function (value: any) {
+    return validatorFn(value)
   }
 }
+````
+
+#### Write your own Pipe
+
+All our pipe functions are located in the `packages/pipes` dir.
+
+##### Getting Started
+
+Navigate into the component package:
+
+```bash
+cd packages/pipes
 ```
 
-# Common Utils
+Each pipe has its own test file.
 
-The library serve a collection of utility functions.
+To run the test use this command:
 
-::: tip
-We recommand to use the utility library [date-fns](https://date-fns.org/) for working with dates and for other utilities the library [lodash](https://lodash.com/).
-:::
+```bash
+npm run test
+```
 
-## Usage
+##### Structure
 
-The utilities are simple functions.
+The structure of the pipe function is importend, because out of it the documentation is automatically generate as well as the adapter for our supported frameworks like angular.
 
-```typescript
-import { isEnterKey } from "@baloise/web-app-utils";
+The comment block has a short description and an example part for the documentaion.
 
-if (isEnterKey(event)) {
-  // do something...
+The pipe are simple functions which always return a string.
+
+````typescript
+import { isEmpty } from '@baloise/web-app-utils'
+import capitalize from 'lodash.capitalize'
+
+/**
+ * Transforms the given string parameter to capitalize string.
+ *
+ * ```typescript
+ * balCapitalize('baloise') // Baloise
+ * ```
+ */
+export function balCapitalize(value: string | null | undefined): string {
+  if (isEmpty(value)) {
+    return ''
+  } else {
+    return capitalize(value as string)
+  }
 }
-```
-
-## ArrayUtil
-
-### areArraysEqual
-
-`areArraysEqual(a: any, b: any) => boolean`
-
-Returns `true` if the arrays are equal
-
-```typescript
-areArraysEqual(["a", "b"], ["b", "a"]); // true
-```
-
----
-
-## DateUtil
-
-### now
-
-`now() => Date`
-
-Returns a JS Date instance of the exact moment
-
-```typescript
-const date = now();
-// Wed Mar 10 2021 20:30:32 GMT+0100 (Central European Standard Time)
-```
-
-### today
-
-`today() => Date`
-
-Returns a JS Date instance of today with time being set to 0
-
-```typescript
-const date = today();
-// Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
-```
-
-### floorTime
-
-`floorTime(date: Date) => any`
-
-Returns a JS Date instance with time being set to 0
-
-```typescript
-const date = floorTime(new Date());
-// Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
-```
-
-### ceilTime
-
-`ceilTime(date: Date) => any`
-
-Returns a JS Date instance with the time set to the possible end
-
-```typescript
-const date = ceilTime(new Date());
-```
-
-### year
-
-`year(date: Date | undefined) => number`
-
-Returns the year number of the given date
-
-```typescript
-year(new Date(2020, 0, 1)); // 2020
-```
-
-### month
-
-`month(date: Date | undefined) => number`
-
-Returns the month number of the given date
-
-```typescript
-month(new Date(2020, 0, 1)); // 0
-```
-
-### day
-
-`day(date: Date | undefined) => number`
-
-Returns the day number of the given date
-
-```typescript
-day(new Date(2020, 0, 1)); // 1
-```
-
-### increaseYear
-
-`increaseYear(date: Date, years: number) => number`
-
-Increases the year of a date and retunrs the result
-
-```typescript
-increaseYear(new Date(2020, 0, 1), 1); // 2021
-```
-
-### decreaseYear
-
-`decreaseYear(date: Date, years: number) => number`
-
-Decreases the year of a date and retunrs the result
-
-```typescript
-decreaseYear(new Date(2020, 0, 1), 1); // 2019
-```
-
-### isBefore
-
-`isBefore(date: any, beforeDate: Date | string | undefined) => boolean`
-
-Returns `true` when the given date is not smaller than the before date.
-
-```typescript
-isBefore(new Date(2020, 1, 1), new Date(2020, 3, 1)); // true
-```
-
-### isAfter
-
-`isAfter(date: any, afterDate: Date | string | undefined) => boolean`
-
-Returns `true` when the given date is not smaller than the before date.
-
-```typescript
-isAfter(new Date(2020, 5, 1), new Date(2020, 3, 1)); // true
-```
-
-### isInRange
-
-`isInRange(date: Date | undefined, minDate: Date | undefined, maxDate: Date | undefined) => boolean`
-
-Returns `true` when the given date is not smaller than the minDate and not bigger than the maxDate.
-
-```typescript
-isInRange(new Date(2020, 1, 1), new Date(2020, 0, 1), new Date(2020, 2, 1)); // true
-```
-
-### getFirstDayOfTheWeek
-
-`getFirstDayOfTheWeek(date: Date) => Date`
-
-Returns the first day of the week of the given date.
-
-### isSameYear
-
-`isSameYear(a: Date, b: Date) => boolean`
-
-Returns `true` when the year of the dates are the same
-
-### isSameMonth
-
-`isSameMonth(a: Date, b: Date) => boolean`
-
-Returns `true` when the month of the dates are the same
-
-### isSameDay
-
-`isSameDay(a: Date, b: Date) => boolean`
-
-Returns `true` when the day of the dates are the same
-
-### isSameWeek
-
-`isSameWeek(a: Date, b: Date) => boolean`
-
-Returns `true` when the week of the dates are the same
-
-### format
-
-`format(value: string | Date | undefined | any) => string`
-
-Transforms the ISO datestring into `dd.mm.yyyy`
-
-```typescript
-format("2020-12-02"); // '02.12.2020'
-```
-
-### isoString
-
-`isoString(date: Date | undefined) => string`
-
-Returns the ISO string `yyyy-mm-dd` of the given date
-
-```typescript
-isoString(new Date(2020, 0, 13)); // '2020-01-13'
-```
-
-### newDateString
-
-`newDateString(date: Date) => string`
-
-Returns the ISO string `yyyy-mm-dd` of the given date
-
-```typescript
-newDateString(new Date(2020, 0, 13)); // '2020-01-13'
-```
-
-### newDateString
-
-`newDateString(year: number, month: number, day: number) => string`
-
-Returns the ISO string `yyyy-mm-dd` of the given parameters year, month and day
-
-```typescript
-newDateString(2020, 0, 13); // '2020-01-13'
-```
-
-### newDateString
-
-`newDateString(yearOrDate: Date | number, month: number, day: number) => string`
-
-### toDate
-
-`toDate(datestring: string | undefined | any) => Date | undefined`
-
-Turns the ISO string `yyyy-mm-dd` it a JS Date instance
-
-```typescript
-toDate("2020-01-13"); // js date instance
-```
-
-### isValidDateString
-
-`isValidDateString(datestring: string | undefined | any) => boolean`
-
-Returns `true` if the given datestring is valid
-
-```typescript
-isValidDateString("2020-01-13"); //true
-isValidDateString("2020-01-0"); //false
-isValidDateString(""); //false
-isValidDateString("1899-01-0"); //false
-```
-
-### isValidDate
-
-`isValidDate(value: any) => boolean`
-
-Returns `true` if the given date is valid
-
----
-
-## KeyUtil
-
-### isEnterKey
-
-`isEnterKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Enter` key
-
-### isSpaceKey
-
-`isSpaceKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Space` key
-
-### isEscapeKey
-
-`isEscapeKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Escape` key
-
-### isBackspaceKey
-
-`isBackspaceKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Backspace` key
-
-### isArrowDownKey
-
-`isArrowDownKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `ArrowDown` key
-
-### isArrowUpKey
-
-`isArrowUpKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `ArrowUp` key
-
----
-
-## NumberUtil
-
-### isValidMonetaryNumber
-
-`isValidMonetaryNumber(stringValue: string) => boolean`
-
-Returns `true` if the arrays are equal
-
-```typescript
-isValidMonetaryNumber(`1'000.99`); // true
-```
-
----
-
-## Util
-
-### isEmpty
-
-`isEmpty(value: any) => boolean`
-
-Returns `true` if the value is empty
-
----
+````
