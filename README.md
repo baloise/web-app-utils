@@ -70,7 +70,27 @@ Maintainers are members of the community who are committed to the success of ind
 
 The Baloise Web App Utilities typically use a [fork and pull request workflow](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) for contributions
 
+### Dev Setup
+
+Baloise Design System is divided into multiple NPM packages. Development for all of the packages happens inside one mono repository. Follow the below steps to get the dev environment up and running.
+
+#### Prerequisite - NodeJS
+
+To work with this project a recent LTS version of NodeJS and npm is required. Make sure you've installed and/or updated [Node](https://nodejs.org/en/) before continuing.
+
 ### How to's
+
+To start building a new utilities, clone this repo to a new directory:
+
+```bash
+git clone https://github.com/baloise/web-app-utils.git web-app-utils
+cd web-app-utils
+```
+
+- Run `npm install` in the root directory to install all dependencies of the packages
+- Run `npm run build` in the root directory to build all packages
+- Run `npm run test` in the root directory to run all tests of packages
+- Run `npm run docs` in the root directory to generate the api documentation of the utilities
 
 #### Write your own Utility
 
