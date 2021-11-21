@@ -470,6 +470,8 @@ newDateString(2020, 0, 13) // '2020-01-13'
 
 `newDateString(yearOrDate: any, month: number, day: number) => string`
 
+
+
 ### toDate
 
 `toDate(datestring: any) => any`
