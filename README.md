@@ -9,9 +9,9 @@
 
 A collection of utilities for Baloise web applications.
 
-- [Utils](https://github.com/baloise/web-app-utils/blob/master/packages/utils/README.md)
-- [Pipes](https://github.com/baloise/web-app-utils/blob/master/packages/pipes/README.md)
-- [Validators](https://github.com/baloise/web-app-utils/blob/master/packages/validators/README.md)
+- [Utils](./packages/utils/README.md)
+- [Pipes](./packages/pipes/README.md)
+- [Validators](./packages/validators/README.md)
 
 ## Table of Content
 
@@ -20,15 +20,15 @@ A collection of utilities for Baloise web applications.
 
 ## Packages
 
-| Library                                                                                                                           | Status                                                                    | Description                                                                               |
-| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [@baloise/web-app-utils](https://github.com/baloise/web-app-utils/blob/master/packages/utils/README.md)                           | ![npm](https://www.npmjs.com/package/@baloise/web-app-utils)              | A collection of JavaScript utilities like simple functions, models and integration logic. |
-| [@baloise/web-app-pipes](https://github.com/baloise/web-app-utils/blob/master/packages/pipes/README.md)                           | ![npm](https://www.npmjs.com/package/@baloise/web-app-pipes)              | A collection of pipe function to transform raw values in a certain format.                |
-| [@baloise/web-app-pipes-angular](https://github.com/baloise/web-app-utils/blob/master/packages/pipes-angular/README.md)           | ![npm](https://www.npmjs.com/package/@baloise/web-app-pipes-angular)      | Proxy package for angular applications.                                                   |
-| [@baloise/web-app-pipes-vue](https://github.com/baloise/web-app-utils/blob/master/packages/pipes-vue/README.md)                   | ![npm](https://www.npmjs.com/package/@baloise/web-app-pipes-vue)          | Proxy package for vue applications.                                                       |
-| [@baloise/web-app-validators](https://github.com/baloise/web-app-utils/blob/master/packages/validators/README.md)                 | ![npm](https://www.npmjs.com/package/@baloise/web-app-validators)         | A collection of validator functions.                                                      |
-| [@baloise/web-app-validators-angular](https://github.com/baloise/web-app-utils/blob/master/packages/validators-angular/README.md) | ![npm](https://www.npmjs.com/package/@baloise/web-app-validators-angular) | Proxy package for angular applications.                                                   |
-| [@baloise/web-app-validators-vue](https://github.com/baloise/web-app-utils/blob/master/packages/validators-vue/README.md)         | ![npm](https://www.npmjs.com/package/@baloise/web-app-validators-vue)     | Proxy package for vue applications.                                                       |
+| Library                                                                                                                           | Status                                                                   | Description                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| [@baloise/web-app-utils](https://github.com/baloise/web-app-utils/blob/master/packages/utils/README.md)                           | ![npm](https://img.shields.io/npm/v/@baloise/web-app-utils)              | A collection of JavaScript utilities like simple functions, models and integration logic. |
+| [@baloise/web-app-pipes](https://github.com/baloise/web-app-utils/blob/master/packages/pipes/README.md)                           | ![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes)              | A collection of pipe function to transform raw values in a certain format.                |
+| [@baloise/web-app-pipes-angular](https://github.com/baloise/web-app-utils/blob/master/packages/pipes-angular/README.md)           | ![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes-angular)      | Proxy package for angular applications.                                                   |
+| [@baloise/web-app-pipes-vue](https://github.com/baloise/web-app-utils/blob/master/packages/pipes-vue/README.md)                   | ![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes-vue)          | Proxy package for vue applications.                                                       |
+| [@baloise/web-app-validators](https://github.com/baloise/web-app-utils/blob/master/packages/validators/README.md)                 | ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators)         | A collection of validator functions.                                                      |
+| [@baloise/web-app-validators-angular](https://github.com/baloise/web-app-utils/blob/master/packages/validators-angular/README.md) | ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators-angular) | Proxy package for angular applications.                                                   |
+| [@baloise/web-app-validators-vue](https://github.com/baloise/web-app-utils/blob/master/packages/validators-vue/README.md)         | ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators-vue)     | Proxy package for vue applications.                                                       |
 
 ## Contribution
 
