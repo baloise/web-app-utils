@@ -1,7 +1,22 @@
-# Pipes
+# @baloise/web-app-pipes
+
+[![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
+[![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
+![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-pipes)
+![npm](https://img.shields.io/npm/dt/@baloise/web-app-pipes)
+![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
+![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
+
+## Installation
+
+```bash
+npm install @baloise/web-app-pipes-angular
+```
+
+## Usage
 
 Use pipe function to transform any kind of data to display.
-
 The pipe are simple functions which always return a string. Just import the function and use it to transform data in to readable strings.
 
 ```typescript
@@ -30,7 +45,7 @@ For more information look up the documentation about [URL.createObjectURL](https
 
 ### balCapitalize
 
-`balCapitalize(value: string | any | undefined) => string`
+`balCapitalize(value: any) => string`
 
 Transforms the given string parameter to capitalize string.
 
@@ -40,7 +55,7 @@ balCapitalize('baloise') // Baloise
 
 ### balClaimNumber
 
-`balClaimNumber(value: string | undefined | any | number) => string`
+`balClaimNumber(value: any) => string`
 
 Transforms the given string into the correct claim-number format.
 
@@ -50,7 +65,7 @@ balClaimNumber('73001217169') // 73/001217/16.9
 
 ### balContractNumber
 
-`balContractNumber(value: string | undefined | any | number) => string`
+`balContractNumber(value: any) => string`
 
 Transforms the given string into the correct police-number format.
 
@@ -60,7 +75,7 @@ balContractNumber('501222333') // 50/1.222.333
 
 ### balCurrency
 
-`balCurrency(value: number | any, currencySign: string, showZero: boolean, decimalLength: number) => string`
+`balCurrency(value: any, currencySign: string, showZero: boolean, decimalLength: number) => string`
 
 Formats the number into a human readable currency string.
 
@@ -70,7 +85,7 @@ balCurrency(1234567.89) // 1'234'567.89
 
 ### balDefaultString
 
-`balDefaultString(value: string | undefined | any, defaultString: string) => string`
+`balDefaultString(value: any, defaultString: string) => string`
 
 If the value is empty it shows a dash ('-').
 
@@ -101,7 +116,7 @@ balHighlight('Some Text') // <span class="bal-highlight">Some Text</span>
 
 ### balJoinArray
 
-`balJoinArray(value: any | undefined | any, delimiter: string) => string`
+`balJoinArray(value: any, delimiter: string) => string`
 
 Transforms the given string array in to a string.
 
@@ -111,7 +126,7 @@ balJoinArray(['Apple', 'Potato', 'Bacon']) // Apple, Potato, Bacon
 
 ### balLimit
 
-`balLimit(value: string | undefined | any, limit: number) => string`
+`balLimit(value: any, limit: number) => string`
 
 Limits the input string.
 
@@ -121,7 +136,7 @@ balLimit('Some string that is ways to long to be rendered') // Some string that 
 
 ### balOfferNumber
 
-`balOfferNumber(value: string | any | undefined, varianteNr: string) => string`
+`balOfferNumber(value: any, varianteNr: string) => string`
 
 Transforms the input string into a offer number.
 
@@ -131,7 +146,7 @@ balOfferNumber('987654321') // 98/7.654.321
 
 ### balPhoneNumber
 
-`balPhoneNumber(value: string | PhoneNumber | any | undefined) => string`
+`balPhoneNumber(value: any) => string`
 
 Formats the given phone.
 

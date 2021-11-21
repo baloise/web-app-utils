@@ -1,35 +1,162 @@
-<a href="https://design.baloise.dev" target="blank">
-    <img src="https://raw.githubusercontent.com/baloise/design-system/design-system/resources/images/banner.svg?sanitize=true" alt="Baloise Design System" />
-</a>
-<br>
+# Web App Utilities
 
-[![Continous](https://github.com/baloise/design-system/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/design-system/actions/workflows/continous.yml)
-[![Release](https://github.com/baloise/design-system/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/design-system/actions/workflows/release.yml)
+[![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
+[![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
 
-![npm](https://img.shields.io/npm/v/@baloise/design-system-components)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/design-system-components)
-![npm](https://img.shields.io/npm/dt/@baloise/design-system-components)
-![GitHub](https://img.shields.io/github/license/baloise/design-system)
-![GitHub issues](https://img.shields.io/github/issues/baloise/design-system)
-![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)
+![npm](https://img.shields.io/npm/v/@baloise/web-app-utils)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-utils)
+![npm](https://img.shields.io/npm/dt/@baloise/web-app-utils)
+![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
+![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
 
 ## About
 
-The Baloise Design System consists of reusable components and a clearly defined visual style, that can be assembled together to build any number of applications.
+A collection of utilities for Baloise web applications.
 
-## Documentation
+- [Utils](https://github.com/baloise/web-app-utils/blob/master/packages/utils/README.md)
+- [Pipes](https://github.com/baloise/web-app-utils/blob/master/packages/pipes/README.md)
+- [Validators](https://github.com/baloise/web-app-utils/blob/master/packages/validators/README.md)
 
-The [documentation](https://design.baloise.dev) is published on now.sh, and is built with [vuepress](https://vuepress.vuejs.org/).
+## Table of Content
+
+- [Packages](#packages)
+- [Contributing](#contributing)
 
 ## Packages
 
-| Library                                                                              | Status                                                                         | Description                                                            |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| [Components](https://design.baloise.dev/components/)                                 | ![npm](https://img.shields.io/npm/v/@baloise/design-system-components)         | Core package build with web components and global styling.             |
-| [Components Angular](https://design.baloise.dev/components/getting-started/angular/) | ![npm](https://img.shields.io/npm/v/@baloise/design-system-components-angular) | Angular component proxies based on the the core package.               |
-| [Components Vue](https://design.baloise.dev/components/getting-started/vue/)         | ![npm](https://img.shields.io/npm/v/@baloise/design-system-components-vue)     | Vue component proxies based on the the core package.                   |
-| [Components React](https://design.baloise.dev/components/getting-started/react/)     | ![npm](https://img.shields.io/npm/v/@baloise/design-system-components-react)   | React component proxies based on the the core package.                 |
-| [Components Table](https://design.baloise.dev/components/components/bal-table.html)  | ![npm](https://img.shields.io/npm/v/@baloise/design-system-components-table)   | Integration library for AG-Grid with styles and renderer functions     |
-| [Icons](https://design.baloise.dev/design/icons.html#all-icons)                      | ![npm](https://img.shields.io/npm/v/@baloise/design-system-icons)              | SVG icons of the design system.                                        |
-| [Fonts](https://design.baloise.dev/design/typography.html)                           | ![npm](https://img.shields.io/npm/v/@baloise/design-system-fonts)              | Web-Font of the design system.                                         |
-| [Testing](https://design.baloise.dev/components/tooling/testing.html)                | ![npm](https://img.shields.io/npm/v/@baloise/design-system-testing)            | Testing package with custom and overriden commands for each component. |
+| Library                                                                                                                           | Status                                                                    | Description                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [@baloise/web-app-utils](https://github.com/baloise/web-app-utils/blob/master/packages/utils/README.md)                           | ![npm](https://www.npmjs.com/package/@baloise/web-app-utils)              | A collection of JavaScript utilities like simple functions, models and integration logic. |
+| [@baloise/web-app-pipes](https://github.com/baloise/web-app-utils/blob/master/packages/pipes/README.md)                           | ![npm](https://www.npmjs.com/package/@baloise/web-app-pipes)              | A collection of pipe function to transform raw values in a certain format.                |
+| [@baloise/web-app-pipes-angular](https://github.com/baloise/web-app-utils/blob/master/packages/pipes-angular/README.md)           | ![npm](https://www.npmjs.com/package/@baloise/web-app-pipes-angular)      | Proxy package for angular applications.                                                   |
+| [@baloise/web-app-pipes-vue](https://github.com/baloise/web-app-utils/blob/master/packages/pipes-vue/README.md)                   | ![npm](https://www.npmjs.com/package/@baloise/web-app-pipes-vue)          | Proxy package for vue applications.                                                       |
+| [@baloise/web-app-validators](https://github.com/baloise/web-app-utils/blob/master/packages/validators/README.md)                 | ![npm](https://www.npmjs.com/package/@baloise/web-app-validators)         | A collection of validator functions.                                                      |
+| [@baloise/web-app-validators-angular](https://github.com/baloise/web-app-utils/blob/master/packages/validators-angular/README.md) | ![npm](https://www.npmjs.com/package/@baloise/web-app-validators-angular) | Proxy package for angular applications.                                                   |
+| [@baloise/web-app-validators-vue](https://github.com/baloise/web-app-utils/blob/master/packages/validators-vue/README.md)         | ![npm](https://www.npmjs.com/package/@baloise/web-app-validators-vue)     | Proxy package for vue applications.                                                       |
+
+# Contributing
+
+We gratefully accept contributions to the Baloise Web App Utilites, but expect new feature requests and changes to be approved by the Baloise Web Community before creating a [pull request](https://github.com/baloise/web-app-utils/pulls).
+
+## Introduction
+
+Baloise Web App Utilities is free to use for anybody building a Baloise product or website, and the Baloise community is always working to make it better. Contributors like you help to make Baloise Web App Utilities great, and so we’re glad you’re here.
+
+Contributions are not limited to code. We also encourage feedback, documentation, new designs, and tools.
+
+All you need is a [public GitHub account](https://github.com/) to get started. Most contributions begin with a GitHub issue using one of these templates:
+
+- [Ask a question](https://github.com/baloise/web-app-utils/issues/new?assignees=&labels=question&template=question.md)
+- [Report a bug](https://github.com/baloise/web-app-utils/issues/new?assignees=&labels=bug&template=bug-report.md&title=)
+- [Request a feature](https://github.com/baloise/web-app-utils/issues/new?assignees=&labels=enhancement&template=feature-request.md&title=)
+
+## Community
+
+### Users
+
+Users are members of the community who use Baloise Web App Utilities guidelines, assets, and tooling. Anyone can be a user, and we encourage users to participate in the community as much as possible.
+
+### Contributors
+
+Contributors are members of the community who contribute to Baloise Web App Utilities in a material way. Anyone can be a contributor. In addition to participating as a user, you can also contribute by:
+
+- Reporting bugs or missing features through GitHub issues
+- Fixing bugs, adding features, and improving documentation
+
+### Maintainers
+
+Maintainers are members of the community who are committed to the success of individual Baloise Web App Utilities projects. In addition to their participation as a contributor, maintainers:
+
+- Label, close, and manage GitHub issues
+- Close and merge GitHub pull requests
+
+## Workflow
+
+The Baloise Web App Utilities typically use a [fork and pull request workflow](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) for contributions
+
+## How to's
+
+### Write your own Utility
+
+All our validators are located in the `packages/utils` dir.
+
+#### Getting Started
+
+Navigate into the component package:
+
+```bash
+cd packages/utils
+```
+
+To run the test use this command:
+
+```bash
+npm run test
+```
+
+#### Structure
+
+The structure of the utils in the folder `utils` is importend, because out of it the documentation is automatically generate as well as the adapter for our supported frameworks like angular.
+
+The comment block has a short description and an example part for the documentaion.
+
+Each utility function needs to be exported.
+
+````typescript
+/**
+ * Returns `true` if the arrays are equal
+ *
+ * ```typescript
+ * isValidMonetaryNumber(`1'000.99`) // true
+ * ```
+ */
+export function isValidMonetaryNumber(stringValue: string): boolean {
+  // utility logic
+  return any
+}
+````
+
+### Write your own Validator
+
+All our validators are located in the `packages/validators` dir.
+
+#### Getting Started
+
+Navigate into the component package:
+
+```bash
+cd packages/validators
+```
+
+Each validator has its own test file.
+
+To run the test use this command:
+
+```bash
+npm run test
+```
+
+#### Structure
+
+The structure of the validator is importend, because out of it the documentation is automatically generate as well as the adapter for our supported frameworks like angular.
+
+The comment block has a short description and an example part for the documentaion.
+
+The first function receivs the options parameter and the second function gets the value to validate.
+
+````typescript
+import { BalValidatorFn } from './validator.type'
+
+/**
+ * Returns `true` if the value date is before the given date
+ *
+ * ```typescript
+ * BalValidators.isCustom((value) => value > 2)(3) // true
+ * ```
+ */
+export function isCustom(validatorFn: BalValidatorFn): BalValidatorFn {
+  return function (value: any) {
+    return validatorFn(value)
+  }
+}
+````

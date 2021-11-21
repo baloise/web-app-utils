@@ -1,4 +1,12 @@
-# Angular Pipes
+# @baloise/web-app-pipes-angular
+
+[![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
+[![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
+![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes-angular)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-pipes-angular)
+![npm](https://img.shields.io/npm/dt/@baloise/web-app-pipes-angular)
+![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
+![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
 
 ## Installation
 

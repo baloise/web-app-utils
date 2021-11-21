@@ -1,15 +1,14 @@
 # @baloise/web-app-utils
 
-Javascript utilities for Baloise Web Applications.
-
 [![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
 [![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
-
 ![npm](https://img.shields.io/npm/v/@baloise/web-app-utils)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-utils)
 ![npm](https://img.shields.io/npm/dt/@baloise/web-app-utils)
 ![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
 ![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
+
+Javascript utilities for Baloise Web Applications.
 
 ## Installation guide
 
@@ -260,25 +259,9 @@ export class ConfirmEmailPageComponent implements OnInit {
 
 # Common Utils
 
-The library serve a collection of utility functions.
+<!-- generated content -->
 
-::: tip
-We recommand to use the utility library [date-fns](https://date-fns.org/) for working with dates and for other utilities the library [lodash](https://lodash.com/).
-:::
-
-## Usage
-
-The utilities are simple functions.
-
-```typescript
-import { isEnterKey } from '@baloise/web-app-utils'
-
-if (isEnterKey(event)) {
-  // do something...
-}
-```
-
-## ArrayUtil
+## API
 
 ### areArraysEqual
 
@@ -289,10 +272,6 @@ Returns `true` if the arrays are equal
 ```typescript
 areArraysEqual(['a', 'b'], ['b', 'a']) // true
 ```
-
----
-
-## DateUtil
 
 ### now
 
@@ -318,7 +297,7 @@ const date = today()
 
 ### floorTime
 
-`floorTime(date: Date) => any`
+`floorTime(date: Date) => Date`
 
 Returns a JS Date instance with time being set to 0
 
@@ -329,7 +308,7 @@ const date = floorTime(new Date())
 
 ### ceilTime
 
-`ceilTime(date: Date) => any`
+`ceilTime(date: Date) => Date`
 
 Returns a JS Date instance with the time set to the possible end
 
@@ -339,7 +318,7 @@ const date = ceilTime(new Date())
 
 ### year
 
-`year(date: Date | undefined) => number`
+`year(date: any) => number`
 
 Returns the year number of the given date
 
@@ -349,7 +328,7 @@ year(new Date(2020, 0, 1)) // 2020
 
 ### month
 
-`month(date: Date | undefined) => number`
+`month(date: any) => number`
 
 Returns the month number of the given date
 
@@ -359,7 +338,7 @@ month(new Date(2020, 0, 1)) // 0
 
 ### day
 
-`day(date: Date | undefined) => number`
+`day(date: any) => number`
 
 Returns the day number of the given date
 
@@ -389,7 +368,7 @@ decreaseYear(new Date(2020, 0, 1), 1) // 2019
 
 ### isBefore
 
-`isBefore(date: any, beforeDate: Date | string | undefined) => boolean`
+`isBefore(date: any, beforeDate: any) => boolean`
 
 Returns `true` when the given date is not smaller than the before date.
 
@@ -399,7 +378,7 @@ isBefore(new Date(2020, 1, 1), new Date(2020, 3, 1)) // true
 
 ### isAfter
 
-`isAfter(date: any, afterDate: Date | string | undefined) => boolean`
+`isAfter(date: any, afterDate: any) => boolean`
 
 Returns `true` when the given date is not smaller than the before date.
 
@@ -409,7 +388,7 @@ isAfter(new Date(2020, 5, 1), new Date(2020, 3, 1)) // true
 
 ### isInRange
 
-`isInRange(date: Date | undefined, minDate: Date | undefined, maxDate: Date | undefined) => boolean`
+`isInRange(date: any, minDate: any, maxDate: any) => boolean`
 
 Returns `true` when the given date is not smaller than the minDate and not bigger than the maxDate.
 
@@ -449,7 +428,7 @@ Returns `true` when the week of the dates are the same
 
 ### format
 
-`format(value: string | Date | undefined | any) => string`
+`format(value: any) => string`
 
 Transforms the ISO datestring into `dd.mm.yyyy`
 
@@ -459,7 +438,7 @@ format('2020-12-02') // '02.12.2020'
 
 ### isoString
 
-`isoString(date: Date | undefined) => string`
+`isoString(date: any) => string`
 
 Returns the ISO string `yyyy-mm-dd` of the given date
 
@@ -489,11 +468,11 @@ newDateString(2020, 0, 13) // '2020-01-13'
 
 ### newDateString
 
-`newDateString(yearOrDate: Date | number, month: number, day: number) => string`
+`newDateString(yearOrDate: any, month: number, day: number) => string`
 
 ### toDate
 
-`toDate(datestring: string | undefined | any) => Date | undefined`
+`toDate(datestring: any) => any`
 
 Turns the ISO string `yyyy-mm-dd` it a JS Date instance
 
@@ -503,7 +482,7 @@ toDate('2020-01-13') // js date instance
 
 ### isValidDateString
 
-`isValidDateString(datestring: string | undefined | any) => boolean`
+`isValidDateString(datestring: any) => boolean`
 
 Returns `true` if the given datestring is valid
 
@@ -520,9 +499,11 @@ isValidDateString('1899-01-0') //false
 
 Returns `true` if the given date is valid
 
----
+### isEmpty
 
-## KeyUtil
+`isEmpty(value: any) => boolean`
+
+Returns `true` if the value is empty
 
 ### isEnterKey
 
@@ -560,10 +541,6 @@ Returns `true` if the keyboard event was triggered by the `ArrowDown` key
 
 Returns `true` if the keyboard event was triggered by the `ArrowUp` key
 
----
-
-## NumberUtil
-
 ### isValidMonetaryNumber
 
 `isValidMonetaryNumber(stringValue: string) => boolean`
@@ -573,15 +550,3 @@ Returns `true` if the arrays are equal
 ```typescript
 isValidMonetaryNumber(`1'000.99`) // true
 ```
-
----
-
-## Util
-
-### isEmpty
-
-`isEmpty(value: any) => boolean`
-
-Returns `true` if the value is empty
-
----

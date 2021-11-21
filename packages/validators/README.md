@@ -1,6 +1,20 @@
-# Validators
+# @baloise/web-app-validators
+
+[![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
+[![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
+![npm](https://img.shields.io/npm/v/@baloise/web-app-validators)
+![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-validators)
+![npm](https://img.shields.io/npm/dt/@baloise/web-app-validators)
+![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
+![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
 
 The library serve a collection of validator functions.
+
+## Installation
+
+```bash
+npm install @baloise/web-app-validators
+```
 
 ## Usage examples
 
@@ -23,7 +37,7 @@ BalValidators.isCustom(value => value > 2)(3) // true
 
 ### isBefore
 
-`isBefore(date: Date | string) => BalValidatorFn`
+`isBefore(date: any) => BalValidatorFn`
 
 Returns `true` if the value date is before the given date
 
@@ -34,7 +48,7 @@ BalValidators.isBefore(new Date(2020, 0, 2))(new Date(2020, 0, 1)) // true
 
 ### isAfter
 
-`isAfter(date: Date | string) => BalValidatorFn`
+`isAfter(date: any) => BalValidatorFn`
 
 Returns `true` if the value date is before the given date
 
