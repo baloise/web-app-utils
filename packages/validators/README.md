@@ -29,10 +29,10 @@ npm install @baloise/web-app-validators
 
 `isCustom(validatorFn: BalValidatorFn) => BalValidatorFn`
 
-Returns `true` if the value date is before the given date
+Returns `true` if the value date is before the given date.
 
 ```typescript
-BalValidators.isCustom(value => value > 2)(3) // true
+BalValidators.isCustom((value) => value > 2)(3) // true
 ```
 
 ### isBefore
