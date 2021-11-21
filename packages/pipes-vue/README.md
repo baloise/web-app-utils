@@ -1,6 +1,6 @@
 # @baloise/web-app-pipes-vue
 
-[![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
+[![Continuous](https://github.com/baloise/web-app-utils/actions/workflows/continuous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continuous.yml)
 [![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
 ![npm](https://img.shields.io/npm/v/@baloise/web-app-pipes-vue)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-pipes-vue)

@@ -1,6 +1,6 @@
 # @baloise/web-app-utils
 
-[![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
+[![Continuous](https://github.com/baloise/web-app-utils/actions/workflows/continuous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continuous.yml)
 [![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
 ![npm](https://img.shields.io/npm/v/@baloise/web-app-utils)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-utils)
@@ -469,8 +469,6 @@ newDateString(2020, 0, 13) // '2020-01-13'
 ### newDateString
 
 `newDateString(yearOrDate: any, month: number, day: number) => string`
-
-
 
 ### toDate
 

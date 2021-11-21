@@ -1,6 +1,6 @@
 # @baloise/web-app-validators
 
-[![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
+[![Continuous](https://github.com/baloise/web-app-utils/actions/workflows/continuous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continuous.yml)
 [![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
 ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-validators)
@@ -32,7 +32,7 @@ npm install @baloise/web-app-validators
 Returns `true` if the value date is before the given date.
 
 ```typescript
-BalValidators.isCustom((value) => value > 2)(3) // true
+BalValidators.isCustom(value => value > 2)(3) // true
 ```
 
 ### isBefore
