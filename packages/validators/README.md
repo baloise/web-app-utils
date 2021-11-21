@@ -16,10 +16,10 @@ The library serve a collection of validator functions.
 npm install @baloise/web-app-validators
 ```
 
-## Usage examples
+## Usage
 
-- [Angular usage of validators](/components/getting-started/angular/usage.html#form-validation)
-- [Vue usage of validators](/components/getting-started/vue/usage.html#form-validation)
+- [Angular usage of validators](../validators-angular/README.md)
+- [Vue usage of validators](../validators-vue/README.md)
 
 <!-- generated content -->
 
@@ -32,7 +32,7 @@ npm install @baloise/web-app-validators
 Returns `true` if the value date is before the given date
 
 ```typescript
-BalValidators.isCustom((value) => value > 2)(3) // true
+BalValidators.isCustom(value => value > 2)(3) // true
 ```
 
 ### isBefore

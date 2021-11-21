@@ -16,8 +16,12 @@ npm install @baloise/web-app-pipes-angular
 
 ## Usage
 
-Use pipe function to transform any kind of data to display.
-The pipe are simple functions which always return a string. Just import the function and use it to transform data in to readable strings.
+Use pipe function to transform any kind of data to a display format.
+The pipe are simple functions which always return a string.
+Just import the function and use it to transform data in to readable strings.
+
+- [Angular usage of pipes](../pipes-angular/README.md)
+- [Vue usage of pipes](../pipes-vue/README.md)
 
 ```typescript
 import { balCapitalize } from '@baloise/web-app-pipes'

@@ -2,10 +2,6 @@
 
 [![Continous](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/continous.yml)
 [![Release](https://github.com/baloise/web-app-utils/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/baloise/web-app-utils/actions/workflows/release.yml)
-
-![npm](https://img.shields.io/npm/v/@baloise/web-app-utils)
-![npm bundle size](https://img.shields.io/bundlephobia/min/@baloise/web-app-utils)
-![npm](https://img.shields.io/npm/dt/@baloise/web-app-utils)
 ![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
 ![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
 
@@ -34,11 +30,11 @@ A collection of utilities for Baloise web applications.
 | [@baloise/web-app-validators-angular](https://github.com/baloise/web-app-utils/blob/master/packages/validators-angular/README.md) | ![npm](https://www.npmjs.com/package/@baloise/web-app-validators-angular) | Proxy package for angular applications.                                                   |
 | [@baloise/web-app-validators-vue](https://github.com/baloise/web-app-utils/blob/master/packages/validators-vue/README.md)         | ![npm](https://www.npmjs.com/package/@baloise/web-app-validators-vue)     | Proxy package for vue applications.                                                       |
 
-# Contributing
+## Contribution
 
 We gratefully accept contributions to the Baloise Web App Utilites, but expect new feature requests and changes to be approved by the Baloise Web Community before creating a [pull request](https://github.com/baloise/web-app-utils/pulls).
 
-## Introduction
+### Introduction
 
 Baloise Web App Utilities is free to use for anybody building a Baloise product or website, and the Baloise community is always working to make it better. Contributors like you help to make Baloise Web App Utilities great, and so we’re glad you’re here.
 
@@ -50,37 +46,37 @@ All you need is a [public GitHub account](https://github.com/) to get started. M
 - [Report a bug](https://github.com/baloise/web-app-utils/issues/new?assignees=&labels=bug&template=bug-report.md&title=)
 - [Request a feature](https://github.com/baloise/web-app-utils/issues/new?assignees=&labels=enhancement&template=feature-request.md&title=)
 
-## Community
+### Community
 
-### Users
+#### Users
 
 Users are members of the community who use Baloise Web App Utilities guidelines, assets, and tooling. Anyone can be a user, and we encourage users to participate in the community as much as possible.
 
-### Contributors
+#### Contributors
 
 Contributors are members of the community who contribute to Baloise Web App Utilities in a material way. Anyone can be a contributor. In addition to participating as a user, you can also contribute by:
 
 - Reporting bugs or missing features through GitHub issues
 - Fixing bugs, adding features, and improving documentation
 
-### Maintainers
+#### Maintainers
 
 Maintainers are members of the community who are committed to the success of individual Baloise Web App Utilities projects. In addition to their participation as a contributor, maintainers:
 
 - Label, close, and manage GitHub issues
 - Close and merge GitHub pull requests
 
-## Workflow
+### Workflow
 
 The Baloise Web App Utilities typically use a [fork and pull request workflow](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) for contributions
 
-## How to's
+### How to's
 
-### Write your own Utility
+#### Write your own Utility
 
 All our validators are located in the `packages/utils` dir.
 
-#### Getting Started
+##### Getting Started
 
 Navigate into the component package:
 
@@ -94,7 +90,7 @@ To run the test use this command:
 npm run test
 ```
 
-#### Structure
+##### Structure
 
 The structure of the utils in the folder `utils` is importend, because out of it the documentation is automatically generate as well as the adapter for our supported frameworks like angular.
 
@@ -116,11 +112,11 @@ export function isValidMonetaryNumber(stringValue: string): boolean {
 }
 ````
 
-### Write your own Validator
+#### Write your own Validator
 
 All our validators are located in the `packages/validators` dir.
 
-#### Getting Started
+##### Getting Started
 
 Navigate into the component package:
 
@@ -136,7 +132,7 @@ To run the test use this command:
 npm run test
 ```
 
-#### Structure
+##### Structure
 
 The structure of the validator is importend, because out of it the documentation is automatically generate as well as the adapter for our supported frameworks like angular.
 
@@ -157,6 +153,54 @@ import { BalValidatorFn } from './validator.type'
 export function isCustom(validatorFn: BalValidatorFn): BalValidatorFn {
   return function (value: any) {
     return validatorFn(value)
+  }
+}
+````
+
+#### Write your own Pipe
+
+All our pipe functions are located in the `packages/pipes` dir.
+
+##### Getting Started
+
+Navigate into the component package:
+
+```bash
+cd packages/pipes
+```
+
+Each pipe has its own test file.
+
+To run the test use this command:
+
+```bash
+npm run test
+```
+
+##### Structure
+
+The structure of the pipe function is importend, because out of it the documentation is automatically generate as well as the adapter for our supported frameworks like angular.
+
+The comment block has a short description and an example part for the documentaion.
+
+The pipe are simple functions which always return a string.
+
+````typescript
+import { isEmpty } from '@baloise/web-app-utils'
+import capitalize from 'lodash.capitalize'
+
+/**
+ * Transforms the given string parameter to capitalize string.
+ *
+ * ```typescript
+ * balCapitalize('baloise') // Baloise
+ * ```
+ */
+export function balCapitalize(value: string | null | undefined): string {
+  if (isEmpty(value)) {
+    return ''
+  } else {
+    return capitalize(value as string)
   }
 }
 ````
