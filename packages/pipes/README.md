@@ -11,7 +11,7 @@
 ## Installation
 
 ```bash
-npm install @baloise/web-app-pipes-angular
+npm install @baloise/web-app-pipes
 ```
 
 ## Usage
