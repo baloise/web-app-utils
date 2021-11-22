@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/baloise/web-app-utils/compare/v2.0.4...v2.0.5) (2021-11-21)
+
+**Note:** Version bump only for package @baloise/web-app-utils
+
+
+
+
+
 ## [2.0.4](https://github.com/baloise/web-app-utils/compare/v2.0.3...v2.0.4) (2021-11-21)
 
 **Note:** Version bump only for package @baloise/web-app-utils
