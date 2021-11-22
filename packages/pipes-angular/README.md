@@ -14,6 +14,23 @@
 npm install @baloise/web-app-pipes-angular
 ```
 
+Add the pipe module to your app module.
+
+```typescript
+import { NgModule } from '@angular/core'
+import { BaloisePipeModule } from '@baloise/@baloise/web-app-pipes-angular'
+
+import { AppComponent } from './app.component'
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BaloisePipeModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
 ## Usage
 
 The pipe functions are defined as [Angular Pipes](https://angular.io/guide/pipes).

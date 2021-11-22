@@ -58,9 +58,7 @@ First we define our template like this.
 
 Now we have to define the logic of our form with the help of VeeValidate.
 
-:::tip
 The helper function `validators` helps us to combine validators and to use the possibility to dynamically disable fields and their validation rules.
-:::
 
 ```typescript
 import { defineComponent, ref } from 'vue'

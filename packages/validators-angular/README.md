@@ -37,10 +37,6 @@ The form elements support [Angular Reactive Forms](https://angular.io/guide/reac
 
 In the component class wen can define the validators for the form control.
 
-::: tip
-Go to [Validators](/components/tooling/validators.html) page to see our collection of available validators.
-:::
-
 ```typescript
 import { Component } from '@angular/core'
 import { FormControl, FormGroup } from '@angular/forms'
