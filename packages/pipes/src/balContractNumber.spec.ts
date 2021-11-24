@@ -13,4 +13,7 @@ describe('balPoliceNumber', () => {
   test('should format a claim number with a sign postfix correctly', () => {
     expect(balContractNumber('0501222333')).toBe('50/1.222.333')
   })
+  test('should format a claim number with a leading or trailing whitespace correctly', () => {
+    expect(balContractNumber(' 0501222333 ')).toBe('50/1.222.333')
+  })
 })
