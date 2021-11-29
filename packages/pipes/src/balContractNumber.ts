@@ -9,7 +9,7 @@ export function balContractNumber(value: string | undefined | null | number): st
   if (!value) {
     return ''
   }
-  let newValue = `${value}`
+  let newValue = (`${value}`).trim();
   if (newValue[0] !== '0') {
     newValue = `0${value}`
   }
