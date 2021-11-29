@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.8](https://github.com/baloise/web-app-utils/compare/v2.0.7...v2.0.8) (2021-11-29)
+
+**Note:** Version bump only for package @baloise/web-app-pipes-vue
+
+
+
+
+
 ## [2.0.7](https://github.com/baloise/web-app-utils/compare/v2.0.6...v2.0.7) (2021-11-22)
 
 **Note:** Version bump only for package @baloise/web-app-pipes-vue
