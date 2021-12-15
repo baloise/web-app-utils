@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.9](https://github.com/baloise/web-app-utils/compare/v2.0.8...v2.0.9) (2021-12-15)
+
+
+### Bug Fixes
+
+* **utils:** add shorthand for years. 2 => 2002 ([0b087d8](https://github.com/baloise/web-app-utils/commit/0b087d8eca63b9d96a761b791737f2a59975652d))
+
+
+
+
+
 ## [2.0.8](https://github.com/baloise/web-app-utils/compare/v2.0.7...v2.0.8) (2021-11-29)
 
 
