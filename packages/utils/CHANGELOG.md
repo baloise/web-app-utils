@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.10](https://github.com/baloise/web-app-utils/compare/v2.0.9...v2.0.10) (2021-12-15)
+
+
+### Bug Fixes
+
+* **utils:** fix short date strings ([853fd1c](https://github.com/baloise/web-app-utils/commit/853fd1cf52f3ea957bf0a57c064a0949df09e7aa))
+
+
+
+
+
 ## [2.0.9](https://github.com/baloise/web-app-utils/compare/v2.0.8...v2.0.9) (2021-12-15)
 
 
