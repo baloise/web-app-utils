@@ -277,14 +277,17 @@ export function toDate(datestring: string | undefined | null): Date | undefined 
   }
 
   if (
-    datestring.length >= 8 &&
+    datestring.length >= 5 &&
     datestring.length <= 10 &&
     (datestring.indexOf('-') >= 0 || datestring.indexOf('.') >= 0)
   ) {
     const isIso = datestring.indexOf('-') >= 0
     const seperator = isIso ? '-' : '.'
     const parts = datestring.split(seperator)
-    const year = parseInt(isIso ? parts[0] : parts[2], 10)
+    let year = parseInt(isIso ? parts[0] : parts[2], 10)
+    if (year < 1000) {
+      year = 2000 + year
+    }
     const month = parseInt(parts[1], 10)
     const day = parseInt(isIso ? parts[2] : parts[0], 10)
 
