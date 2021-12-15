@@ -284,7 +284,7 @@ export function toDate(datestring: string | undefined | null): Date | undefined 
     const isIso = datestring.indexOf('-') >= 0
     const seperator = isIso ? '-' : '.'
     const parts = datestring.split(seperator)
-    let year = parseInt(isIso ? parts[0] : parts[2], 10)
+    let year = parseInt(isIso ? parts[0] || '0' : parts[2] || '0', 10)
     if (year < 1000) {
       year = 2000 + year
     }

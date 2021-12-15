@@ -45,6 +45,9 @@ describe('date', () => {
     })
     test('should turn short datestrings into js dates', () => {
       expect(toDate('2.2.1')?.toISOString()).toBe('2001-02-02T00:00:00.000Z')
+      expect(toDate('20.02.')?.toISOString()).toBe('2000-02-20T00:00:00.000Z')
+      expect(toDate('20.02.1')?.toISOString()).toBe('2001-02-20T00:00:00.000Z')
+      expect(toDate('20.02.11')?.toISOString()).toBe('2011-02-20T00:00:00.000Z')
     })
   })
 
