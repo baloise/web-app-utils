@@ -3,19 +3,16 @@
   "version": "2.0.10",
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
-    "banner": "node ../../.scripts/banner.js pipes",
+    "banner": "node ../../.build/banner.js pipes",
+    "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "npm run banner && npm run build:clean && npm run build:docs && npm run build:index && npm run build:compile && npm run build:bundle",
     "build:clean": "rimraf dist && rimraf dist-transpiled",
     "build:compile": "tsc -p .",
     "build:bundle": "rollup --config rollup.config.js",
-    "build:index": "node .scripts/pipes.index.js",
-    "build:docs": "node .scripts/pipes.docs.js",
-    "lint": "eslint src --ext .ts,vue",
-    "format": "npm run prettier:write",
-    "prettier:write": "prettier --write \"./src\"",
-    "prettier:check": "prettier --check \"./src\""
+    "build:index": "node .build/pipes.index.js",
+    "build:docs": "node .build/pipes.docs.js"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
@@ -30,7 +27,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "",
+  "contributors": [
+    "Gery Hirschfeld <gerhard.hirschfeld@baloise.ch> (https://github.com/hirsch88)",
+    "Yannick Holzenkamp <yannick.holzenkamp@baloise.ch> (https://github.com/yannickholzenkamp)",
+    "Petar Nobilo <petar.nobilo@baloise.ch> (https://github.com/nobilo)",
+    "lazaki (https://github.com/lazaki)"
+  ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/baloise/web-app-utils/issues"
@@ -50,13 +52,7 @@
     "@types/lodash.isempty": "^4.4.6",
     "@types/lodash.isstring": "^4.0.6",
     "@types/lodash.round": "^4.0.6",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
     "jest": "^26.6.3",
-    "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.58.0",
     "ts-jest": "^26.5.6",

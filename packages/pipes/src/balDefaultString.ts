@@ -8,6 +8,6 @@ import { isEmpty } from '@baloise/web-app-utils'
  * balDefaultString('text') // text
  * ```
  */
-export function balDefaultString(value: string | undefined | null, defaultString: string = '-'): string {
+export function balDefaultString(value: string | undefined | null, defaultString = '-'): string {
   return isEmpty(value) ? defaultString : (value as string)
 }

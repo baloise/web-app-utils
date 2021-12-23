@@ -1,4 +1,4 @@
-// generated file by .scripts/validators.index.js
+// generated file by .build/validators.index.js
 
 export { BalValidatorFn } from './validator.type'
 

@@ -1,6 +1,6 @@
-// generated file by .scripts/generator.script.js
+// generated file by .build/generator.script.js
 
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core'
 import {
   balBlobToUrl,
   balCapitalize,
@@ -13,88 +13,88 @@ import {
   balJoinArray,
   balLimit,
   balOfferNumber,
-  balPhoneNumber
+  balPhoneNumber,
 } from '@baloise/web-app-pipes'
 
 @Pipe({
-  name: 'balBlobToUrl'
+  name: 'balBlobToUrl',
 })
 export class BalBlobToUrlPipe implements PipeTransform {
   transform = balBlobToUrl
 }
 
 @Pipe({
-  name: 'balCapitalize'
+  name: 'balCapitalize',
 })
 export class BalCapitalizePipe implements PipeTransform {
   transform = balCapitalize
 }
 
 @Pipe({
-  name: 'balClaimNumber'
+  name: 'balClaimNumber',
 })
 export class BalClaimNumberPipe implements PipeTransform {
   transform = balClaimNumber
 }
 
 @Pipe({
-  name: 'balContractNumber'
+  name: 'balContractNumber',
 })
 export class BalContractNumberPipe implements PipeTransform {
   transform = balContractNumber
 }
 
 @Pipe({
-  name: 'balCurrency'
+  name: 'balCurrency',
 })
 export class BalCurrencyPipe implements PipeTransform {
   transform = balCurrency
 }
 
 @Pipe({
-  name: 'balDefaultString'
+  name: 'balDefaultString',
 })
 export class BalDefaultStringPipe implements PipeTransform {
   transform = balDefaultString
 }
 
 @Pipe({
-  name: 'balFileSize'
+  name: 'balFileSize',
 })
 export class BalFileSizePipe implements PipeTransform {
   transform = balFileSize
 }
 
 @Pipe({
-  name: 'balHighlight'
+  name: 'balHighlight',
 })
 export class BalHighlightPipe implements PipeTransform {
   transform = balHighlight
 }
 
 @Pipe({
-  name: 'balJoinArray'
+  name: 'balJoinArray',
 })
 export class BalJoinArrayPipe implements PipeTransform {
   transform = balJoinArray
 }
 
 @Pipe({
-  name: 'balLimit'
+  name: 'balLimit',
 })
 export class BalLimitPipe implements PipeTransform {
   transform = balLimit
 }
 
 @Pipe({
-  name: 'balOfferNumber'
+  name: 'balOfferNumber',
 })
 export class BalOfferNumberPipe implements PipeTransform {
   transform = balOfferNumber
 }
 
 @Pipe({
-  name: 'balPhoneNumber'
+  name: 'balPhoneNumber',
 })
 export class BalPhoneNumberPipe implements PipeTransform {
   transform = balPhoneNumber
@@ -112,5 +112,5 @@ export const PIPES = [
   BalJoinArrayPipe,
   BalLimitPipe,
   BalOfferNumberPipe,
-  BalPhoneNumberPipe
+  BalPhoneNumberPipe,
 ]

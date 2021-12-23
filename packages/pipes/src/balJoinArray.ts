@@ -7,7 +7,7 @@ import isArray from 'lodash.isarray'
  * balJoinArray(['Apple', 'Potato', 'Bacon']) // Apple, Potato, Bacon
  * ```
  */
-export function balJoinArray(value: string[] | undefined | null, delimiter: string = ', '): string {
+export function balJoinArray(value: string[] | undefined | null, delimiter = ', '): string {
   if (value === null || value === undefined) {
     return ''
   }

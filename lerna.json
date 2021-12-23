@@ -1,18 +1,23 @@
 {
+  "version": "2.0.10",
+  "granularPathspec": false,
   "packages": [
     "packages/*"
   ],
-  "version": "2.0.10",
   "command": {
-    "publish": {
-      "ignoreChanges": [
-        "**/*.md"
-      ],
-      "message": "chore(): release"
-    },
     "version": {
-      "message": "chore(): release",
-      "private": false
+      "message": "chore(release): publish %s"
     }
-  }
+  },
+  "ignoreChanges": [
+    ".build/**",
+    ".github/**",
+    ".husky/**",
+    "**/.build/**",
+    "**/generated/**",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.e2e.ts",
+    "**/*.md"
+  ]
 }
