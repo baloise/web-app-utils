@@ -11,3 +11,5 @@ ngcc.config.js
 packages/pipes/src/index.ts
 packages/utils/src/utils/index.ts
 packages/validators/src/index.ts
+packages/pipes-angular/src/pipes.ts
+packages/validators-angular/src/validators.ts
