@@ -9,11 +9,16 @@ export function balContractNumber(value: string | undefined | null | number): st
   if (!value) {
     return ''
   }
-  let newValue = (`${value}`).trim();
+  let newValue = `${value}`.trim()
   if (newValue[0] !== '0') {
     newValue = `0${value}`
   }
-  const parts = [newValue.substring(1, 3), newValue.substring(3, 4), newValue.substring(4, 7), newValue.substring(7, 10)].filter(val => val.length > 0)
+  const parts = [
+    newValue.substring(1, 3),
+    newValue.substring(3, 4),
+    newValue.substring(4, 7),
+    newValue.substring(7, 10),
+  ].filter(val => val.length > 0)
   if (!parts || parts.length < 4) {
     return `${value}`
   }

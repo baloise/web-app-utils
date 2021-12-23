@@ -1,37 +1,56 @@
 {
   "name": "root",
   "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/baloise/web-app-utils/issues"
   },
   "homepage": "https://github.com/baloise/web-app-utils",
-  "author": {
-    "name": "Gery Hirschfeld",
-    "email": "gerhard.hirschfeld@baloise.ch",
-    "url": "https://github.com/hirsch88"
-  },
+  "contributors": [
+    "Gery Hirschfeld <gerhard.hirschfeld@baloise.ch> (https://github.com/hirsch88)",
+    "Yannick Holzenkamp <yannick.holzenkamp@baloise.ch> (https://github.com/yannickholzenkamp)",
+    "Petar Nobilo <petar.nobilo@baloise.ch> (https://github.com/nobilo)",
+    "lazaki (https://github.com/lazaki)"
+  ],
   "scripts": {
+    "==================== INSTALLATION / SETUP ====================": "",
+    "prepare": "husky install && npm run build",
     "postinstall": "npm run bootstrap",
     "bootstrap": "lerna bootstrap",
+    "update:lock": "lerna exec -- npm install --package-lock-only",
+    "update:registry": "lerna run update:registry && sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
+    "precommit": "lint-staged",
+    "==================== FORMATTER / LINTER ======================": "",
+    "format:check": "prettier --check ./packages",
+    "format": "prettier --write ./packages",
+    "lint:check": "eslint --ext .tsx,.ts packages/",
+    "lint": "eslint --ext .tsx,.ts packages/ --fix",
+    "==================== BUILD ===================================": "",
     "build": "lerna run build",
+    "==================== TEST ====================================": "",
     "test": "lerna run test",
-    "docs": "node ./.scripts/docs.js",
+    "==================== DOCUMENTATION ===========================": "",
+    "docs": "node ./.build/docs.js",
+    "==================== RELEASE =================================": "",
     "release": "lerna publish --conventional-commits --exact --force-publish --yes",
-    "canary": "lerna publish --canary --preid beta --dist-tag beta --exact --force-publish --yes",
-    "update:lock": "lerna exec -- npm install --package-lock-only"
+    "release:canary": "lerna publish prepatch --canary --preid beta --dist-tag beta --exact --force-publish --yes --no-changelog"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
     "chalk": "^4.1.2",
     "figlet": "^1.5.2",
     "glob": "^7.1.7",
     "lerna": "^4.0.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "lint-staged": "^12.1.3",
+    "prettier": "^2.5.1",
+    "husky": "^7.0.0"
   },
   "resolutions": {
     "tar": ">=4.4.18"

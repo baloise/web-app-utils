@@ -1,0 +1,13 @@
+.build/
+dist/
+dist-transpiled/
+generated/
+public/
+temp/
+
+rollup.config.js
+ngcc.config.js
+
+packages/pipes/src/index.ts
+packages/utils/src/utils/index.ts
+packages/validators/src/index.ts

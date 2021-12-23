@@ -7,9 +7,9 @@
  */
 
 const path = require('path')
-const utilities = require('../../../.scripts/utilities')
-const file = require('../../../.scripts/file')
-const log = require('../../../.scripts/log')
+const utilities = require('../../../.build/utilities')
+const file = require('../../../.build/file')
+const log = require('../../../.build/log')
 
 const run = async () => {
   await log.title('pipes : index')
@@ -31,7 +31,7 @@ const run = async () => {
   const utilStaticTypes = firstFunctions.map(f => `  ${f.name}: ${f.signature}`)
 
   const content = [
-    '// generated file by .scripts/pipes.index.js',
+    '// generated file by .build/pipes.index.js',
     // '',
     // utilImports.join('\n'),
     '',
