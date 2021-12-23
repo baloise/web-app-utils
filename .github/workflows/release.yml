@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: '0'
 
       - uses: actions/setup-node@v2
         with:
@@ -31,6 +29,9 @@ jobs:
         run: |
           git fetch --depth=1 origin +refs/tags/*:refs/tags/*
           git pull
+
+      - name: Install Lerna globally
+        run: npm install lerna --global
 
       - name: Update npm registry
         run: npm run update:registry
