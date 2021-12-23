@@ -18,12 +18,12 @@ export interface BalPipesStatic {
   balCapitalize: (value: any) => string
   balClaimNumber: (value: any) => string
   balContractNumber: (value: any) => string
-  balCurrency: (value: any, currencySign: string, showZero: boolean, decimalLength: number) => string
-  balDefaultString: (value: any, defaultString: string) => string
+  balCurrency: (value: any, currencySign: any, showZero: any, decimalLength: any) => string
+  balDefaultString: (value: any, defaultString: any) => string
   balFileSize: (value: number) => string
-  balHighlight: (value: string, search: string, cssClass: string) => string
-  balJoinArray: (value: any, delimiter: string) => string
-  balLimit: (value: any, limit: number) => string
+  balHighlight: (value: string, search: string, cssClass: any) => string
+  balJoinArray: (value: any, delimiter: any) => string
+  balLimit: (value: any, limit: any) => string
   balOfferNumber: (value: any, varianteNr: string) => string
   balPhoneNumber: (value: any) => string
 }

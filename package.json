@@ -1,9 +1,6 @@
 {
   "name": "root",
   "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
   "bugs": {
     "url": "https://github.com/baloise/web-app-utils/issues"
   },
