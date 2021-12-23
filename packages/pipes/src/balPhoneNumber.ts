@@ -22,7 +22,7 @@ export function balPhoneNumber(value: string | PhoneNumber | null | undefined): 
   let number
 
   if (isString(value)) {
-    let split = (<string>value).split(',')
+    const split = (<string>value).split(',')
     prefix = split[0]
     number = split[1]
   } else {
@@ -34,8 +34,10 @@ export function balPhoneNumber(value: string | PhoneNumber | null | undefined): 
     return ''
   }
 
-  const swissPhoneNumberPattern = new RegExp(`(?:(?:|0{0,2}|\\+{0,2})${prefix}(?:|\\(0\\))|0{0,1})\\s*([1-9]\\d)\\s*(\\d{3})\\s*(\\d{2})\\s*(\\d{2})(.*)`)
-  let match = number.match(swissPhoneNumberPattern)
+  const swissPhoneNumberPattern = new RegExp(
+    `(?:(?:|0{0,2}|\\+{0,2})${prefix}(?:|\\(0\\))|0{0,1})\\s*([1-9]\\d)\\s*(\\d{3})\\s*(\\d{2})\\s*(\\d{2})(.*)`,
+  )
+  const match = number.match(swissPhoneNumberPattern)
 
   function removeLeadingZero(phone: string): string {
     return phone.startsWith('0') ? phone.substring(1) : phone

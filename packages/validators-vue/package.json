@@ -10,11 +10,12 @@
     "url": "https://github.com/baloise/web-app-utils/issues"
   },
   "homepage": "https://github.com/baloise/web-app-utils",
-  "author": {
-    "name": "Gery Hirschfeld",
-    "email": "gerhard.hirschfeld@baloise.ch",
-    "url": "https://github.com/hirsch88"
-  },
+  "contributors": [
+    "Gery Hirschfeld <gerhard.hirschfeld@baloise.ch> (https://github.com/hirsch88)",
+    "Yannick Holzenkamp <yannick.holzenkamp@baloise.ch> (https://github.com/yannickholzenkamp)",
+    "Petar Nobilo <petar.nobilo@baloise.ch> (https://github.com/nobilo)",
+    "lazaki (https://github.com/lazaki)"
+  ],
   "publishConfig": {
     "access": "public"
   },

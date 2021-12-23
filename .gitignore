@@ -110,3 +110,9 @@ dist-transpiled
 /temp
 /templates
 .vscode
+
+# Husky
+.husky/_/
+
+# Design System
+packages/*/CHANGELOG.md

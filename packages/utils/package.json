@@ -11,11 +11,7 @@
     "build:compile": "tsc -p .",
     "build:bundle": "rollup --config rollup.config.js",
     "build:index": "node .build/utils.index.js",
-    "build:docs": "node .build/utils.docs.js",
-    "lint": "eslint src --ext .ts,vue",
-    "format": "npm run prettier:write",
-    "prettier:write": "prettier --write \"./src\"",
-    "prettier:check": "prettier --check \"./src\""
+    "build:docs": "node .build/utils.docs.js"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
@@ -30,7 +26,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "",
+  "contributors": [
+    "Gery Hirschfeld <gerhard.hirschfeld@baloise.ch> (https://github.com/hirsch88)",
+    "Yannick Holzenkamp <yannick.holzenkamp@baloise.ch> (https://github.com/yannickholzenkamp)",
+    "Petar Nobilo <petar.nobilo@baloise.ch> (https://github.com/nobilo)",
+    "lazaki (https://github.com/lazaki)"
+  ],
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/baloise/web-app-utils/issues"
@@ -64,13 +65,7 @@
     "@types/lodash.isstring": "^4.0.6",
     "@types/lodash.padstart": "^4.6.6",
     "@types/lodash.upperfirst": "^4.3.6",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
     "jest": "^26.6.3",
-    "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.58.0",
     "ts-jest": "^26.5.6",

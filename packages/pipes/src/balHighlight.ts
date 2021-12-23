@@ -5,7 +5,7 @@
  * balHighlight('Some Text') // <span class="bal-highlight">Some Text</span>
  * ```
  */
-export function balHighlight(value: string, search: string, cssClass: string = 'bal-highlight'): string {
+export function balHighlight(value: string, search: string, cssClass = 'bal-highlight'): string {
   if (search && value) {
     let pattern = search.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')
     pattern = pattern
