@@ -80,7 +80,7 @@ balContractNumber('501222333') // 50/1.222.333
 
 ### balCurrency
 
-`balCurrency(value: any, currencySign: string, showZero: boolean, decimalLength: number) => string`
+`balCurrency(value: any, currencySign: any, showZero: any, decimalLength: any) => string`
 
 Formats the number into a human readable currency string.
 
@@ -90,7 +90,7 @@ balCurrency(1234567.89) // 1'234'567.89
 
 ### balDefaultString
 
-`balDefaultString(value: any, defaultString: string) => string`
+`balDefaultString(value: any, defaultString: any) => string`
 
 If the value is empty it shows a dash ('-').
 
@@ -111,7 +111,7 @@ balFileSize(86956565) // 82.9 MB
 
 ### balHighlight
 
-`balHighlight(value: string, search: string, cssClass: string) => string`
+`balHighlight(value: string, search: string, cssClass: any) => string`
 
 Transforms the given text into a highlighted html content.
 
@@ -121,7 +121,7 @@ balHighlight('Some Text') // <span class="bal-highlight">Some Text</span>
 
 ### balJoinArray
 
-`balJoinArray(value: any, delimiter: string) => string`
+`balJoinArray(value: any, delimiter: any) => string`
 
 Transforms the given string array in to a string.
 
@@ -131,7 +131,7 @@ balJoinArray(['Apple', 'Potato', 'Bacon']) // Apple, Potato, Bacon
 
 ### balLimit
 
-`balLimit(value: any, limit: number) => string`
+`balLimit(value: any, limit: any) => string`
 
 Limits the input string.
 
