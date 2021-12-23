@@ -8,9 +8,9 @@
 
 const path = require('path')
 const _ = require('lodash')
-const utilities = require('../../../.scripts/utilities')
-const file = require('../../../.scripts/file')
-const log = require('../../../.scripts/log')
+const utilities = require('../../../.build/utilities')
+const file = require('../../../.build/file')
+const log = require('../../../.build/log')
 
 const run = async () => {
   await log.title('validators : index')
@@ -25,7 +25,7 @@ const run = async () => {
   }, [])
 
   const content = [
-    '// generated file by .scripts/validators.index.js',
+    '// generated file by .build/validators.index.js',
     '',
     `export { BalValidatorFn } from './validator.type'`,
     '',

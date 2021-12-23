@@ -6,7 +6,7 @@
  * and code generations.
  */
 
-const utilities = require('../../../.scripts/utilities')
+const utilities = require('../../../.build/utilities')
 
 utilities.write({
   name: 'pipes',

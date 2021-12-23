@@ -19,7 +19,7 @@
     "access": "public"
   },
   "scripts": {
-    "banner": "node ../../.scripts/banner.js validators-vue",
+    "banner": "node ../../.build/banner.js validators-vue",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "npm run banner && npm run build:clean && npm run build:compile && npm run build:bundle",

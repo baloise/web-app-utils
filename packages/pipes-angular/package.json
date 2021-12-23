@@ -19,9 +19,9 @@
     "access": "public"
   },
   "scripts": {
-    "banner": "node ../../.scripts/banner.js pipes-angular",
+    "banner": "node ../../.build/banner.js pipes-angular",
     "build": "npm run banner && npm run clean && npm run build:generator && npm run build:compile",
-    "build:generator": "node .scripts/generator.script.js",
+    "build:generator": "node .build/generator.script.js",
     "build:compile": "ng-packagr -p package.json",
     "clean": "rimraf src/pipes.ts && rimraf dist"
   },

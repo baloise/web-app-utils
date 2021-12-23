@@ -18,7 +18,7 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
-    "docs": "node ./.scripts/docs.js",
+    "docs": "node ./.build/docs.js",
     "release": "lerna publish --conventional-commits --exact --force-publish --yes",
     "canary": "lerna publish --canary --preid beta --dist-tag beta --exact --force-publish --yes",
     "update:lock": "lerna exec -- npm install --package-lock-only"

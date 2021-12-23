@@ -19,10 +19,10 @@
     "access": "public"
   },
   "scripts": {
-    "banner": "node ../../.scripts/banner.js pipes-vue",
+    "banner": "node ../../.build/banner.js pipes-vue",
     "build": "npm run banner && npm run build:clean && npm run build:generator && npm run build:compile && npm run build:bundle",
     "build:clean": "rimraf dist && rimraf dist-transpiled",
-    "build:generator": "node .scripts/generator.script.js",
+    "build:generator": "node .build/generator.script.js",
     "build:compile": "tsc -p .",
     "build:bundle": "rollup --config rollup.config.js"
   },

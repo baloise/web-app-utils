@@ -7,9 +7,9 @@
  */
 
 const path = require('path')
-const file = require('../../../.scripts/file')
-const { title } = require('../../../.scripts/log')
-const utilities = require('../../../.scripts/utilities')
+const file = require('../../../.build/file')
+const { title } = require('../../../.build/log')
+const utilities = require('../../../.build/utilities')
 
 const run = async () => {
   await title('vue : pipes')
@@ -18,7 +18,7 @@ const run = async () => {
   const functions = pipes.map(f => `  ${f.name}`)
   const functionsGlobal = pipes.map(f => `  app.config.globalProperties.$${f.name} = ${f.name}`)
   const content = [
-    '// generated file by .scripts/generator.script.js',
+    '// generated file by .build/generator.script.js',
     '',
     `import { App } from 'vue'`,
     `import {`,

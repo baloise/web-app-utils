@@ -7,9 +7,9 @@
  */
 
 const path = require('path')
-const file = require('../../../.scripts/file')
-const { title } = require('../../../.scripts/log')
-const utilities = require('../../../.scripts/utilities')
+const file = require('../../../.build/file')
+const { title } = require('../../../.build/log')
+const utilities = require('../../../.build/utilities')
 
 const run = async () => {
   await title('angular : pipes')
@@ -31,7 +31,7 @@ const run = async () => {
   )
 
   const content = [
-    '// generated file by .scripts/generator.script.js',
+    '// generated file by .build/generator.script.js',
     '',
     `import { Pipe, PipeTransform } from '@angular/core';`,
     `import {`,

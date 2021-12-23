@@ -1,4 +1,4 @@
-// generated file by .scripts/generator.script.js
+// generated file by .build/generator.script.js
 
 import { AbstractControl, ValidatorFn } from '@angular/forms';
 import { BalValidators, BalValidatorFn } from '@baloise/web-app-validators'

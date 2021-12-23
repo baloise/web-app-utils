@@ -1,4 +1,4 @@
-// generated file by .scripts/pipes.index.js
+// generated file by .build/pipes.index.js
 
 export { balBlobToUrl } from './balBlobToUrl'
 export { balCapitalize } from './balCapitalize'

@@ -1,4 +1,4 @@
-// generated file by .scripts/generator.script.js
+// generated file by .build/generator.script.js
 
 import { Pipe, PipeTransform } from '@angular/core';
 import {
