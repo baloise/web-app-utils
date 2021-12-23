@@ -21,6 +21,7 @@
   },
   "scripts": {
     "banner": "node ../../.build/banner.js pipes-vue",
+    "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
     "build": "npm run banner && npm run build:clean && npm run build:generator && npm run build:compile && npm run build:bundle",
     "build:clean": "rimraf dist && rimraf dist-transpiled",
     "build:generator": "node .build/generator.script.js",

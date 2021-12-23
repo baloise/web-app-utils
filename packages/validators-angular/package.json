@@ -21,6 +21,7 @@
   },
   "scripts": {
     "banner": "node ../../.build/banner.js validators-angular",
+    "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
     "build": "npm run banner && npm run clean && npm run build:generator && npm run build:compile",
     "build:generator": "node .build/generator.script.js",
     "build:compile": "ng-packagr -p package.json",

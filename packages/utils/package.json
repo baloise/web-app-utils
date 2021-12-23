@@ -4,6 +4,7 @@
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
     "banner": "node ../../.build/banner.js utils",
+    "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "npm run banner && npm run build:clean && npm run build:docs && npm run build:index && npm run build:compile && npm run build:bundle",
