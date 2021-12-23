@@ -116,3 +116,4 @@ dist-transpiled
 
 # Design System
 packages/*/CHANGELOG.md
+package-lock.json-e
