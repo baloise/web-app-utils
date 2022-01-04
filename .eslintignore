@@ -9,6 +9,8 @@ rollup.config.js
 ngcc.config.js
 *.md
 
+packages/unsupported-browsers/src/*
+packages/unsupported-browsers/demo/public/assets/js/baloise-unsupported-browsers.js
 packages/pipes/src/index.ts
 packages/utils/src/utils/index.ts
 packages/validators/src/index.ts

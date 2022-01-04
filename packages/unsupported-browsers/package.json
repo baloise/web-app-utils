@@ -1,0 +1,43 @@
+{
+  "name": "@baloise/web-app-unsupported-browsers",
+  "version": "2.0.11",
+  "description": "Utilities for Baloise Web Applications",
+  "scripts": {
+    "banner": "node ../../.build/banner.js unsupported-browsers",
+    "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
+    "build": "npm run banner && npm run build:clean && npm run build:compile",
+    "build:clean": "rimraf dist",
+    "build:compile": "babel src -d dist",
+    "postinstall": "npm run copy:script",
+    "copy:script": "copyfiles --flat dist/* demo/public/assets/js"
+  },
+  "main": "./dist/baloise-unsupported-browsers.js",
+  "files": [
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baloise/web-app-utils.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    "Gery Hirschfeld <gerhard.hirschfeld@baloise.ch> (https://github.com/hirsch88)",
+    "Yannick Holzenkamp <yannick.holzenkamp@baloise.ch> (https://github.com/yannickholzenkamp)",
+    "Petar Nobilo <petar.nobilo@baloise.ch> (https://github.com/nobilo)",
+    "lazaki (https://github.com/lazaki)"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/baloise/web-app-utils/issues"
+  },
+  "homepage": "https://github.com/baloise/web-app-utils",
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "copyfiles": "^2.4.1",
+    "rimraf": "^3.0.2"
+  }
+}
