@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.14 (2022-01-10)
+
+
+### Bug Fixes
+
+* add dist to files ([62b3383](https://github.com/baloise/web-app-utils/commit/62b338315c1f355c1c091e0e0571177765399b71))
+
+
+
+
+
 ## 2.0.13 (2022-01-04)
 
 **Note:** Version bump only for package root
