@@ -13,7 +13,7 @@
   },
   "main": "./dist/baloise-unsupported-browsers.js",
   "files": [
-    "src/"
+    "dist/"
   ],
   "repository": {
     "type": "git",
