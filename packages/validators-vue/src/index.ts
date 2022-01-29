@@ -32,9 +32,9 @@ export function rules(isDisabledOrRules: any, validators?: any): ValidatorsRules
   }
 }
 
-export function useValidator(translateFn: (key: string) => string) {
+export function createValidator(translateFn: (key: string) => string) {
   return {
-    createValidator:
+    validator:
       (validatorFn: BalValidatorFn, translationKey: string): ValidatorFn =>
       value => {
         const isValid = validatorFn(value)

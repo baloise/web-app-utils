@@ -1,4 +1,4 @@
-import { useValidator, ValidatorFn, rules } from './index'
+import { createValidator, ValidatorFn, rules } from './index'
 
 describe('rules', () => {
   test('verify validator function return types', async () => {
@@ -30,22 +30,22 @@ describe('useValidator', () => {
 
     return 'Validation message'
   }
-  const { createValidator } = useValidator(i18n)
+  const { validator } = createValidator(i18n)
   test('should return translated error message', () => {
     const isRequiredValidator = () => false
-    const isRequired = (): ValidatorFn => createValidator(isRequiredValidator, 'validator.required')
+    const isRequired = (): ValidatorFn => validator(isRequiredValidator, 'validator.required')
     expect(isRequired()('1234')).toBe('Validation message')
   })
   test('should return true due to valid input', () => {
     const isRequiredValidator = () => true
-    const isRequired = (): ValidatorFn => createValidator(isRequiredValidator, 'validator.required')
+    const isRequired = (): ValidatorFn => validator(isRequiredValidator, 'validator.required')
     expect(isRequired()('1234')).toBe(true)
   })
   test('should return the second validator', async () => {
     const firstValidator = () => true
     const secondValidator = () => false
-    const isFirstValidator = (): ValidatorFn => createValidator(firstValidator, 'first.validator.required')
-    const isSecondValidator = (): ValidatorFn => createValidator(secondValidator, 'second.validator.required')
+    const isFirstValidator = (): ValidatorFn => validator(firstValidator, 'first.validator.required')
+    const isSecondValidator = (): ValidatorFn => validator(secondValidator, 'second.validator.required')
 
     expect(await rules([isFirstValidator(), isSecondValidator()])('1234')).toBe('Validation message 2')
     expect(await rules([isSecondValidator(), isFirstValidator()])('1234')).toBe('Validation message 2')
@@ -53,8 +53,8 @@ describe('useValidator', () => {
   test('should return the error message of the first failed validator', async () => {
     const firstValidator = () => false
     const secondValidator = () => false
-    const isFirstValidator = (): ValidatorFn => createValidator(firstValidator, 'first.validator.required')
-    const isSecondValidator = (): ValidatorFn => createValidator(secondValidator, 'second.validator.required')
+    const isFirstValidator = (): ValidatorFn => validator(firstValidator, 'first.validator.required')
+    const isSecondValidator = (): ValidatorFn => validator(secondValidator, 'second.validator.required')
 
     expect(await rules([isFirstValidator(), isSecondValidator()])('1234')).toBe('Validation message')
     expect(await rules([isSecondValidator(), isFirstValidator()])('1234')).toBe('Validation message 2')
@@ -62,8 +62,8 @@ describe('useValidator', () => {
   test('should return true due to all valid rules', async () => {
     const firstValidator = () => true
     const secondValidator = () => true
-    const isFirstValidator = (): ValidatorFn => createValidator(firstValidator, 'first.validator.required')
-    const isSecondValidator = (): ValidatorFn => createValidator(secondValidator, 'second.validator.required')
+    const isFirstValidator = (): ValidatorFn => validator(firstValidator, 'first.validator.required')
+    const isSecondValidator = (): ValidatorFn => validator(secondValidator, 'second.validator.required')
 
     expect(await rules([])('1234')).toBe(true)
     expect(await rules([isFirstValidator(), isSecondValidator()])('1234')).toBe(true)
