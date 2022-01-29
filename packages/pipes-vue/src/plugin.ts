@@ -6,3 +6,9 @@ export const BaloisePipes: Plugin = {
     applyPipes(app)
   },
 }
+
+export const createBaloisePipes = (): Plugin => ({
+  async install(app) {
+    applyPipes(app)
+  },
+})
