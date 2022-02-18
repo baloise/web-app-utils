@@ -11,5 +11,6 @@ describe('isEmpty', () => {
     expect(isEmpty(1)).toBe(false)
     expect(isEmpty(true)).toBe(false)
     expect(isEmpty(false)).toBe(false)
+    expect(isEmpty(new Date())).toBe(false)
   })
 })

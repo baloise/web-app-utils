@@ -3,6 +3,7 @@ import isArray from 'lodash.isarray'
 import isString from 'lodash.isstring'
 import isBoolean from 'lodash.isboolean'
 import isObject from 'lodash.isobject'
+import isDate from 'lodash.isdate'
 
 /**
  * Returns `true` if the value is empty
@@ -17,6 +18,10 @@ export function isEmpty(value: any): boolean {
   }
 
   if (isBoolean(value)) {
+    return false
+  }
+
+  if (isDate(value)) {
     return false
   }
 
