@@ -4,6 +4,7 @@ dist-transpiled/
 generated/
 public/
 temp/
+node_modules/
 
 rollup.config.js
 ngcc.config.js

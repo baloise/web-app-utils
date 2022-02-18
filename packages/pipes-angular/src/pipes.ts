@@ -7,6 +7,7 @@ import {
   balClaimNumber,
   balContractNumber,
   balCurrency,
+  balDataString,
   balDefaultString,
   balFileSize,
   balHighlight,
@@ -49,6 +50,13 @@ export class BalContractNumberPipe implements PipeTransform {
 })
 export class BalCurrencyPipe implements PipeTransform {
   transform = balCurrency
+}
+
+@Pipe({
+  name: 'balDataString'
+})
+export class BalDataStringPipe implements PipeTransform {
+  transform = balDataString
 }
 
 @Pipe({
@@ -106,6 +114,7 @@ export const PIPES = [
   BalClaimNumberPipe,
   BalContractNumberPipe,
   BalCurrencyPipe,
+  BalDataStringPipe,
   BalDefaultStringPipe,
   BalFileSizePipe,
   BalHighlightPipe,
