@@ -317,6 +317,50 @@ const date = ceilTime(new Date())
 // Wed Mar 10 2021 23:59:59 GMT+0100 (Central European Standard Time)
 ```
 
+### formatDateString
+
+`formatDateString(date: Date) => string`
+
+Return the formatted date string in ISO 8601 format. Options may be passed to control the parts and notations of the date.
+
+```typescript
+const dateString = formatDateString(new Date())
+// '2022-02-14'
+```
+
+### isValidIsoString
+
+`isValidIsoString(dateString: any) => any`
+
+Validates if the given date string matches the iso date format.
+
+```typescript
+isValidIsoString('2022-02-14')
+// 'true'
+```
+
+### format
+
+`format(locale: any, date: Date) => any`
+
+Formats the dates according to the given locale.
+
+```typescript
+format('de-CH', new Date())
+// '14.2.2022'
+```
+
+### parse
+
+`parse(dateString: string) => any`
+
+Parses the iso date string into a javascript date object.
+
+```typescript
+const dateString = parse('2021-03-10')
+// Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
+```
+
 ### isEmpty
 
 `isEmpty(value: any) => boolean`
@@ -367,4 +411,44 @@ Returns `true` if the arrays are equal
 
 ```typescript
 isValidMonetaryNumber(`1'000.99`) // true
+```
+
+### getDecimalSeparator
+
+`getDecimalSeparator(locale: any) => string`
+
+Returns the decimal separator of the given locale
+
+```typescript
+getDecimalSeparator('de-ch') // .
+```
+
+### getThousandSeparator
+
+`getThousandSeparator(locale: any) => string`
+
+Returns the thousand separator of the given locale
+
+```typescript
+getThousandSeparator('de-ch') // '
+```
+
+### formatLocaleNumber
+
+`formatLocaleNumber(locale: any, number: number, minimumFractionDigits: number) => string`
+
+Formats the number into the given locale
+
+```typescript
+formatLocaleNumber('de-ch', 1000.42) // 1'000.42
+```
+
+### parseLocaleNumber
+
+`parseLocaleNumber(locale: any, stringNumber: string) => number`
+
+Parses the locale formatted number into a native number
+
+```typescript
+parseLocaleNumber('de-ch', '1'000.42') // 1000.42
 ```
