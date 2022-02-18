@@ -7,7 +7,7 @@ import {
   balClaimNumber,
   balContractNumber,
   balCurrency,
-  balDataString,
+  balDateString,
   balDefaultString,
   balFileSize,
   balHighlight,
@@ -23,7 +23,7 @@ export const applyPipes = (app: App) => {
   app.config.globalProperties.$balClaimNumber = balClaimNumber
   app.config.globalProperties.$balContractNumber = balContractNumber
   app.config.globalProperties.$balCurrency = balCurrency
-  app.config.globalProperties.$balDataString = balDataString
+  app.config.globalProperties.$balDateString = balDateString
   app.config.globalProperties.$balDefaultString = balDefaultString
   app.config.globalProperties.$balFileSize = balFileSize
   app.config.globalProperties.$balHighlight = balHighlight
