@@ -88,6 +88,16 @@ Formats the number into a human readable currency string.
 balCurrency(1234567.89) // 1'234'567.89
 ```
 
+### balDateString
+
+`balDateString(value: any) => string`
+
+Transforms the given string parameter to capitalize string.
+
+```typescript
+balDateString(new Date(2022, 11, 31)) // '2022-12-31'
+```
+
 ### balDefaultString
 
 `balDefaultString(value: any, defaultString: any) => string`
