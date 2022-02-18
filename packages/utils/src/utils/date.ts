@@ -1,8 +1,19 @@
-import isNil from 'lodash.isnil'
-import isNumber from 'lodash.isnumber'
-import isString from 'lodash.isstring'
-import isDate from 'lodash.isdate'
+import {
+  formatISO,
+  parse as dateFnsParse,
+  isMatch,
+  isValid,
+  parseISO,
+  getYear,
+  setYear,
+  getMonth,
+  getDate,
+} from 'date-fns'
 import padStart from 'lodash.padstart'
+
+export const ISO_PATTERN = 'yyyy-MM-dd'
+export const DATE_PATTERN = 'dd-MM-yyyy'
+export const TIMEZONE = 'T00:00:00.000Z'
 
 /**
  * Returns a JS Date instance of the exact moment
@@ -47,6 +58,7 @@ export function floorTime(date: Date): Date {
  *
  * ```typescript
  * const date = ceilTime(new Date())
+ * // Wed Mar 10 2021 23:59:59 GMT+0100 (Central European Standard Time)
  * ```
  */
 export function ceilTime(date: Date): Date {
@@ -56,341 +68,103 @@ export function ceilTime(date: Date): Date {
 }
 
 /**
- * Returns the year number of the given date
+ * Return the formatted date string in ISO 8601 format. Options may be passed to control the parts and notations of the date.
  *
  * ```typescript
- * year(new Date(2020, 0, 1)) // 2020
+ * const dateString = formatDateString(new Date())
+ * // '2022-02-14'
  * ```
  */
-export function year(date: Date | undefined): number {
-  if (date && isValidDate(date)) {
-    return date.getFullYear()
-  }
-  throw new Error('Not a valid date')
+export const formatDateString = (date: Date): string => {
+  return date && isValid(date) ? formatISO(date, { representation: 'date' }) : ''
 }
 
 /**
- * Returns the month number of the given date
+ * Validates if the given date string matches the iso date format.
  *
  * ```typescript
- * month(new Date(2020, 0, 1)) // 0
+ * isValidIsoString('2022-02-14')
+ * // 'true'
  * ```
  */
-export function month(date: Date | undefined): number {
-  if (date && isValidDate(date)) {
-    return date.getMonth()
-  }
-  throw new Error('Not a valid date')
-}
+export const isValidIsoString = (dateString: string | undefined | null) =>
+  !!dateString ? isMatch(dateString, ISO_PATTERN) : false
 
 /**
- * Returns the day number of the given date
+ * Formats the dates according to the given locale.
  *
  * ```typescript
- * day(new Date(2020, 0, 1)) // 1
+ * format('de-CH', new Date())
+ * // '14.2.2022'
  * ```
  */
-export function day(date: Date | undefined): number {
-  if (date && isValidDate(date)) {
-    return date.getDate()
-  }
-  throw new Error('Not a valid date')
+export const format = (locale = 'de-CH', date?: Date) => {
+  return isValid(date) ? intlFormat(locale, date as Date) : ''
 }
 
 /**
- * Increases the year of a date and retunrs the result
+ * Parses the iso date string into a javascript date object.
  *
  * ```typescript
- * increaseYear(new Date(2020, 0, 1), 1) // 2021
+ * const dateString = parse('2021-03-10')
+ * // Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
  * ```
  */
-export function increaseYear(date: Date, years: number): number {
-  return year(date) + years
-}
-
-/**
- * Decreases the year of a date and retunrs the result
- *
- * ```typescript
- * decreaseYear(new Date(2020, 0, 1), 1) // 2019
- * ```
- */
-export function decreaseYear(date: Date, years: number): number {
-  return year(date) - years
-}
-
-/**
- * Returns `true` when the given date is not smaller than the before date.
- *
- * ```typescript
- * isBefore(new Date(2020, 1, 1), new Date(2020, 3, 1)) // true
- * ```
- */
-export function isBefore(date: any, beforeDate: Date | string | undefined): boolean {
-  return validateTwoDates(date, beforeDate, (first, second) => first < second)
-}
-
-/**
- * Returns `true` when the given date is not smaller than the before date.
- *
- * ```typescript
- * isAfter(new Date(2020, 5, 1), new Date(2020, 3, 1)) // true
- * ```
- */
-export function isAfter(date: any, afterDate: Date | string | undefined): boolean {
-  return validateTwoDates(date, afterDate, (first, second) => first > second)
-}
-
-/**
- * Returns `true` when the given date is not smaller than the minDate and not bigger than the maxDate.
- *
- * ```typescript
- * isInRange(new Date(2020, 1, 1), new Date(2020, 0, 1), new Date(2020, 2, 1)) // true
- * ```
- */
-export function isInRange(date: Date | undefined, minDate: Date | undefined, maxDate: Date | undefined): boolean {
-  if (date && minDate && maxDate) {
-    return minDate <= date && date <= maxDate
-  }
-  return true
-}
-
-/**
- * Returns the first day of the week of the given date.
- */
-export function getFirstDayOfTheWeek(date: Date): Date {
-  const weekdayDiff = [6, 0, 1, 2, 3, 4, 5]
-  const d = new Date(date)
-  d.setDate(d.getDate() - weekdayDiff[d.getDay()])
-  return d
-}
-
-/**
- * Returns `true` when the year of the dates are the same
- */
-export function isSameYear(a: Date, b: Date): boolean {
-  return a.getFullYear() === b.getFullYear()
-}
-
-/**
- * Returns `true` when the month of the dates are the same
- */
-export function isSameMonth(a: Date, b: Date): boolean {
-  return isSameYear(a, b) && a.getMonth() === b.getMonth()
-}
-
-/**
- * Returns `true` when the day of the dates are the same
- */
-export function isSameDay(a: Date, b: Date): boolean {
-  return isSameMonth(a, b) && a.getDate() === b.getDate()
-}
-
-/**
- * Returns `true` when the week of the dates are the same
- */
-export function isSameWeek(a: Date, b: Date): boolean {
-  return isSameDay(getFirstDayOfTheWeek(a), getFirstDayOfTheWeek(b))
-}
-
-/**
- * Transforms the ISO datestring into `dd.mm.yyyy`
- *
- * ```typescript
- * format('2020-12-02') // '02.12.2020'
- * ```
- */
-export function format(value: string | Date | undefined | null): string {
-  if (isNil(value)) {
-    return ''
-  }
-
-  if (isString(value)) {
-    if (!isValidDateString(value)) {
-      return ''
+export const parse = (dateString: string): Date | undefined => {
+  if (isMatch(dateString, ISO_PATTERN)) {
+    const d = parseISO(dateString + TIMEZONE)
+    if (d && isValid(d)) {
+      return validateYear(d)
     }
-
-    value = toDate(value)
+    const [year, month, day] = `${dateString}`.split('-').map(d => parseInt(d, 10))
+    return generateIsoDate([year, month, day])
   }
 
-  if (!isDate(value)) {
-    return ''
+  if (isMatch(dateString, getDatePattern())) {
+    const d = dateFnsParse(dateString, getDatePattern(), now())
+    return generateIsoDate([getYear(d), getMonth(d) + 1, getDate(d)])
   }
 
-  return `${pad(day(value))}.${pad(month(value) + 1)}.${year(value)}`
+  return undefined
 }
 
-/**
- * Returns the ISO string `yyyy-mm-dd` of the given date
- *
- * ```typescript
- * isoString(new Date(2020, 0, 13)) // '2020-01-13'
- * ```
- */
-export function isoString(date: Date | undefined): string {
-  if (isNil(date) || Date.toString() === 'Invalid Date') {
-    return ''
-  }
-  return `${year(date)}-${pad(month(date) + 1)}-${pad(day(date))}`
+/**************************************************************
+ * PRIVATE
+ **************************************************************/
+
+function getDateSeparator(locale = 'de-CH'): string {
+  return new Intl.DateTimeFormat(locale)
+    .format(now())
+    .replace(/\p{Number}/gu, '')
+    .charAt(0)
 }
 
-/**
- * Returns the ISO string `yyyy-mm-dd` of the given date
- *
- * ```typescript
- * newDateString(new Date(2020, 0, 13)) // '2020-01-13'
- * ```
- */
-export function newDateString(date: Date): string
-/**
- * Returns the ISO string `yyyy-mm-dd` of the given parameters year, month and day
- *
- * ```typescript
- * newDateString(2020, 0, 13) // '2020-01-13'
- * ```
- */
-export function newDateString(year: number, month: number, day: number): string
-export function newDateString(yearOrDate: Date | number, month?: number, day?: number): string {
-  let date
-  if (isDate(yearOrDate)) {
-    date = localDatetime(yearOrDate)
-  } else {
-    date = new Date(Date.UTC(yearOrDate, month - 1, day))
-  }
-  return isoString(date)
+function getDatePattern() {
+  return DATE_PATTERN.split('-').join(getDateSeparator())
 }
 
-function localDatetime(date: Date): Date {
-  return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
-}
-
-/**
- * Turns the ISO string `yyyy-mm-dd` it a JS Date instance
- *
- * ```typescript
- * toDate('2020-01-13') // js date instance
- * ```
- */
-export function toDate(datestring: string | undefined | null): Date | undefined {
-  if (isNil(datestring)) {
-    return undefined
-  }
-
-  if (
-    datestring.length >= 5 &&
-    datestring.length <= 10 &&
-    (datestring.indexOf('-') >= 0 || datestring.indexOf('.') >= 0)
-  ) {
-    const isIso = datestring.indexOf('-') >= 0
-    const seperator = isIso ? '-' : '.'
-    const parts = datestring.split(seperator)
-    let year = parseInt(isIso ? parts[0] || '0' : parts[2] || '0', 10)
-    if (year < 1000) {
-      year = 2000 + year
-    }
-    const month = parseInt(parts[1], 10)
-    const day = parseInt(isIso ? parts[2] : parts[0], 10)
-
-    if (year < 1900) {
-      return undefined
-    }
-
-    if (month < 1 || month > 12) {
-      return undefined
-    }
-
-    const lastDayOfMonth = new Date(year, month, 0).getDate()
-    if (day < 1 || day > lastDayOfMonth) {
-      return undefined
-    }
-
-    datestring = newDateString(year, month, day)
-  }
-
-  if (datestring === '' || datestring.length < 8 || datestring.length > 10) {
-    return undefined
-  }
-
-  const date = new Date(datestring)
-
-  if (date.toString() === 'Invalid Date') {
-    return undefined
-  }
-
-  return date
-}
-
-/**
- * Returns `true` if the given datestring is valid
- *
- * ```typescript
- * isValidDateString('2020-01-13') //true
- * isValidDateString('2020-01-0') //false
- * isValidDateString('') //false
- * isValidDateString('1899-01-0') //false
- * ```
- */
-export function isValidDateString(datestring: string | undefined | null): boolean {
-  const date = toDate(datestring)
-  if (isNil(date)) {
-    return false
-  }
-
-  if (!isString(datestring)) {
-    return false
-  }
-
-  if (datestring && datestring.indexOf('-') === -1) {
-    return false
-  }
-
-  if (date.toString() === 'Invalid Date') {
-    return false
-  }
-
-  if (date.getFullYear() < 1900) {
-    return false
-  }
-
-  return true
-}
-
-/**
- * Returns `true` if the given date is valid
- */
-export function isValidDate(value: any): boolean {
-  if (isNil(value)) {
-    return false
-  }
-  if (isNumber(value)) {
-    return false
-  }
-  if (isDate(value)) {
-    return value.toString() !== 'Invalid Date'
-  }
-
-  return new Date(value).toString() !== 'Invalid Date'
+function intlFormat(locale = 'de-CH', date: Date): string {
+  const intl = new Intl.DateTimeFormat(locale)
+  return intl.format(date)
 }
 
 function pad(value: number) {
   return padStart(`${value}`, 2, '0')
 }
 
-function validateTwoDates(
-  first: any,
-  second: Date | string | undefined,
-  validateFn: (irst: Date, second: Date) => boolean,
-) {
-  if (isNil(first) && isNil(second)) {
-    return false
+function validateYear(date: Date): Date | undefined {
+  if (date && isValid(date)) {
+    if (getYear(date) < 1000) {
+      return setYear(date, getYear(date) + 2000)
+    }
+    return date
   }
+  return undefined
+}
 
-  const _first: Date = new Date(first)
-  const _second: Date = new Date(second)
-
-  if (!isValidDate(_first) || !isValidDate(_second)) {
-    return false
+function generateIsoDate([year, month, day]: [number, number, number]): Date | undefined {
+  if (year > 0 && month > 0 && day > 0) {
+    return parseISO(`${year < 1000 ? year + 2000 : year}-${pad(month)}-${pad(day)}` + TIMEZONE)
   }
-
-  return validateFn(_first, _second)
+  return undefined
 }
