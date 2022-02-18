@@ -75,7 +75,7 @@ export function ceilTime(date: Date): Date {
  * // '2022-02-14'
  * ```
  */
-export const formatDateString = (date: Date): string => {
+export function formatDateString(date: Date): string {
   return date && isValid(date) ? formatISO(date, { representation: 'date' }) : ''
 }
 
@@ -87,8 +87,9 @@ export const formatDateString = (date: Date): string => {
  * // 'true'
  * ```
  */
-export const isValidIsoString = (dateString: string | undefined | null) =>
-  !!dateString ? isMatch(dateString, ISO_PATTERN) : false
+export function isValidIsoString(dateString: string | undefined | null) {
+  return !!dateString ? isMatch(dateString, ISO_PATTERN) : false
+}
 
 /**
  * Formats the dates according to the given locale.
@@ -98,7 +99,7 @@ export const isValidIsoString = (dateString: string | undefined | null) =>
  * // '14.2.2022'
  * ```
  */
-export const format = (locale = 'de-CH', date?: Date) => {
+export function format(locale = 'de-CH', date?: Date) {
   return isValid(date) ? intlFormat(locale, date as Date) : ''
 }
 
@@ -110,7 +111,7 @@ export const format = (locale = 'de-CH', date?: Date) => {
  * // Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
  * ```
  */
-export const parse = (dateString: string): Date | undefined => {
+export function parse(dateString: string): Date | undefined {
   if (isMatch(dateString, ISO_PATTERN)) {
     const d = parseISO(dateString + TIMEZONE)
     if (d && isValid(d)) {

@@ -29,7 +29,7 @@ export function isValidMonetaryNumber(stringValue: string): boolean {
  * getDecimalSeparator('de-ch') // .
  * ```
  */
-export const getDecimalSeparator = (locale = 'de-CH'): string => {
+export function getDecimalSeparator(locale = 'de-CH'): string {
   return Intl.NumberFormat(locale)
     .format(1.1)
     .replace(/\p{Number}/gu, '')
@@ -42,7 +42,7 @@ export const getDecimalSeparator = (locale = 'de-CH'): string => {
  * getThousandSeparator('de-ch') // '
  * ```
  */
-export const getThousandSeparator = (locale = 'de-CH'): string => {
+export function getThousandSeparator(locale = 'de-CH'): string {
   return Intl.NumberFormat(locale)
     .format(11111)
     .replace(/\p{Number}/gu, '')
@@ -55,7 +55,7 @@ export const getThousandSeparator = (locale = 'de-CH'): string => {
  * formatLocaleNumber('de-ch', 1000.42) // 1'000.42
  * ```
  */
-export const formatLocaleNumber = (locale = 'de-CH', number: number, minimumFractionDigits?: number): string => {
+export function formatLocaleNumber(locale = 'de-CH', number: number, minimumFractionDigits?: number): string {
   const options = minimumFractionDigits !== undefined ? { minimumFractionDigits } : {}
   const formattedNumber = Intl.NumberFormat(locale, {
     ...options,
@@ -75,7 +75,7 @@ export const formatLocaleNumber = (locale = 'de-CH', number: number, minimumFrac
  * parseLocaleNumber('de-ch', '1'000.42') // 1000.42
  * ```
  */
-export const parseLocaleNumber = (locale = 'de-CH', stringNumber: string): number => {
+export function parseLocaleNumber(locale = 'de-CH', stringNumber: string): number {
   const thousandSeparator = getThousandSeparator(locale)
   const decimalSeparator = getDecimalSeparator(locale)
 
