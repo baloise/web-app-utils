@@ -1,4 +1,6 @@
 import * as BalUtils from '@baloise/web-app-utils'
+import * as DateFns from 'date-fns'
+import isString from 'lodash.isstring'
 import { BalValidatorFn } from './validator.type'
 
 /**
@@ -9,12 +11,15 @@ import { BalValidatorFn } from './validator.type'
  * BalValidators.isBefore(new Date(2020, 0, 2))(new Date(2020, 0, 1)) // true
  * ```
  */
-export function isBefore(date: Date | string): BalValidatorFn {
+export function isBefore(date: Date | string | number): BalValidatorFn {
   return function (value: any) {
     if (BalUtils.isEmpty(value)) {
       return true
     }
-    return BalUtils.isBefore(value, date)
+    if (isString(date)) {
+      date = BalUtils.parse(date)
+    }
+    return DateFns.isBefore(value, date)
   }
 }
 
@@ -31,7 +36,10 @@ export function isAfter(date: Date | string): BalValidatorFn {
     if (BalUtils.isEmpty(value)) {
       return true
     }
-    return BalUtils.isAfter(value, date)
+    if (isString(date)) {
+      date = BalUtils.parse(date)
+    }
+    return DateFns.isAfter(value, date)
   }
 }
 
@@ -48,6 +56,10 @@ export function isDate(): BalValidatorFn {
     if (BalUtils.isEmpty(value)) {
       return true
     }
-    return BalUtils.isValidDate(value)
+    if (isString(value) && BalUtils.isValidIsoString(value)) {
+      return true
+    }
+
+    return DateFns.isDate(value)
   }
 }

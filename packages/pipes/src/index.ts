@@ -5,6 +5,7 @@ export { balCapitalize } from './balCapitalize'
 export { balClaimNumber } from './balClaimNumber'
 export { balContractNumber } from './balContractNumber'
 export { balCurrency } from './balCurrency'
+export { balDateString } from './balDateString'
 export { balDefaultString } from './balDefaultString'
 export { balFileSize } from './balFileSize'
 export { balHighlight } from './balHighlight'
@@ -19,6 +20,7 @@ export interface BalPipesStatic {
   balClaimNumber: (value: any) => string
   balContractNumber: (value: any) => string
   balCurrency: (value: any, currencySign: any, showZero: any, decimalLength: any) => string
+  balDateString: (value: any) => string
   balDefaultString: (value: any, defaultString: any) => string
   balFileSize: (value: number) => string
   balHighlight: (value: string, search: string, cssClass: any) => string
