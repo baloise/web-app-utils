@@ -403,6 +403,28 @@ Returns `true` if the keyboard event was triggered by the `ArrowDown` key
 
 Returns `true` if the keyboard event was triggered by the `ArrowUp` key
 
+### numberLocale
+
+`numberLocale(locale: any) => string`
+
+Parses the locale to the correct display locale
+
+```typescript
+numberLocale('de-CH')
+// 'de-CH'
+```
+
+### dateLocale
+
+`dateLocale(locale: any) => string`
+
+Parses the locale to the correct display locale
+
+```typescript
+numberLocale('de-CH')
+// 'fr-CH'
+```
+
 ### isValidMonetaryNumber
 
 `isValidMonetaryNumber(stringValue: string) => boolean`
