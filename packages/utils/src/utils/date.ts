@@ -10,6 +10,7 @@ import {
   getDate,
 } from 'date-fns'
 import padStart from 'lodash.padstart'
+import { dateLocale } from './locale'
 
 export const ISO_PATTERN = 'yyyy-MM-dd'
 export const DATE_PATTERN = 'dd-MM-yyyy'
@@ -100,7 +101,7 @@ export function isValidIsoString(dateString: string | undefined | null) {
  * ```
  */
 export function format(locale = 'de-CH', date?: Date) {
-  return isValid(date) ? intlFormat(locale, date as Date) : ''
+  return isValid(date) ? intlFormat(dateLocale(locale), date as Date) : ''
 }
 
 /**
@@ -134,7 +135,7 @@ export function parse(dateString: string): Date | undefined {
  **************************************************************/
 
 function getDateSeparator(locale = 'de-CH'): string {
-  return new Intl.DateTimeFormat(locale)
+  return new Intl.DateTimeFormat(dateLocale(locale))
     .format(now())
     .replace(/\p{Number}/gu, '')
     .charAt(0)
@@ -145,7 +146,7 @@ function getDatePattern() {
 }
 
 function intlFormat(locale = 'de-CH', date: Date): string {
-  const intl = new Intl.DateTimeFormat(locale)
+  const intl = new Intl.DateTimeFormat(dateLocale(locale))
   return intl.format(date)
 }
 

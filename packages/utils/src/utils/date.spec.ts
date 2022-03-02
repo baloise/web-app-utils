@@ -24,7 +24,7 @@ describe('date', () => {
     test('should format the JS Date into the given local format to display', () => {
       expect(format('de-CH', new Date(2022, 11, 31))).toBe('31.12.2022')
       expect(format('fr-BE', new Date(2022, 11, 31))).toBe('31/12/2022')
-      expect(format('de-CH', new Date(2022, 0, 1))).toBe('1.1.2022')
+      expect(format('de-CH', new Date(2022, 0, 1))).toBe('01.01.2022')
       expect(format('de-CH', undefined)).toBe('')
     })
   })
