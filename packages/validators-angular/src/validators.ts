@@ -102,3 +102,9 @@ import { BalValidators, BalValidatorFn } from '@baloise/web-app-validators'
      return validate(BalValidators.isMaxLength(maxLength)(control.value), 'isMaxLength', control)
    }
  }
+
+ export function validateConditionally(validatorFn: BalValidatorFn, conditionFn: BalValidatorFn): ValidatorFn {
+   return (control: AbstractControl): { [key: string]: any } | null => {
+     return validate(BalValidators.validateConditionally(validatorFn, conditionFn)(control.value), 'validateConditionally', control)
+   }
+ }

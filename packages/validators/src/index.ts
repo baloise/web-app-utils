@@ -8,6 +8,7 @@ import { isMin, isMax, isNumber, isMonetaryNumber } from './number.validators'
 import { matchesRegex, isEmail, isPhone } from './regex.validators'
 import { isRequired, isRequiredTrue } from './required.validators'
 import { isMinLength, isMaxLength } from './string.validators'
+import { validateConditionally } from './validateConditionally.validators'
 
 export const BalValidators = {
   isCustom,
@@ -25,4 +26,5 @@ export const BalValidators = {
   isRequiredTrue,
   isMinLength,
   isMaxLength,
+  validateConditionally,
 }
