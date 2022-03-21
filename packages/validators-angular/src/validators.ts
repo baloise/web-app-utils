@@ -13,98 +13,98 @@ import { BalValidators, BalValidatorFn } from '@baloise/web-app-validators'
    return result === true ? null : createError(key, control)
  }
 
- export function isCustom(validatorFn: BalValidatorFn): ValidatorFn {
+ export function isCustom(validatorFn: BalValidatorFn, errorName = 'isCustom'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isCustom(validatorFn)(control.value), 'isCustom', control)
+     return validate(BalValidators.isCustom(validatorFn)(control.value), errorName, control)
    }
  }
 
- export function isBefore(date: any): ValidatorFn {
+ export function isBefore(date: any, errorName = 'isBefore'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isBefore(date)(control.value), 'isBefore', control)
+     return validate(BalValidators.isBefore(date)(control.value), errorName, control)
    }
  }
 
- export function isAfter(date: any): ValidatorFn {
+ export function isAfter(date: any, errorName = 'isAfter'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isAfter(date)(control.value), 'isAfter', control)
+     return validate(BalValidators.isAfter(date)(control.value), errorName, control)
    }
  }
 
- export function isDate(): ValidatorFn {
+ export function isDate(errorName = 'isDate'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isDate()(control.value), 'isDate', control)
+     return validate(BalValidators.isDate()(control.value), errorName, control)
    }
  }
 
- export function isMin(min: number): ValidatorFn {
+ export function isMin(min: number, errorName = 'isMin'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isMin(min)(control.value), 'isMin', control)
+     return validate(BalValidators.isMin(min)(control.value), errorName, control)
    }
  }
 
- export function isMax(max: number): ValidatorFn {
+ export function isMax(max: number, errorName = 'isMax'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isMax(max)(control.value), 'isMax', control)
+     return validate(BalValidators.isMax(max)(control.value), errorName, control)
    }
  }
 
- export function isNumber(): ValidatorFn {
+ export function isNumber(errorName = 'isNumber'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isNumber()(control.value), 'isNumber', control)
+     return validate(BalValidators.isNumber()(control.value), errorName, control)
    }
  }
 
- export function isMonetaryNumber(): ValidatorFn {
+ export function isMonetaryNumber(errorName = 'isMonetaryNumber'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isMonetaryNumber()(control.value), 'isMonetaryNumber', control)
+     return validate(BalValidators.isMonetaryNumber()(control.value), errorName, control)
    }
  }
 
- export function matchesRegex(regex: RegExp): ValidatorFn {
+ export function matchesRegex(regex: RegExp, errorName = 'matchesRegex'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.matchesRegex(regex)(control.value), 'matchesRegex', control)
+     return validate(BalValidators.matchesRegex(regex)(control.value), errorName, control)
    }
  }
 
- export function isEmail(): ValidatorFn {
+ export function isEmail(errorName = 'isEmail'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isEmail()(control.value), 'isEmail', control)
+     return validate(BalValidators.isEmail()(control.value), errorName, control)
    }
  }
 
- export function isPhone(): ValidatorFn {
+ export function isPhone(errorName = 'isPhone'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isPhone()(control.value), 'isPhone', control)
+     return validate(BalValidators.isPhone()(control.value), errorName, control)
    }
  }
 
- export function isRequired(): ValidatorFn {
+ export function isRequired(errorName = 'isRequired'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isRequired()(control.value), 'isRequired', control)
+     return validate(BalValidators.isRequired()(control.value), errorName, control)
    }
  }
 
- export function isRequiredTrue(): ValidatorFn {
+ export function isRequiredTrue(errorName = 'isRequiredTrue'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isRequiredTrue()(control.value), 'isRequiredTrue', control)
+     return validate(BalValidators.isRequiredTrue()(control.value), errorName, control)
    }
  }
 
- export function isMinLength(minLength: number): ValidatorFn {
+ export function isMinLength(minLength: number, errorName = 'isMinLength'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isMinLength(minLength)(control.value), 'isMinLength', control)
+     return validate(BalValidators.isMinLength(minLength)(control.value), errorName, control)
    }
  }
 
- export function isMaxLength(maxLength: number): ValidatorFn {
+ export function isMaxLength(maxLength: number, errorName = 'isMaxLength'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.isMaxLength(maxLength)(control.value), 'isMaxLength', control)
+     return validate(BalValidators.isMaxLength(maxLength)(control.value), errorName, control)
    }
  }
 
- export function validateConditionally(validatorFn: BalValidatorFn, conditionFn: BalValidatorFn): ValidatorFn {
+ export function validateConditionally(validatorFn: BalValidatorFn, conditionFn: BalValidatorFn, errorName = 'validateConditionally'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.validateConditionally(validatorFn, conditionFn)(control.value), 'validateConditionally', control)
+     return validate(BalValidators.validateConditionally(validatorFn, conditionFn)(control.value), errorName, control)
    }
  }

@@ -11,12 +11,12 @@ const run = async () => {
       return [...acc, ...f.functions]
     }, [])
     .map(v => {
+      const params = v.parameters.map(p => `${p.name}: ${p.type}`)
+      params.push(`errorName = '${v.name}'`)
       return `
- export function ${v.name}(${v.parameters.map(p => `${p.name}: ${p.type}`).join(', ')}): ValidatorFn {
+ export function ${v.name}(${params.join(', ')}): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.${v.name}(${v.parameters.map(p => p.name).join(', ')})(control.value), '${
-        v.name
-      }', control)
+     return validate(BalValidators.${v.name}(${v.parameters.map(p => p.name).join(', ')})(control.value), errorName, control)
    }
  }`
     })
