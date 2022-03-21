@@ -188,3 +188,20 @@ Returns `true` if the string is smaller or equal than the max length
 BalValidators.isMaxLength(3)('123') // true
 BalValidators.isMaxLength(3)('1234') // false
 ```
+
+### validateConditionally
+
+`validateConditionally(validatorFn: BalValidatorFn, conditionFn: BalValidatorFn) => BalValidatorFn`
+
+Returns `true` if the condition is true and the validations is true too.
+
+```typescript
+BalValidators.validateConditionally(
+  value => value > 2,
+  () => true,
+)(3) // true
+BalValidators.validateConditionally(
+  value => value > 2,
+  () => false,
+)(3) // undefined
+```
