@@ -104,7 +104,9 @@ import { BalValidators, BalValidatorFn } from '@baloise/web-app-validators'
  }
 
  export function validateConditionally(validatorFn: BalValidatorFn, conditionFn: BalValidatorFn, errorName = 'validateConditionally'): ValidatorFn {
-   return (control: AbstractControl): { [key: string]: any } | null => {
-     return validate(BalValidators.validateConditionally(validatorFn, conditionFn)(control.value), errorName, control)
+   return (control: AbstractControl): { [key: string]: any } | null => {     
+     const result = BalValidators.validateConditionally(validatorFn, conditionFn)(control.value) 
+     // undefined: condition is NOT fullfilled, true: condition is fulfilled & value is valid, false: condition is fulfilled & value is invalid
+     return result === undefined || result === true ? null : createError(errorName, control)
    }
  }
