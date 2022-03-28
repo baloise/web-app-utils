@@ -34,7 +34,7 @@ const run = async () => {
  }
 
  function validate(result: boolean, key: string, control: AbstractControl) {
-   return result === true ? null : createError(key, control)
+   return result === undefined || result === true ? null : createError(key, control)
  }`,
     validators.join('\n'),
     '',
