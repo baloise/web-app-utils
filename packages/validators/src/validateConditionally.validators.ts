@@ -10,6 +10,6 @@ import { BalValidatorFn } from './validator.type'
  */
 export function validateConditionally(validatorFn: BalValidatorFn, conditionFn: BalValidatorFn): BalValidatorFn {
   return function (value: any) {
-    return !conditionFn(value) ? undefined : validatorFn(value)
+    return conditionFn(value) === true ? validatorFn(value) : undefined
   }
 }

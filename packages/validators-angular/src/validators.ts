@@ -10,7 +10,7 @@ import { BalValidators, BalValidatorFn } from '@baloise/web-app-validators'
  }
 
  function validate(result: boolean, key: string, control: AbstractControl) {
-   return result === true ? null : createError(key, control)
+   return result === undefined || result === true ? null : createError(key, control)
  }
 
  export function isCustom(validatorFn: BalValidatorFn, errorName = 'isCustom'): ValidatorFn {

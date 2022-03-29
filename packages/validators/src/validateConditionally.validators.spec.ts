@@ -17,4 +17,20 @@ describe('custom', () => {
     expect(validator(3)).toBe(undefined)
     expect(validator(2)).toBe(undefined)
   })
+  test('validateConditionally when false', () => {
+    const validator = validateConditionally(
+      value => value > 2,
+      () => undefined,
+    )
+    expect(validator(3)).toBe(undefined)
+    expect(validator(2)).toBe(undefined)
+  })
+  test('validateConditionally when false', () => {
+    const validator = validateConditionally(
+      value => value > 2,
+      () => null,
+    )
+    expect(validator(3)).toBe(undefined)
+    expect(validator(2)).toBe(undefined)
+  })
 })
