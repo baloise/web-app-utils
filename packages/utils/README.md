@@ -361,6 +361,17 @@ const dateString = parse('2021-03-10')
 // Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
 ```
 
+### dateSeparator
+
+`dateSeparator(locale: any) => string`
+
+Returns the char which separates day form month and year.
+
+```typescript
+dateSeparator('de-CH')
+// .
+```
+
 ### isEmpty
 
 `isEmpty(value: any) => boolean`
