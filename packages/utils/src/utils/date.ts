@@ -112,7 +112,7 @@ export function format(locale = 'de-CH', date?: Date) {
  * // Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
  * ```
  */
-export function parse(dateString: string): Date | undefined {
+export function parse(dateString: string, locale = 'de-CH'): Date | undefined {
   if (isMatch(dateString, ISO_PATTERN)) {
     const d = parseISO(dateString + TIMEZONE)
     if (d && isValid(d)) {
@@ -122,8 +122,8 @@ export function parse(dateString: string): Date | undefined {
     return generateIsoDate([year, month, day])
   }
 
-  if (isMatch(dateString, getDatePattern())) {
-    const d = dateFnsParse(dateString, getDatePattern(), now())
+  if (isMatch(dateString, getDatePattern(locale))) {
+    const d = dateFnsParse(dateString, getDatePattern(locale), now())
     return generateIsoDate([getYear(d), getMonth(d) + 1, getDate(d)])
   }
 
@@ -149,8 +149,8 @@ export function dateSeparator(locale = 'de-CH'): string {
  * PRIVATE
  **************************************************************/
 
-function getDatePattern() {
-  return DATE_PATTERN.split('-').join(dateSeparator())
+function getDatePattern(locale = 'de-CH') {
+  return DATE_PATTERN.split('-').join(dateSeparator(locale))
 }
 
 function intlFormat(locale = 'de-CH', date: Date): string {
