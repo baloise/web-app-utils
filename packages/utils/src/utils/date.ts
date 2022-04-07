@@ -130,19 +130,27 @@ export function parse(dateString: string): Date | undefined {
   return undefined
 }
 
-/**************************************************************
- * PRIVATE
- **************************************************************/
-
-function getDateSeparator(locale = 'de-CH'): string {
+/**
+ * Returns the char which separates day form month and year.
+ *
+ * ```typescript
+ * dateSeparator('de-CH')
+ * // .
+ * ```
+ */
+export function dateSeparator(locale = 'de-CH'): string {
   return new Intl.DateTimeFormat(dateLocale(locale))
     .format(now())
     .replace(/\p{Number}/gu, '')
     .charAt(0)
 }
 
+/**************************************************************
+ * PRIVATE
+ **************************************************************/
+
 function getDatePattern() {
-  return DATE_PATTERN.split('-').join(getDateSeparator())
+  return DATE_PATTERN.split('-').join(dateSeparator())
 }
 
 function intlFormat(locale = 'de-CH', date: Date): string {
