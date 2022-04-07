@@ -11,7 +11,12 @@ export function numberLocale(locale = 'de-CH'): string {
   if (region === 'CH') {
     return 'de-CH'
   }
-
+  if (region === 'BE') {
+    return 'fr-BE'
+  }
+  if (region === 'LU') {
+    return 'fr-LU'
+  }
   return locale
 }
 
@@ -28,6 +33,11 @@ export function dateLocale(locale = 'de-CH'): string {
   if (region === 'CH') {
     return 'fr-CH'
   }
-
+  if (region === 'BE') {
+    return 'fr-BE'
+  }
+  if (region === 'LU') {
+    return 'fr-LU'
+  }
   return locale
 }
