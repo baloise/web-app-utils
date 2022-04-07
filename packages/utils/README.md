@@ -352,7 +352,7 @@ format('de-CH', new Date())
 
 ### parse
 
-`parse(dateString: string) => any`
+`parse(dateString: string, locale: any) => any`
 
 Parses the iso date string into a javascript date object.
 
