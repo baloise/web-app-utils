@@ -52,6 +52,7 @@ export function isMax(max: number): BalValidatorFn {
  *
  * ```typescript
  * BalValidators.isNumber()(10) // true
+ * BalValidators.isNumber()('10') // true
  * BalValidators.isNumber()('a') // false
  * ```
  */
@@ -59,6 +60,9 @@ export function isNumber(): BalValidatorFn {
   return function (value: any) {
     if (isEmpty(value)) {
       return true
+    }
+    if (typeof value === 'string' && new RegExp(/^\d*$/).test(value)) {
+      return _isNumber(+value)
     }
     return _isNumber(value)
   }

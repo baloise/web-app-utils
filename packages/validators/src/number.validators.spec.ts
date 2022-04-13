@@ -1,6 +1,14 @@
-import { isMin, isMax, isMonetaryNumber } from './number.validators'
+import { isMin, isMax, isMonetaryNumber, isNumber } from './number.validators'
 
 describe('number', () => {
+  test('isNumber', () => {
+    expect(isNumber()(0)).toBe(true)
+    expect(isNumber()(5)).toBe(true)
+    expect(isNumber()('5')).toBe(true)
+    expect(isNumber()('0')).toBe(true)
+    expect(isNumber()('test')).toBe(false)
+  })
+
   test('isMin', () => {
     expect(isMin(0)(0)).toBe(true)
     expect(isMin(10)(9)).toBe(false)
