@@ -100,6 +100,7 @@ Returns `true` if the number is valid
 
 ```typescript
 BalValidators.isNumber()(10) // true
+BalValidators.isNumber()('10') // true
 BalValidators.isNumber()('a') // false
 ```
 
