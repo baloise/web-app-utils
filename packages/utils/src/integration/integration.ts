@@ -1,4 +1,4 @@
-const CMS_CH_API = '/.rest/mt/baloise-ch@nodes'
+const CMS_CH_API = 'https://baloise.ch/app-integration/integration/cms.json'
 const ONETRUST_KEY = 'onetrust-de'
 
 export const loadOneTrustBaloiseSwitzerland = (): void => {

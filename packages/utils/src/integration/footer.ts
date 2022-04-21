@@ -1,10 +1,10 @@
 import { ENGLISH, Language } from '../language/index'
 
 const MAGNOLIA_API_URL = new Map([
-  ['de', 'https://www.baloise.ch/de/privatkunden.json'],
-  ['fr', 'https://www.baloise.ch/fr/clients-prives.json'],
-  ['it', 'https://www.baloise.ch/it/clienti-privati.json'],
-  ['en', 'https://www.baloise.ch/en/private-customers.json'],
+  ['de', 'https://baloise.ch/app-integration/footer-links/de.json'],
+  ['fr', 'https://baloise.ch/app-integration/footer-links/fr.json'],
+  ['it', 'https://baloise.ch/app-integration/footer-links/it.json'],
+  ['en', 'https://baloise.ch/app-integration/footer-links/en.json'],
 ])
 
 export interface FooterLink {
