@@ -11,6 +11,7 @@ import {
   balDefaultString,
   balFileSize,
   balHighlight,
+  balHighlightStartsWith,
   balJoinArray,
   balLimit,
   balOfferNumber,
@@ -81,6 +82,13 @@ export class BalHighlightPipe implements PipeTransform {
 }
 
 @Pipe({
+  name: 'balHighlightStartsWith'
+})
+export class BalHighlightStartsWithPipe implements PipeTransform {
+  transform = balHighlightStartsWith
+}
+
+@Pipe({
   name: 'balJoinArray'
 })
 export class BalJoinArrayPipe implements PipeTransform {
@@ -118,6 +126,7 @@ export const PIPES = [
   BalDefaultStringPipe,
   BalFileSizePipe,
   BalHighlightPipe,
+  BalHighlightStartsWithPipe,
   BalJoinArrayPipe,
   BalLimitPipe,
   BalOfferNumberPipe,
