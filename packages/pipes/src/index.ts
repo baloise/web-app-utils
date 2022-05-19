@@ -9,6 +9,7 @@ export { balDateString } from './balDateString'
 export { balDefaultString } from './balDefaultString'
 export { balFileSize } from './balFileSize'
 export { balHighlight } from './balHighlight'
+export { balHighlightStartsWith } from './balHighlightStartsWith'
 export { balJoinArray } from './balJoinArray'
 export { balLimit } from './balLimit'
 export { balOfferNumber } from './balOfferNumber'
@@ -24,6 +25,7 @@ export interface BalPipesStatic {
   balDefaultString: (value: any, defaultString: any) => string
   balFileSize: (value: number) => string
   balHighlight: (value: string, search: string, cssClass: any) => string
+  balHighlightStartsWith: (value: string, search: string, cssClass: any) => string
   balJoinArray: (value: any, delimiter: any) => string
   balLimit: (value: any, limit: any) => string
   balOfferNumber: (value: any, varianteNr: string) => string

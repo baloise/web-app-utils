@@ -372,6 +372,21 @@ dateSeparator('de-CH')
 // .
 ```
 
+### debounce
+
+`debounce(func: any, wait: any) => any`
+
+The debounce function wait a certain amount of time before running the inner function again.
+This should reduce the number of times a function is called.
+
+```typescript
+const debounceFunction = debounce(function () {
+  // The function's code
+}, 250)
+
+window.addEventListener('resize', debounceFunction)
+```
+
 ### isEmpty
 
 `isEmpty(value: any) => boolean`

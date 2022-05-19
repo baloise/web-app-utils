@@ -124,6 +124,16 @@ Transforms the given text into a highlighted html content.
 balHighlight('Some Text') // <span class="bal-highlight">Some Text</span>
 ```
 
+### balHighlightStartsWith
+
+`balHighlightStartsWith(value: string, search: string, cssClass: any) => string`
+
+Transforms the given text into a highlighted html content.
+
+```typescript
+balHighlightStartsWith('Some Text', 'Some') // <span class="bal-highlight">Some</span> Text
+```
+
 ### balJoinArray
 
 `balJoinArray(value: any, delimiter: any) => string`
