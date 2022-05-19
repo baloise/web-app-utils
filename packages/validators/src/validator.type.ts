@@ -1,1 +1,1 @@
-export type BalValidatorFn = (value: any) => boolean | undefined
+export type BalValidatorFn = (value: any) => boolean
