@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-unsupported-browsers",
-  "version": "3.4.0",
+  "version": "3.3.2-beta.6+d106dbb",
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
     "banner": "node ../../.build/banner.js unsupported-browsers",
@@ -39,5 +39,6 @@
     "@babel/preset-env": "^7.16.7",
     "copyfiles": "^2.4.1",
     "rimraf": "^3.0.2"
-  }
+  },
+  "gitHead": "d106dbb3f56104a1579ce900abd8161c54e9665b"
 }

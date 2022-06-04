@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-utils",
-  "version": "3.4.0",
+  "version": "3.3.2-beta.6+d106dbb",
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
     "banner": "node ../../.build/banner.js utils",
@@ -72,5 +72,6 @@
     "rollup": "^2.58.0",
     "ts-jest": "^26.5.6",
     "typescript": "4.3.5"
-  }
+  },
+  "gitHead": "d106dbb3f56104a1579ce900abd8161c54e9665b"
 }
