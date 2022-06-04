@@ -11,7 +11,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div
     :class="{
-      column: true,
+      'column': true,
       'py-0': true,
       'is-12': size === 'fullwidth' || size === undefined,
       'is-6': size === 'half',

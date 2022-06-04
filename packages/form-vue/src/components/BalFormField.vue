@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue'
 import { I18n } from 'vue-i18n'
-import { ValidationMessage } from '../yup/types.yup';
+import { ValidationMessage } from '../yup/types.yup'
 
 export interface Props {
   label?: string
