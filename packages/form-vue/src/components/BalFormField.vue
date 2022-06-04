@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { BalField, BalFieldLabel, BalFieldControl, BalFieldMessage } from '@baloise/design-system-components-vue'
 import { computed, inject } from 'vue'
 import { I18n } from 'vue-i18n'
 import { ValidationMessage } from '../yup/types.yup';
 
-interface Props {
+export interface Props {
   label?: string
   message?: ValidationMessage | string
   invalid?: boolean
@@ -40,18 +39,19 @@ const computedMessage = computed(() => {
 </script>
 
 <template>
-  <BalField
+  <bal-field
     :invalid="props.invalid"
     :readonly="props.readonly"
     :disabled="props.disabled"
     :loading="props.loading"
+    :required="props.required"
   >
-    <BalFieldLabel v-if="props.label">{{ props.label }}</BalFieldLabel>
-    <BalFieldControl>
+    <bal-field-label v-if="props.label" :disabled="props.disabled">{{ props.label }}</bal-field-label>
+    <bal-field-control>
       <slot></slot>
-    </BalFieldControl>
-    <BalFieldMessage>
+    </bal-field-control>
+    <bal-field-message>
       {{ computedMessage }}
-    </BalFieldMessage>
-  </BalField>
+    </bal-field-message>
+  </bal-field>
 </template>

@@ -32,7 +32,7 @@
   ],
   "license": "Apache-2.0",
   "devDependencies": {
-    "@baloise/design-system-components-vue": "^10.12.0",
+    "@baloise/design-system-components": "^10.12.0",
     "rollup": "^2.56.2",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-typescript2": "^0.32.0",
@@ -44,7 +44,7 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "@baloise/design-system-components-vue": ">=10.12.0",
+    "@baloise/design-system-components": ">=10.12.0",
     "vee-validate": ">=4.5.11",
     "vue": ">=3.0.5",
     "vue-i18n": ">=9.1.10",
