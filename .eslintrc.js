@@ -18,15 +18,15 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
-        argsIgnorePattern: '^h$|^_|^Cypress',
-        varsIgnorePattern: '^h$|^_|^Cypress',
+        argsIgnorePattern: '^h$|^_|^Cypress|^yup',
+        varsIgnorePattern: '^h$|^_|^Cypress|^yup',
       },
     ],
     'no-unused-vars': [
       'error',
       {
-        argsIgnorePattern: '^h$|^_|^Cypress',
-        varsIgnorePattern: '^h$|^_|^Cypress',
+        argsIgnorePattern: '^h$|^_|^Cypress|^yup',
+        varsIgnorePattern: '^h$|^_|^Cypress|^yup',
       },
     ],
   },
