@@ -9,6 +9,7 @@ import { initLocale } from './yup/locale.yup'
 export const baloiseForm: Plugin = {
   async install(app: App) {
     initLocale()
+    app.config.compilerOptions.isCustomElement = (tag: string) => tag.startsWith('bal-')
     app.component('BalFormGrid', BalFormGrid)
     app.component('BalFormCol', BalFormCol)
     app.component('BalFormField', BalFormField)
