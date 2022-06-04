@@ -2,7 +2,7 @@
 import { BalField, BalFieldLabel, BalFieldControl, BalFieldMessage } from '@baloise/design-system-components-vue'
 import { computed, inject } from 'vue'
 import { I18n } from 'vue-i18n'
-import { ValidationMessage } from './schema.yup'
+import { ValidationMessage } from '../yup/types.yup';
 
 interface Props {
   label?: string
@@ -45,13 +45,12 @@ const computedMessage = computed(() => {
     :readonly="props.readonly"
     :disabled="props.disabled"
     :loading="props.loading"
-    :required="props.required"
   >
-    <BalFieldLabel v-if="props.label" :disabled="props.disabled">{{ props.label }}</BalFieldLabel>
-    <BalFieldControl :disabled="props.disabled">
+    <BalFieldLabel v-if="props.label">{{ props.label }}</BalFieldLabel>
+    <BalFieldControl>
       <slot></slot>
     </BalFieldControl>
-    <BalFieldMessage :disabled="props.disabled">
+    <BalFieldMessage>
       {{ computedMessage }}
     </BalFieldMessage>
   </BalField>

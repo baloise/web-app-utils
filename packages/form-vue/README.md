@@ -95,3 +95,17 @@ export default defineComponent({
   },
 })
 ```
+
+{
+"extends": "../../tsconfig.base.json",
+"compilerOptions": {
+"outDir": "dist-transpiled",
+"declaration": true,
+"declarationDir": "dist/types",
+"skipLibCheck": true,
+"strictFunctionTypes": false,
+"strictNullChecks": true
+},
+"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+"exclude": ["./__tests__/**", "node_modules"]
+}

@@ -22,29 +22,21 @@
   "scripts": {
     "banner": "node ../../.build/banner.js form-vue",
     "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "build": "npm run banner && npm run build:clean && npm run build:bundle",
-    "build:clean": "rimraf dist && rimraf dist-transpiled",
-    "build:bundle": "rollup --config rollup.config.js"
+    "build": "npm run banner && rollup --config rollup.config.js"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/"
   ],
   "license": "Apache-2.0",
   "devDependencies": {
     "@baloise/design-system-components-vue": "^10.12.0",
-    "@types/jest": "^27.0.3",
-    "change-case": "^4.1.2",
-    "jest": "^27.3.1",
-    "rimraf": "^3.0.2",
     "rollup": "^2.56.2",
-    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-typescript2": "^0.32.0",
     "rollup-plugin-vue": "^6.0.0",
-    "ts-jest": "^27.0.7",
     "typescript": "^4.3.5",
     "vee-validate": "^4.5.11",
     "vue": "^3.2.4",
@@ -52,10 +44,10 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "vue": ">=3.0.5",
-    "vee-validate": ">=4.5.11",
-    "vue-i18n": ">=9.1.10",
     "@baloise/design-system-components-vue": ">=10.12.0",
+    "vee-validate": ">=4.5.11",
+    "vue": ">=3.0.5",
+    "vue-i18n": ">=9.1.10",
     "yup": ">=0.32.11"
   },
   "gitHead": "e0d380309b487bcedee06d025645f5aab37ab192",

@@ -1,6 +1,6 @@
 import { FieldContext, useField } from 'vee-validate'
 import { computed, ComputedRef, ref, Ref, watch } from 'vue'
-import { ValidationMessage } from './yup/locale.yup'
+import { ValidationMessage } from './yup/types.yup'
 
 export type MaybeRef<T> = Ref<T> | T
 
