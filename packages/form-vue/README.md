@@ -8,6 +8,11 @@
 ![GitHub](https://img.shields.io/github/license/baloise/web-app-utils)
 ![GitHub issues](https://img.shields.io/github/issues/baloise/web-app-utils)
 
+Delivers utility components to create forms that follow the guides of the
+Baloise Design System. Moreover it extends the useField function to work as
+smooth as possible with the Baloise Design System and defines Baloise specific
+yup schema validations.
+
 ## Installation
 
 For Vue we use the library [VeeValidate](https://vee-validate.logaretm.com/v4/) together with the [Yup Schema Validation](https://github.com/jquense/yup).
