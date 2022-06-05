@@ -40,14 +40,12 @@
     "typescript": "^4.3.5",
     "vee-validate": "^4.5.11",
     "vue": "^3.2.4",
-    "vue-i18n": "^9.1.10",
     "yup": "^0.32.11"
   },
   "peerDependencies": {
     "@baloise/design-system-components": ">=10.12.0",
     "vee-validate": ">=4.5.11",
     "vue": ">=3.0.5",
-    "vue-i18n": ">=9.1.10",
     "yup": ">=0.32.11"
   },
   "gitHead": "d106dbb3f56104a1579ce900abd8161c54e9665b",
