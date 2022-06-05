@@ -1,8 +1,9 @@
-import { ValidationMessage } from './yup/types.yup'
-import BalFormGrid from './components/BalFormGrid.vue'
-import BalFormCol from './components/BalFormCol.vue'
-import { baloiseForm } from './plugin'
-import { BalFieldProps, useBalField } from './useBalField'
+import type { ValidationMessage } from './yup/types.yup'
+import type { BalFieldProps } from './useBalField'
 
-export { BalFormGrid, BalFormCol, baloiseForm, useBalField }
+import { baloiseForm } from './plugin'
+import { useBalField } from './useBalField'
+
 export type { ValidationMessage, BalFieldProps }
+
+export { baloiseForm, useBalField }

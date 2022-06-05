@@ -1,14 +1,10 @@
-import { App, Plugin } from 'vue'
-import BalFormGrid from './components/BalFormGrid.vue'
-import BalFormCol from './components/BalFormCol.vue'
+import { Plugin } from 'vue'
 
 import './yup/validators.yup'
 import { initLocale } from './yup/locale.yup'
 
 export const baloiseForm: Plugin = {
-  async install(app: App) {
+  async install() {
     initLocale()
-    app.component('BalFormGrid', BalFormGrid)
-    app.component('BalFormCol', BalFormCol)
   },
 }
