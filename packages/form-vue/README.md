@@ -18,7 +18,7 @@ yup schema validations.
 For Vue we use the library [VeeValidate](https://vee-validate.logaretm.com/v4/) together with the [Yup Schema Validation](https://github.com/jquense/yup).
 
 ```bash
-npm install @baloise/web-app-form-vue vee-validate@next yup vue-i18n
+npm install @baloise/web-app-form-vue vee-validate@next yup
 ```
 
 ```typescript
@@ -28,35 +28,29 @@ import App from './App.vue'
 createApp(App).use(baloiseForm).mount('#app')
 ```
 
-## Define Form Grid
-
-```vue
-<script setup lang="ts">
-import { BalFormGrid, BalFormCol } from '@baloise/web-app-form-vue'
-</script>
-<template>
-  <BalFormGrid>
-    <BalFormCol size="two-thirds">...</BalFormCol>
-    <BalFormCol size="one-third">...</BalFormCol>
-    <BalFormCol size="one-third">...</BalFormCol>
-    <BalFormCol size="two-thirds">...</BalFormCol>
-  </BalFormGrid>
-</template>
-```
-
 ## Define Form Field
 
+Instead of using the `useField` from **Vee-Validate** use the wrapper `useBalField`.
+This extends the **Vee-Validate** implementation with the property invalid and
+message from the yup schema validations.
+
+- [Vee-Validate useField API](https://vee-validate.logaretm.com/v4/api/use-field)
+
 ```vue
 <script setup lang="ts">
-import { BalInput } from '@baloise/design-system-components-vue'
-import { useBalField, BalFormField } from '@baloise/web-app-form-vue'
+import { BalInput, BalField, BalFieldLabel, BalFieldControl, BalFieldMessage } from '@baloise/design-system-components-vue'
+import { useBalField } from '@baloise/web-app-form-vue'
 
-const { value, message, invalid } = useBalField<string>('firstname', { props })
+const { value, message, invalid } = useBalField<string>('firstname')
 </script>
 
 <template>
-  <BalFormField label="My Label" :message="message" :invalid="invalid" required :disabled="false">
-    <BalInput v-model="value" />
-  </BalFormField>
+  <BalField :invalid="invalid">
+    <BalFieldLabel>My Label</BalFieldLabel>
+    <BalFieldControl>
+      <BalInput v-model="value" />
+    </BalFieldControl>
+    <BalFieldMessage>{{ message }}</BalFieldMessage>
+  </BalFie>
 </template>
 ```

@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-clean-architecture",
-  "version": "3.3.2-beta.6+d106dbb",
+  "version": "3.3.2-beta.14+6bc39fc",
   "description": "Utilities for Baloise Web Applications",
   "repository": {
     "type": "git",
@@ -37,7 +37,5 @@
     "rollup-plugin-typescript2": "^0.32.0",
     "typescript": "^4.3.5"
   },
-  "peerDependencies": {},
-  "gitHead": "d106dbb3f56104a1579ce900abd8161c54e9665b",
-  "dependencies": {}
+  "gitHead": "6bc39fcc60a2294d11940527d9a051f21ca01e42"
 }
