@@ -34,9 +34,9 @@
   },
   "homepage": "https://github.com/baloise/web-app-utils",
   "devDependencies": {
-    "@babel/cli": "^7.16.7",
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.7",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
     "copyfiles": "^2.4.1",
     "rimraf": "^3.0.2"
   }
