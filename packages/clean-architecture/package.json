@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-clean-architecture",
-  "version": "3.3.2-beta.14+6bc39fc",
+  "version": "3.5.0",
   "description": "Utilities for Baloise Web Applications",
   "repository": {
     "type": "git",
