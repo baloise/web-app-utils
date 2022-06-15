@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-pipes",
-  "version": "3.4.0",
+  "version": "3.3.2-beta.14+6bc39fc",
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
     "banner": "node ../../.build/banner.js pipes",
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/baloise/web-app-utils",
   "dependencies": {
-    "@baloise/web-app-utils": "^3.4.0",
+    "@baloise/web-app-utils": "3.3.2-beta.14+6bc39fc",
     "lodash.capitalize": "^4.2.1",
     "lodash.isarray": "^4.0.0",
     "lodash.isstring": "^4.0.1",
@@ -57,5 +57,6 @@
     "rollup": "^2.58.0",
     "ts-jest": "^26.5.6",
     "typescript": "4.3.5"
-  }
+  },
+  "gitHead": "6bc39fcc60a2294d11940527d9a051f21ca01e42"
 }

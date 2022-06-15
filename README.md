@@ -13,6 +13,8 @@ A collection of utilities for Baloise web applications.
 - [Pipes](./packages/pipes/README.md)
 - [Validators](./packages/validators/README.md)
 - [Unsupported Browsers](./packages/unsupported-browsers/README.md)
+- [Clean Architecture](./packages/clean-architecture/README.md)
+- [Form Vue](./packages/form-vue/README.md)
 
 ## Table of Content
 
@@ -31,6 +33,8 @@ A collection of utilities for Baloise web applications.
 | [@baloise/web-app-validators-angular](https://github.com/baloise/web-app-utils/blob/master/packages/validators-angular/README.md)     | ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators-angular)   | Proxy package for angular applications.                                                                                                                       |
 | [@baloise/web-app-validators-vue](https://github.com/baloise/web-app-utils/blob/master/packages/validators-vue/README.md)             | ![npm](https://img.shields.io/npm/v/@baloise/web-app-validators-vue)       | Proxy package for vue applications.                                                                                                                           |
 | [@baloise/web-app-unsupported-browsers](https://github.com/baloise/web-app-utils/blob/master/packages/unsupported-browsers/README.md) | ![npm](https://img.shields.io/npm/v/@baloise/web-app-unsupported-browsers) | This script verifies if the users browser is supported by the Baloise applications and if not it redirects directly to the static unsupported-browsers pages. |
+| [@baloise/web-app-clean-architecture](https://github.com/baloise/web-app-utils/blob/master/packages/clean-architecture/README.md) | ![npm](https://img.shields.io/npm/v/@baloise/web-app-clean-architecture) | Utils for clean architecture |
+| [@baloise/web-app-form-vue](https://github.com/baloise/web-app-utils/blob/master/packages/form-vue/README.md) | ![npm](https://img.shields.io/npm/v/@baloise/web-app-form-vue) | Components and utils for Vue form creation. |
 
 ## Contribution
 

@@ -1,5 +1,5 @@
 {
-  "name": "@baloise/web-app-validators-vue",
+  "name": "@baloise/web-app-form-vue",
   "version": "3.3.2-beta.14+6bc39fc",
   "description": "Utilities for Baloise Web Applications",
   "repository": {
@@ -20,39 +20,36 @@
     "access": "public"
   },
   "scripts": {
-    "banner": "node ../../.build/banner.js validators-vue",
+    "banner": "node ../../.build/banner.js form-vue",
     "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "build": "npm run banner && npm run build:clean && npm run build:compile && npm run build:bundle",
-    "build:clean": "rimraf dist && rimraf dist-transpiled",
-    "build:compile": "tsc -p .",
-    "build:bundle": "rollup --config rollup.config.js"
+    "build": "npm run banner && rollup --config rollup.config.js"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/"
   ],
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/jest": "^27.0.3",
-    "@types/lodash.isarray": "^4.0.6",
-    "change-case": "^4.1.2",
-    "jest": "^27.3.1",
-    "rimraf": "^3.0.2",
+    "@baloise/design-system-components": "^10.12.0",
     "rollup": "^2.56.2",
-    "ts-jest": "^27.0.7",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-typescript2": "^0.32.0",
+    "rollup-plugin-vue": "^6.0.0",
     "typescript": "^4.3.5",
-    "vue": "^3.2.4"
+    "vee-validate": "^4.5.11",
+    "vue": "^3.2.4",
+    "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "vue": ">=3.0.5"
+    "@baloise/design-system-components": ">=10.12.0",
+    "vee-validate": ">=4.5.11",
+    "vue": ">=3.0.5",
+    "yup": ">=0.32.11"
   },
   "gitHead": "6bc39fcc60a2294d11940527d9a051f21ca01e42",
   "dependencies": {
-    "@baloise/web-app-validators": "3.3.2-beta.14+6bc39fc",
-    "lodash.isarray": "^4.0.0"
+    "@baloise/web-app-validators": "3.3.2-beta.14+6bc39fc"
   }
 }
