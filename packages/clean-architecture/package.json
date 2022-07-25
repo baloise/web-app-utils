@@ -20,7 +20,7 @@
     "access": "public"
   },
   "scripts": {
-    "banner": "node ../../.build/banner.js form-vue",
+    "banner": "node ../../.build/banner.js clean architecture",
     "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
     "build": "npm run banner && rollup --config rollup.config.js"
   },
@@ -32,10 +32,16 @@
   ],
   "license": "Apache-2.0",
   "devDependencies": {
+    "immer": "^9.0.15",
     "rollup": "^2.56.2",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-typescript2": "^0.32.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "yup": "^0.32.11"
+  },
+  "peerDependencies": {
+    "immer": ">=9.0.15",
+    "yup": ">=0.32.11"
   },
   "gitHead": "6bc39fcc60a2294d11940527d9a051f21ca01e42",
   "dependencies": {
