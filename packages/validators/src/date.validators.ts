@@ -16,8 +16,8 @@ export function isBefore(date: Date | string | number): BalValidatorFn {
     if (BalUtils.isEmpty(value)) {
       return true
     }
-    if (isString(date)) {
-      date = BalUtils.parse(date)
+    if (isString(value)) {
+      date = BalUtils.parse(value)
     }
     return DateFns.isBefore(value, date)
   }
