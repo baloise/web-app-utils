@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-validators-vue",
-  "version": "3.6.1",
+  "version": "3.6.2",
   "description": "Utilities for Baloise Web Applications",
   "repository": {
     "type": "git",
@@ -52,7 +52,7 @@
   },
   "gitHead": "6bc39fcc60a2294d11940527d9a051f21ca01e42",
   "dependencies": {
-    "@baloise/web-app-validators": "^3.6.1",
+    "@baloise/web-app-validators": "^3.6.2",
     "lodash.isarray": "^4.0.0"
   }
 }
