@@ -16,6 +16,9 @@ export function isBefore(date: Date | string | number): BalValidatorFn {
     if (BalUtils.isEmpty(value)) {
       return true
     }
+    if (isString(value)) {
+      value = BalUtils.parse(value)
+    }
     if (isString(date)) {
       date = BalUtils.parse(date)
     }
@@ -35,6 +38,9 @@ export function isAfter(date: Date | string): BalValidatorFn {
   return function (value: any) {
     if (BalUtils.isEmpty(value)) {
       return true
+    }
+    if (isString(value)) {
+      value = BalUtils.parse(value)
     }
     if (isString(date)) {
       date = BalUtils.parse(date)
