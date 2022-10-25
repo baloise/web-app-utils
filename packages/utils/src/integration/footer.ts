@@ -18,6 +18,6 @@ export const loadFooterLinks = (lang: Language): Promise<FooterLink[]> => {
     fetch(url)
       .then(res => res.json())
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      .then(res => Object.values(res[0]['footer']['footerMetaList']))
+      .then(res => Object.values(res['result'][0][0]['footer']['footerMetaList']))
   )
 }
