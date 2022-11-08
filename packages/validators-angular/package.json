@@ -24,7 +24,7 @@
     "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
     "build": "npm run banner && npm run clean && npm run build:generator && npm run build:compile",
     "build:generator": "node .build/generator.script.js",
-    "build:compile": "ng-packagr -p package.json",
+    "build:compile": "ng-packagr -p ng-package.json",
     "clean": "rimraf src/validators.ts && rimraf dist"
   },
   "license": "Apache-2.0",
@@ -63,16 +63,5 @@
   "typings": "dist/baloise-web-app-validators-angular.d.ts",
   "metadata": "dist/baloise-web-app-validators-angular.metadata.json",
   "sideEffects": false,
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "src/index.ts",
-      "umdModuleIds": {
-        "@baloise/web-app-validators": "@baloise/web-app-validators"
-      }
-    },
-    "whitelistedNonPeerDependencies": [
-      "@baloise/web-app-validators"
-    ]
-  }
+  "$schema": "./node_modules/ng-packagr/package.schema.json"
 }
