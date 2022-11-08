@@ -2,7 +2,5 @@
   "lib": {
     "entryFile": "src/index.ts"
   },
-  "allowedNonPeerDependencies": [
-    "@baloise/web-app-validators"
-  ]
+  "allowedNonPeerDependencies": ["@baloise/web-app-validators"]
 }

@@ -2,7 +2,5 @@
   "lib": {
     "entryFile": "src/index.ts"
   },
-  "allowedNonPeerDependencies": [
-    "@baloise/web-app-pipes"
-  ]
+  "allowedNonPeerDependencies": ["@baloise/web-app-pipes"]
 }
