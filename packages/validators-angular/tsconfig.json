@@ -18,6 +18,5 @@
     "skipTemplateCodegen": true,
     "fullTemplateTypeCheck": false,
     "enableResourceInlining": true,
-    "enableIvy": false
   }
 }
