@@ -55,6 +55,12 @@
   "files": [
     "dist/"
   ],
+  "main": "dist/fesm2020/baloise-web-app-validators-angular.mjs",
+  "module": "dist/fesm2015/baloise-web-app-validators-angular.js",
+  "es2015": "dist/fesm2015/baloise-web-app-validators-angular.mjs",
+  "es2020": "dist/fesm2020/baloise-web-app-validators-angular.mjs",
+  "esm2020": "dist/esm2020/baloise-web-app-validators-angular.mjs",
+  "typings": "dist/baloise-web-app-validators-angular.d.ts",
   "sideEffects": false,
   "$schema": "./node_modules/ng-packagr/package.schema.json"
 }
