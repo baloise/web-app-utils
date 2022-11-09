@@ -55,13 +55,6 @@
   "files": [
     "dist/"
   ],
-  "main": "dist/bundles/baloise-web-app-pipes-angular.umd.js",
-  "module": "dist/fesm2015/baloise-web-app-pipes-angular.js",
-  "es2015": "dist/fesm2015/baloise-web-app-pipes-angular.js",
-  "esm2015": "dist/esm2015/baloise-web-app-pipes-angular.js",
-  "fesm2015": "dist/fesm2015/baloise-web-app-pipes-angular.js",
-  "typings": "dist/baloise-web-app-pipes-angular.d.ts",
-  "metadata": "dist/baloise-web-app-pipes-angular.metadata.json",
   "sideEffects": false,
   "$schema": "./node_modules/ng-packagr/package.schema.json"
 }

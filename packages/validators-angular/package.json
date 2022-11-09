@@ -55,13 +55,6 @@
   "files": [
     "dist/"
   ],
-  "main": "dist/bundles/baloise-web-app-validators-angular.umd.js",
-  "module": "dist/fesm2015/baloise-web-app-validators-angular.js",
-  "es2015": "dist/fesm2015/baloise-web-app-validators-angular.js",
-  "esm2015": "dist/esm2015/baloise-web-app-validators-angular.js",
-  "fesm2015": "dist/fesm2015/baloise-web-app-validators-angular.js",
-  "typings": "dist/baloise-web-app-validators-angular.d.ts",
-  "metadata": "dist/baloise-web-app-validators-angular.metadata.json",
   "sideEffects": false,
   "$schema": "./node_modules/ng-packagr/package.schema.json"
 }
