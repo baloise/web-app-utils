@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.1](https://github.com/baloise/web-app-utils/compare/v3.7.1...v3.7.0) (2022-11-09)
+* **validators-angular:** fix packaging of subpackages
+* **pipes-angular:** fix packaging of subpackage
+
+### Bug fixes
+
+* **validators-angular:** Upgrade to angular 13
+* **pipes-angular:** Upgrade to angular 13
+
+
+## [3.7.0](https://github.com/baloise/web-app-utils/compare/v3.2.0...v3.7.0) (2022-11-08)
+### Features added
+
+* **validators-angular:** Upgrade to angular 13
+* **pipes-angular:** Upgrade to angular 13
+
+
 ## [3.2.1](https://github.com/baloise/web-app-utils/compare/v3.2.0...v3.2.1) (2022-03-30)
 
 
