@@ -55,6 +55,13 @@
   "files": [
     "dist/"
   ],
+  "main": "dist/fesm2020/baloise-web-app-pipes-angular.mjs",
+  "module": "dist/fesm2015/baloise-web-app-pipes-angular.js",
+  "es2015": "dist/fesm2015/baloise-web-app-pipes-angular.mjs",
+  "es2020": "dist/fesm2020/baloise-web-app-pipes-angular.mjs",
+  "esm2020": "dist/esm2020/baloise-web-app-pipes-angular.mjs",
+  "typings": "dist/baloise-web-app-pipes-angular.d.ts",
+  "metadata": "dist/baloise-web-app-pipes-angular.metadata.json",
   "sideEffects": false,
   "$schema": "./node_modules/ng-packagr/package.schema.json"
 }
