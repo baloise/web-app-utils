@@ -1,4 +1,4 @@
-import { Language, LanguagesOfSwitzerland } from '../language'
+import { Language, LanguagesOfSwitzerland } from '../language/index'
 
 const CMS_CH_API = 'https://www.baloise.ch/app-integration/v2/onetrust/all.json'
 
