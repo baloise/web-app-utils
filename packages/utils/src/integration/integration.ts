@@ -1,11 +1,13 @@
-const CMS_CH_API = 'https://www.baloise.ch/app-integration/integration/cms.json'
-const ONETRUST_KEY = 'onetrust-de'
+import { Language, LanguagesOfSwitzerland } from '../language/index'
 
-export const loadOneTrustBaloiseSwitzerland = (): void => {
-  void loadCMSDataSwitzerland().then((cmsData: CMSData[]) => {
-    const oneTrustData = cmsData.find(entry => entry.name === ONETRUST_KEY)
+const CMS_CH_API = 'https://www.baloise.ch/app-integration/v2/onetrust/all.json'
+
+export const loadOneTrustBaloiseSwitzerland = (lang?: Language): void => {
+  void loadOnetrustDataSwitzerland().then((cmsData: OnetrustData[]) => {
+    const effectiveLang = LanguagesOfSwitzerland.valueOfOrDefault(lang ? lang.key : undefined)
+    const oneTrustData = cmsData.find(entry => entry.lang === effectiveLang.key)
     if (oneTrustData) {
-      const oneTrustScript = oneTrustData.content
+      const oneTrustScript = oneTrustData.script
       includeScriptsFromString(oneTrustScript)
     }
   })
@@ -27,13 +29,13 @@ const includeScriptsFromString = (scriptAsString: string): void => {
   }
 }
 
-interface CMSData {
-  name: string
-  content: string
+interface OnetrustData {
+  lang: string
+  script: string
 }
 
-const loadCMSDataSwitzerland = (): Promise<CMSData[]> => {
+const loadOnetrustDataSwitzerland = (): Promise<OnetrustData[]> => {
   return fetch(CMS_CH_API)
     .then(res => res.json())
-    .then(res => res as CMSData[])
+    .then(res => res as OnetrustData[])
 }
