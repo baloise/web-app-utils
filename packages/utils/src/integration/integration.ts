@@ -1,6 +1,5 @@
-import { Language, LanguagesOfSwitzerland } from '../language/index'
-
-const CMS_CH_API = 'https://www.baloise.ch/app-integration/v2/onetrust/all.json'
+import { GERMAN, Language, LanguagesOfSwitzerland } from '../language/index'
+import { getIntegrationUrl, IntegrationType, Region } from './app-integration'
 
 export const loadOneTrustBaloiseSwitzerland = (lang?: Language): void => {
   void loadOnetrustDataSwitzerland().then((cmsData: OnetrustData[]) => {
@@ -34,8 +33,9 @@ interface OnetrustData {
   script: string
 }
 
-const loadOnetrustDataSwitzerland = (): Promise<OnetrustData[]> => {
-  return fetch(CMS_CH_API)
+const loadOnetrustDataSwitzerland = (lang: Language = GERMAN, region: Region = 'CH'): Promise<OnetrustData[]> => {
+  const url = getIntegrationUrl(lang, region, IntegrationType.ONETRUST)
+  return fetch(url)
     .then(res => res.json())
     .then(res => res as OnetrustData[])
 }
