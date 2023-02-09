@@ -28,9 +28,7 @@ export const getIntegrationUrl = (
   return `${getIntegrationBaseUrl()}${INTEGRATION_BASE_PATH}/${region.toLowerCase()}/${type}/${langPath}.json`
 }
 
-export const getHost = () => {
-  return window?.location?.host || undefined
-}
+export const getHost = () => window?.location?.host || undefined
 
 export enum IntegrationType {
   FOOTER = 'footer',
