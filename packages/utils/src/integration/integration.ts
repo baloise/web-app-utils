@@ -1,14 +1,15 @@
 import { GERMAN, Language, LanguagesOfSwitzerland } from '../language/index'
 import { getIntegrationUrl, IntegrationType, Region } from './app-integration'
 
-export const loadOneTrustBaloiseSwitzerland = (lang?: Language): void => {
-  void loadOnetrustDataSwitzerland().then((cmsData: OnetrustData[]) => {
+export const loadOneTrustBaloiseSwitzerland = (lang?: Language): Promise<void> => {
+  return loadOnetrustDataSwitzerland().then((cmsData: OnetrustData[]) => {
     const effectiveLang = LanguagesOfSwitzerland.valueOfOrDefault(lang ? lang.key : undefined)
     const oneTrustData = cmsData.find(entry => entry.lang === effectiveLang.key)
     if (oneTrustData) {
       const oneTrustScript = oneTrustData.script
       includeScriptsFromString(oneTrustScript)
     }
+    return
   })
 }
 
