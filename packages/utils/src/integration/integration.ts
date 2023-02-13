@@ -2,9 +2,12 @@ import { GERMAN, Language, LanguagesOfSwitzerland } from '../language/index'
 import { getIntegrationUrl, IntegrationType, Region } from './app-integration'
 
 export const loadOneTrustBaloiseSwitzerland = (lang?: Language): Promise<void> => {
+  console.log('Loading one trust for language' + lang)
   return loadOnetrustDataSwitzerland().then((cmsData: OnetrustData[]) => {
     const effectiveLang = LanguagesOfSwitzerland.valueOfOrDefault(lang ? lang.key : undefined)
     const oneTrustData = cmsData.find(entry => entry.lang === effectiveLang.key)
+    console.log('One trust data', oneTrustData)
+    console.log('Effective language', effectiveLang)
     if (oneTrustData) {
       const oneTrustScript = oneTrustData.script
       includeScriptsFromString(oneTrustScript)
