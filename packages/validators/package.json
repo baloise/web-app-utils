@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-validators",
-  "version": "3.9.0",
+  "version": "3.10.0",
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
     "banner": "node ../../.build/banner.js validators",
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/baloise/web-app-utils",
   "dependencies": {
-    "@baloise/web-app-utils": "^3.9.0",
+    "@baloise/web-app-utils": "^3.10.0",
     "date-fns": "^2.28.0",
     "lodash.capitalize": "^4.2.1",
     "lodash.isarray": "^4.0.0",
