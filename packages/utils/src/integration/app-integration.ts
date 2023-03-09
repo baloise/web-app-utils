@@ -2,7 +2,7 @@ import { Language } from '../language'
 
 export type Region = 'CH' | 'DE'
 const INTEGRATION_BASE_URL = 'https://www.baloise.ch'
-const INTEGRATION_BASE_PATH = '/app-integration/v2'
+const INTEGRATION_BASE_PATH = '/app-integration'
 
 export const getIntegrationBaseUrl = () => {
   const host = getHost()
@@ -16,6 +16,7 @@ export const getIntegrationUrl = (
   lang: Language,
   region: Region = 'CH',
   type: IntegrationType = IntegrationType.FOOTER,
+  version: 'v1' | 'v2' = 'v2',
 ) => {
   let langPath: string = lang.key
   if (type === IntegrationType.ONETRUST) {
@@ -25,12 +26,13 @@ export const getIntegrationUrl = (
       langPath = 'de'
     }
   }
-  return `${getIntegrationBaseUrl()}${INTEGRATION_BASE_PATH}/${region.toLowerCase()}/${type}/${langPath}.json`
+  return `${getIntegrationBaseUrl()}${INTEGRATION_BASE_PATH}/${version}/${region.toLowerCase()}/${type}/${langPath}.json`
 }
 
 export const getHost = () => window?.location?.host || undefined
 
 export enum IntegrationType {
   FOOTER = 'footer',
+  SOCIAL_MEDIA = 'socialmediachannels',
   ONETRUST = 'onetrust',
 }
