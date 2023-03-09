@@ -6,4 +6,5 @@ export * from './browser'
 export * from './language/index'
 
 export * from './integration/footer'
+export * from './integration/social-media'
 export * from './integration/integration'
