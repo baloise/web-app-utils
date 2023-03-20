@@ -1,5 +1,4 @@
 import isNil from 'lodash.isnil'
-import isArray from 'lodash.isarray'
 import isString from 'lodash.isstring'
 import isBoolean from 'lodash.isboolean'
 import isObject from 'lodash.isobject'
@@ -25,7 +24,7 @@ export function isEmpty(value: any): boolean {
     return false
   }
 
-  if (isArray(value) && value.length === 0) {
+  if (Array.isArray(value) && value.length === 0) {
     return true
   }
 
