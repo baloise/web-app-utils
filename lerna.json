@@ -1,7 +1,9 @@
 {
-  "version": "3.11.1",
+  "version": "3.11.2",
   "granularPathspec": false,
-  "packages": ["packages/*"],
+  "packages": [
+    "packages/*"
+  ],
   "command": {
     "version": {
       "message": "chore(release): publish %s"
