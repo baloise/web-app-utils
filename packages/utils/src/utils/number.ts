@@ -57,7 +57,8 @@ export function getThousandSeparator(locale = 'de-CH'): string {
  * ```
  */
 export function formatLocaleNumber(locale = 'de-CH', number: number, minimumFractionDigits?: number): string {
-  const options = minimumFractionDigits !== undefined ? { minimumFractionDigits } : {}
+  const options =
+    minimumFractionDigits !== undefined ? { minimumFractionDigits, maximumFractionDigits: minimumFractionDigits } : {}
   const formattedNumber = Intl.NumberFormat(numberLocale(locale), {
     ...options,
   }).format(number)

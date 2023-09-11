@@ -32,6 +32,7 @@ describe('number', () => {
 
   describe('formatLocaleNumber', () => {
     test('should format the number into the given locale', () => {
+      expect(formatLocaleNumber('de-CH', 1000.4231, 2)).toBe('1’000.42')
       expect(formatLocaleNumber('de-CH', 1000.42)).toBe('1’000.42')
       expect(formatLocaleNumber('de-DE', 1000.42)).toBe('1.000,42')
       expect(formatLocaleNumber('de-DE', 0)).toBe('0')
