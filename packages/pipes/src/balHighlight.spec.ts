@@ -8,4 +8,14 @@ describe('balHighlight', () => {
   test('should return same text without search query', () => {
     expect(balHighlight('search text', '')).toBe('search text')
   })
+  test('should highlight only text, not the text inside href', () => {
+    expect(
+      balHighlight(
+        `<a href="localhost:4200/mybaloise-api/api/documents/v1/12345678-1234-4321-1234-123456789012-12345678?filename=Vertrag" target="_blank">Vertrag</a>`,
+        'Vertrag',
+      ),
+    ).toBe(
+      `<a href="localhost:4200/mybaloise-api/api/documents/v1/12345678-1234-4321-1234-123456789012-12345678?filename=Vertrag" target="_blank"><span class="bal-highlight">Vertrag</span></a>`,
+    )
+  })
 })

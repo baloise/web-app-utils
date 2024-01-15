@@ -7,7 +7,8 @@
  */
 export function balHighlight(value: string, search: string, cssClass = 'bal-highlight'): string {
   if (search && value) {
-    let pattern = search.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')
+    const hrefTag = '(href="[^>]+")|('
+    let pattern = hrefTag.concat(search.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')).concat(')')
     pattern = pattern
       .split(' ')
       .filter(t => {
@@ -15,7 +16,9 @@ export function balHighlight(value: string, search: string, cssClass = 'bal-high
       })
       .join('|')
     const regex = new RegExp(pattern, 'gi')
-    return value.replace(regex, match => `<span class="${cssClass}">${match}</span>`)
+    return value.replace(regex, match => {
+      return match.includes('href') ? match : `<span class="${cssClass}">${match}</span>`
+    })
   } else {
     return value
   }
