@@ -18,4 +18,14 @@ describe('balHighlight', () => {
       `<a href="localhost:4200/mybaloise-api/api/documents/v1/12345678-1234-4321-1234-123456789012-12345678?filename=Vertrag" target="_blank"><span class="bal-highlight">Vertrag</span></a>`,
     )
   })
+  test('should return the same text without highlighting when searching <', () => {
+    expect(balHighlight(`<b style="font-weight: 700;">Vertrag</b>`, '<')).toBe(
+      `<b style="font-weight: 700;">Vertrag</b>`,
+    )
+  })
+  test('should return the same text without highlighting when searching html props', () => {
+    expect(balHighlight(`<b style="font-weight: 700;">Vertrag</b>`, 'font-weight')).toBe(
+      `<b style="font-weight: 700;">Vertrag</b>`,
+    )
+  })
 })
