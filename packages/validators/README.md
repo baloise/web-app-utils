@@ -68,6 +68,18 @@ BalValidators.isDate()('2000-01-02') // true
 BalValidators.isDate()(new Date(2000, 0, 1)) // true
 ```
 
+### isMinDate
+
+`isMinDate(date: any) => BalValidatorFn`
+
+Returns `true` if the given data is at the same or after the value date
+
+```typescript
+BalValidators.isMinDate('2000-01-01')('2000-01-01') // true
+BalValidators.isMinDate('2000-01-02')('2000-01-01') // true
+BalValidators.isMinDate(new Date(2020, 0, 1))(new Date(2020, 0, 1)) // true
+```
+
 ### isMin
 
 `isMin(min: number) => BalValidatorFn`

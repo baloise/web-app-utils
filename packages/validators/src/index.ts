@@ -3,7 +3,7 @@
 export { BalValidatorFn } from './validator.type'
 
 import { isCustom } from './custom.validators'
-import { isBefore, isAfter, isDate } from './date.validators'
+import { isBefore, isAfter, isDate, isMinDate } from './date.validators'
 import { isMin, isMax, isNumber, isMonetaryNumber } from './number.validators'
 import { matchesRegex, isEmail, isPhone } from './regex.validators'
 import { isRequired, isRequiredTrue } from './required.validators'
@@ -15,6 +15,7 @@ export const BalValidators = {
   isBefore,
   isAfter,
   isDate,
+  isMinDate,
   isMin,
   isMax,
   isNumber,

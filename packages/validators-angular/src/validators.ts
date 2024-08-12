@@ -37,6 +37,12 @@ import { BalValidators, BalValidatorFn } from '@baloise/web-app-validators'
    }
  }
 
+ export function isMinDate(date: any, errorName = 'isMinDate'): ValidatorFn {
+   return (control: AbstractControl): { [key: string]: any } | null => {
+     return validate(BalValidators.isMinDate(date)(control.value), errorName, control)
+   }
+ }
+
  export function isMin(min: number, errorName = 'isMin'): ValidatorFn {
    return (control: AbstractControl): { [key: string]: any } | null => {
      return validate(BalValidators.isMin(min)(control.value), errorName, control)
