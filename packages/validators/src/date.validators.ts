@@ -69,27 +69,3 @@ export function isDate(): BalValidatorFn {
     return DateFns.isDate(value)
   }
 }
-
-/**
- * Returns `true` if the given data is at the same or after the value date
- *
- * ```typescript
- * BalValidators.isMinDate('2000-01-01')('2000-01-01') // true
- * BalValidators.isMinDate('2000-01-02')('2000-01-01') // true
- * BalValidators.isMinDate(new Date(2020, 0, 1))(new Date(2020, 0, 1)) // true
- * ```
- */
-export function isMinDate(date: Date | string): BalValidatorFn {
-  return function (value: any) {
-    if (BalUtils.isEmpty(value)) {
-      return true
-    }
-    if (isString(value)) {
-      value = BalUtils.parse(value)
-    }
-    if (isString(date)) {
-      date = BalUtils.parse(date)
-    }
-    return DateFns.isSameDay(value, date) || DateFns.isAfter(value, date)
-  }
-}
