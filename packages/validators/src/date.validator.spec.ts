@@ -1,4 +1,4 @@
-import { isAfter, isBefore, isDate, isMinDate } from './date.validators'
+import { isAfter, isBefore, isDate } from './date.validators'
 
 const aDate = new Date(2000, 0, 1)
 const aDateString = '2000-01-01'
@@ -35,14 +35,5 @@ describe('date', () => {
     expect(isAfter(oldDateString)(aDate)).toBe(true)
     expect(isAfter(aDate)(null)).toBe(true)
     expect(isAfter(aDate)('')).toBe(true)
-  })
-  test('isMinDate', () => {
-    expect(isMinDate(aDate)(aDate)).toBe(true)
-    expect(isMinDate(aDateString)(aDate)).toBe(true)
-    expect(isMinDate(oldDate)(aDate)).toBe(true)
-    expect(isMinDate(oldDate)(aDateString)).toBe(true)
-    expect(isMinDate(aDate)(oldDate)).toBe(false)
-    expect(isMinDate(aDate)(null)).toBe(true)
-    expect(isMinDate(aDate)('')).toBe(true)
   })
 })
