@@ -3,6 +3,11 @@ import { getIntegrationUrl, IntegrationType, Region } from './app-integration'
 
 export const loadOneTrustBaloiseSwitzerland = (lang?: Language): Promise<void> => {
   return loadOnetrustDataSwitzerland().then((cmsData: OnetrustData[]) => {
+    const win = window
+    if (win && win.localStorage && win.localStorage.getItem('onetrust_debug_mode') === 'true') {
+      return
+    }
+
     const effectiveLang = LanguagesOfSwitzerland.valueOfOrDefault(lang ? lang.key : undefined)
     const oneTrustData = cmsData.find(entry => entry.lang === effectiveLang.key)
     if (oneTrustData) {
