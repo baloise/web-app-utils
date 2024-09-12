@@ -429,6 +429,30 @@ Returns `true` if the keyboard event was triggered by the `ArrowDown` key
 
 Returns `true` if the keyboard event was triggered by the `ArrowUp` key
 
+### isArrowLeftKey
+
+`isArrowLeftKey(event: KeyboardEvent) => boolean`
+
+Returns `true` if the keyboard event was triggered by the `ArrowLeft` key
+
+### isArrowRightKey
+
+`isArrowRightKey(event: KeyboardEvent) => boolean`
+
+Returns `true` if the keyboard event was triggered by the `ArrowRight` key
+
+### isHomeKey
+
+`isHomeKey(event: KeyboardEvent) => boolean`
+
+Returns `true` if the keyboard event was triggered by the `Home` key
+
+### isEndKey
+
+`isEndKey(event: KeyboardEvent) => boolean`
+
+Returns `true` if the keyboard event was triggered by the `End` key
+
 ### numberLocale
 
 `numberLocale(locale: any) => string`
