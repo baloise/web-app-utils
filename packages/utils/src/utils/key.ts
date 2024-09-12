@@ -39,3 +39,31 @@ export function isArrowDownKey(event: KeyboardEvent): boolean {
 export function isArrowUpKey(event: KeyboardEvent): boolean {
   return event.key === 'ArrowUp' || event.key === 'Up'
 }
+
+/**
+ * Returns `true` if the keyboard event was triggered by the `ArrowLeft` key
+ */
+export function isArrowLeftKey(event: KeyboardEvent): boolean {
+  return event.key === 'ArrowLeft' || event.key === 'Left'
+}
+
+/**
+ * Returns `true` if the keyboard event was triggered by the `ArrowRight` key
+ */
+export function isArrowRightKey(event: KeyboardEvent): boolean {
+  return event.key === 'ArrowRight' || event.key === 'Right'
+}
+
+/**
+ * Returns `true` if the keyboard event was triggered by the `Home` key
+ */
+export function isHomeKey(event: KeyboardEvent): boolean {
+  return event.key === 'Home'
+}
+
+/**
+ * Returns `true` if the keyboard event was triggered by the `End` key
+ */
+export function isEndKey(event: KeyboardEvent): boolean {
+  return event.key === 'End'
+}
