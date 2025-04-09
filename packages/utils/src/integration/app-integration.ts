@@ -16,11 +16,11 @@ export const getIntegrationUrl = (
   lang: Language,
   region: Region = 'CH',
   type: IntegrationType = IntegrationType.FOOTER,
-  version: 'v1' | 'v2' = 'v2',
+  version: 'v1' | 'v2' | 'v3' = 'v2',
 ) => {
   let langPath: string = lang.key
-  if (type === IntegrationType.ONETRUST) {
-    langPath = 'all'
+  if (type === IntegrationType.CONSENT_MANAGER) {
+    return `${getIntegrationBaseUrl()}${INTEGRATION_BASE_PATH}/v3/${region.toLowerCase()}/consent.json`
   } else {
     if (region === 'DE') {
       langPath = 'de'
@@ -34,5 +34,5 @@ export const getHost = () => window?.location?.host || undefined
 export enum IntegrationType {
   FOOTER = 'footer',
   SOCIAL_MEDIA = 'socialmediachannels',
-  ONETRUST = 'onetrust',
+  CONSENT_MANAGER = 'onetrust',
 }

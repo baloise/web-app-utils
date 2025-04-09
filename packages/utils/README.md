@@ -197,14 +197,14 @@ interface BrowserInfo {
 
 ## Integration Utils
 
-The integration utils helps to work with our integration tools like one trust.
+The integration utils helps to work with our integration tools like one trust or user centrics.
 
-### `loadOneTrustBaloiseSwitzerland`
+### `loadConsentManagerBaloiseSwitzerland`
 
-Loads the one trust script directly from our main cms system with the necessary parameters.
+Loads the consent management script directly from our main cms system with the necessary parameters.
 
 **Signature**
-`loadOneTrustBaloiseSwitzerland(): void`
+`loadConsentManagerBaloiseSwitzerland(): void`
 
 ## Common Model Utils
 

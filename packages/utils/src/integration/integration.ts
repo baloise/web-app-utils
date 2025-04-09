@@ -1,18 +1,18 @@
 import { GERMAN, Language, LanguagesOfSwitzerland } from '../language/index'
 import { getIntegrationUrl, IntegrationType, Region } from './app-integration'
 
-export const loadOneTrustBaloiseSwitzerland = (lang?: Language): Promise<void> => {
-  return loadOnetrustDataSwitzerland().then((cmsData: OnetrustData[]) => {
+export const loadConsentManagerBaloiseSwitzerland = (lang?: Language): Promise<void> => {
+  return loadConsentManager().then((cmsData: ConsentManagerData[]) => {
     const win = window
     if (win && win.localStorage && win.localStorage.getItem('onetrust_debug_mode') === 'true') {
       return
     }
 
     const effectiveLang = LanguagesOfSwitzerland.valueOfOrDefault(lang ? lang.key : undefined)
-    const oneTrustData = cmsData.find(entry => entry.lang === effectiveLang.key)
-    if (oneTrustData) {
-      const oneTrustScript = oneTrustData.script
-      includeScriptsFromString(oneTrustScript)
+    const consentManagerData = cmsData.find(entry => entry.lang === effectiveLang.key)
+    if (consentManagerData) {
+      const consentManagerScript = consentManagerData.script
+      includeScriptsFromString(consentManagerScript)
     }
     return
   })
@@ -34,14 +34,14 @@ const includeScriptsFromString = (scriptAsString: string): void => {
   }
 }
 
-interface OnetrustData {
+interface ConsentManagerData {
   lang: string
   script: string
 }
 
-const loadOnetrustDataSwitzerland = (lang: Language = GERMAN, region: Region = 'CH'): Promise<OnetrustData[]> => {
-  const url = getIntegrationUrl(lang, region, IntegrationType.ONETRUST)
+const loadConsentManager = (lang: Language = GERMAN, region: Region = 'CH'): Promise<ConsentManagerData[]> => {
+  const url = getIntegrationUrl(lang, region, IntegrationType.CONSENT_MANAGER)
   return fetch(url)
     .then(res => res.json())
-    .then(res => res as OnetrustData[])
+    .then(res => res as ConsentManagerData[])
 }
