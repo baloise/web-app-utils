@@ -85,27 +85,27 @@ describe('getBaseUrl', () => {
       'https://www.baloise.ch/app-integration/v2/de/footer/de.json',
     )
   })
-  test('should determine the integration url for region DE and type onetrust and lang DE', () => {
+  test('should determine the integration url for region DE and type consentmanager and lang DE', () => {
     expect(getIntegrationUrl(GERMAN, 'DE', something.IntegrationType.CONSENT_MANAGER)).toBe(
       'https://www.baloise.ch/app-integration/v3/de/consent.json',
     )
   })
-  test('should determine the integration url for region DE and type onetrust and lang FR', () => {
+  test('should determine the integration url for region DE and type consentmanager and lang FR', () => {
     expect(getIntegrationUrl(FRENCH, 'DE', something.IntegrationType.CONSENT_MANAGER)).toBe(
       'https://www.baloise.ch/app-integration/v3/de/consent.json',
     )
   })
-  test('should determine the integration url for region CH and type onetrust and lang DE', () => {
+  test('should determine the integration url for region CH and type consentmanager and lang DE', () => {
     expect(getIntegrationUrl(GERMAN, 'CH', something.IntegrationType.CONSENT_MANAGER)).toBe(
       'https://www.baloise.ch/app-integration/v3/ch/consent.json',
     )
   })
-  test('should determine the integration url for region CH and type onetrust and lang DE', () => {
+  test('should determine the integration url for region CH and type consentmanager and lang DE', () => {
     expect(getIntegrationUrl(FRENCH, 'CH', something.IntegrationType.CONSENT_MANAGER)).toBe(
       'https://www.baloise.ch/app-integration/v3/ch/consent.json',
     )
   })
-  test('should determine the integration url for region CH and type onetrust and lang DE', () => {
+  test('should determine the integration url for region CH and type consentmanager and lang DE', () => {
     expect(getIntegrationUrl(ITALIAN, 'CH', something.IntegrationType.CONSENT_MANAGER)).toBe(
       'https://www.baloise.ch/app-integration/v3/ch/consent.json',
     )

@@ -34,5 +34,5 @@ export const getHost = () => window?.location?.host || undefined
 export enum IntegrationType {
   FOOTER = 'footer',
   SOCIAL_MEDIA = 'socialmediachannels',
-  CONSENT_MANAGER = 'onetrust',
+  CONSENT_MANAGER = 'consentmanager',
 }
