@@ -40,10 +40,15 @@ function handleClaimCenterClaimNumber(value: string): string {
   if (!parts) {
     return value
   }
-  return `${removeLeadingZeros(parts[1])}'+
-    '.${removeLeadingZeros(parts[2])}'+
-    '.${removeLeadingZeros(parts[3])}'+
-    '.${removeLeadingZeros(parts[4])}`
+  return (
+    removeLeadingZeros(parts[1]) +
+    '.' +
+    removeLeadingZeros(parts[2]) +
+    '.' +
+    removeLeadingZeros(parts[3]) +
+    '.' +
+    removeLeadingZeros(parts[4])
+  )
 }
 
 function removeLeadingZeros(str: string): string {
