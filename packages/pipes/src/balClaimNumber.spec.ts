@@ -22,4 +22,7 @@ describe('balClaimNumber', () => {
   test('should format claimcenter claim number with zeros correctly', () => {
     expect(balClaimNumber(400045678121)).toBe('4.45678.12.1')
   })
+  test('should format claimcenter claim number with zeros correctly', () => {
+    expect(balClaimNumber(400045678020)).toBe('4.45678.2.0')
+  })
 })

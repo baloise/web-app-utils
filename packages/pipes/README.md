@@ -64,6 +64,7 @@ balClaimNumber('73001217169') // 73/001217/16.9
 balClaimNumber('412345678221') // 4.12345678.22.1 // L.NNNNNNNN.JJ.P
 balClaimNumber('400045678221') // 4.45678.22.1
 balClaimNumber('400045678021') // 4.45678.2.1
+balClaimNumber('400045678020') // 4.45678.2.0
 ```
 
 ### balContractNumber

@@ -9,6 +9,7 @@ const CLAIM_CENTER_CLAIM_NUMBER = 12
  * balClaimNumber('412345678221') // 4.12345678.22.1 // L.NNNNNNNN.JJ.P
  * balClaimNumber('400045678221') // 4.45678.22.1
  * balClaimNumber('400045678021') // 4.45678.2.1
+ * balClaimNumber('400045678020') // 4.45678.2.0
  * ```
  */
 export function balClaimNumber(value: string | undefined | null | number): string {
@@ -37,15 +38,7 @@ function handleClaimCenterClaimNumber(value: string): string {
   if (!parts) {
     return value
   }
-  return (
-    removeLeadingZeros(parts[1]) +
-    '.' +
-    removeLeadingZeros(parts[2]) +
-    '.' +
-    removeLeadingZeros(parts[3]) +
-    '.' +
-    removeLeadingZeros(parts[4])
-  )
+  return parts[1] + '.' + removeLeadingZeros(parts[2]) + '.' + removeLeadingZeros(parts[3]) + '.' + parts[4]
 }
 
 function removeLeadingZeros(str: string): string {
