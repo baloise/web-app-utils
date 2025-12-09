@@ -16,6 +16,7 @@ export function balClaimNumber(value: string | undefined | null | number): strin
     return ''
   }
   value = `${value}`.trim()
+  console.log('domi balClaimNumber value:', value.length)
   if (value.length === KOSSY_CLAIM_NUMBER) {
     return handleKossyClaimNumber(value)
   } else if (value.length === CLAIM_CENTER_CLAIM_NUMBER) {
@@ -26,6 +27,7 @@ export function balClaimNumber(value: string | undefined | null | number): strin
 
 function handleKossyClaimNumber(value: string): string {
   const parts = value.match(/^(\d{2})(\d{6})(\d{2})(\w{1})$/)
+  console.log('domi handle kossy:', value.length)
   if (!parts) {
     return value
   }
@@ -34,6 +36,7 @@ function handleKossyClaimNumber(value: string): string {
 
 function handleClaimCenterClaimNumber(value: string): string {
   const parts = value.match(/^(\d)(\d{8})(\d{2})(\d)$/)
+  console.log('domi handle claimcenter:', value.length)
   if (!parts) {
     return value
   }
