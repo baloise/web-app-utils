@@ -61,6 +61,8 @@ Transforms the given string into the correct claim-number format.
 
 ```typescript
 balClaimNumber('73001217169') // 73/001217/16.9
+balClaimNumber('412345678221') // 4.12345678.22.1
+balClaimNumber('400045678221') // 4.45678.22.1 // Leading zeros in the serial number are not displayed on documents and screens
 ```
 
 ### balContractNumber
