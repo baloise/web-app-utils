@@ -15,11 +15,11 @@ export function balClaimNumber(value: string | undefined | null | number): strin
   if (!value) {
     return ''
   }
-  value = `${value}`
+  value = `${value}`.trim()
   if (value.length === KOSSY_CLAIM_NUMBER) {
-    handleKossyClaimNumber(value);
+    return handleKossyClaimNumber(value)
   } else if (value.length === CLAIM_CENTER_CLAIM_NUMBER) {
-    handleClaimCenterClaimNumber(value);
+    return handleClaimCenterClaimNumber(value)
   }
   return value
 }
@@ -37,11 +37,11 @@ function handleClaimCenterClaimNumber(value: string): string {
   if (!parts) {
     return value
   }
-  return `${removeLeadingZeros(parts[1])}.${removeLeadingZeros(parts[2])}.${removeLeadingZeros(parts[3])}.${removeLeadingZeros(parts[4])}`
+  return `${removeLeadingZeros(parts[1])}.${removeLeadingZeros(parts[2])}.${removeLeadingZeros(
+    parts[3],
+  )}.${removeLeadingZeros(parts[4])}`
 }
 
 function removeLeadingZeros(str: string): string {
   return str.replace(/^0+/, '')
 }
-
-

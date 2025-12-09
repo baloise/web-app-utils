@@ -13,4 +13,10 @@ describe('balClaimNumber', () => {
   test('should format a claim number with a sign postfix correctly', () => {
     expect(balClaimNumber('7300772816X')).toBe('73/007728/16.X')
   })
+  test('should format claimcenter claim number correctly', () => {
+    expect(balClaimNumber(' 412345678221 ')).toBe('4.12345678.22.1')
+  })
+  test('should format claimcenter claim number with zeros correctly', () => {
+    expect(balClaimNumber('400045678021 ')).toBe('4.45678.2.1')
+  })
 })
