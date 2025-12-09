@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-pipes",
-  "version": "3.16.1",
+  "version": "3.16.3",
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
     "banner": "node ../../.build/banner.js pipes",
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/baloise/web-app-utils",
   "dependencies": {
-    "@baloise/web-app-utils": "^3.16.1",
+    "@baloise/web-app-utils": "^3.16.3",
     "lodash.capitalize": "^4.2.1",
     "lodash.isarray": "^4.0.0",
     "lodash.isstring": "^4.0.1",

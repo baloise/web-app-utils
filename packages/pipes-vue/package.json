@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-pipes-vue",
-  "version": "3.16.1",
+  "version": "3.16.3",
   "description": "Utilities for Baloise Web Applications",
   "repository": {
     "type": "git",
@@ -48,6 +48,6 @@
   },
   "gitHead": "6bc39fcc60a2294d11940527d9a051f21ca01e42",
   "dependencies": {
-    "@baloise/web-app-pipes": "^3.16.1"
+    "@baloise/web-app-pipes": "^3.16.3"
   }
 }
