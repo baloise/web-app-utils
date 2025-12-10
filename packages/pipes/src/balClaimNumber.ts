@@ -10,6 +10,7 @@ const CLAIM_CENTER_CLAIM_NUMBER = 12
  * balClaimNumber('400045678221') // 4.45678.22.1
  * balClaimNumber('400045678021') // 4.45678.2.1
  * balClaimNumber('400045678020') // 4.45678.2.0
+ * balClaimNumber('400000000000') // 4.0.0.0
  * ```
  */
 export function balClaimNumber(value: string | undefined | null | number): string {
