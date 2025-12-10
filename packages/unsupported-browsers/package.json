@@ -1,6 +1,6 @@
 {
   "name": "@baloise/web-app-unsupported-browsers",
-  "version": "3.16.5",
+  "version": "3.17.0",
   "description": "Utilities for Baloise Web Applications",
   "scripts": {
     "banner": "node ../../.build/banner.js unsupported-browsers",
