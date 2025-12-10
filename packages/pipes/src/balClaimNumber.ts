@@ -42,5 +42,6 @@ function handleClaimCenterClaimNumber(value: string): string {
 }
 
 function removeLeadingZeros(str: string): string {
-  return str.replace(/^0+/, '')
+  const formatedValue = str.replace(/^0+/, '')
+  return formatedValue.length == 0 ? '0' : formatedValue
 }
