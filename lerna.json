@@ -1,8 +1,6 @@
 {
   "version": "3.17.0",
   "granularPathspec": false,
-  "packages": ["packages/*"],
-  "useWorkspaces": true,
   "npmClient": "npm",
   "command": {
     "version": {
