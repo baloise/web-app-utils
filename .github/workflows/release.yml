@@ -43,6 +43,9 @@ jobs:
       - name: Install Lerna globally
         run: npm install lerna --global
 
+      - name: Update npm registry
+        run: npm run update:registry
+
       - name: Install dependencies
         run: npm ci
 
