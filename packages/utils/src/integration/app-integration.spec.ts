@@ -3,20 +3,24 @@ import * as something from './app-integration'
 import { ENGLISH, FRENCH, GERMAN, ITALIAN } from '../language'
 
 describe('getBaseUrl', () => {
+  afterEach(() => {
+    jest.restoreAllMocks()
+  })
+
   test('should determine the base url for something.com', () => {
-    spyOn(something, 'getHost' as any).and.returnValue('www.something.com')
+    jest.spyOn(something, 'getHost').mockReturnValue('www.something.com')
     expect(getIntegrationBaseUrl()).toBe('https://www.baloise.ch')
   })
   test('should determine the base url for empty host', () => {
-    spyOn(something, 'getHost' as any).and.returnValue('')
+    jest.spyOn(something, 'getHost').mockReturnValue('')
     expect(getIntegrationBaseUrl()).toBe('https://www.baloise.ch')
   })
   test('should determine the base url for baloise.ch', () => {
-    spyOn(something, 'getHost' as any).and.returnValue('www.baloise.ch')
+    jest.spyOn(something, 'getHost').mockReturnValue('www.baloise.ch')
     expect(getIntegrationBaseUrl()).toBe('https://www.baloise.ch')
   })
   test('should determine the base url for acc-www.baloise.ch', () => {
-    spyOn(something, 'getHost' as any).and.returnValue('acc-www.baloise.ch')
+    jest.spyOn(something, 'getHost').mockReturnValue('acc-www.baloise.ch')
     expect(getIntegrationBaseUrl()).toBe('https://acc-www.baloise.ch')
   })
 })
