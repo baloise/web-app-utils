@@ -3,6 +3,12 @@ import isNaN from 'lodash.isnan'
 import isString from 'lodash.isstring'
 import { numberLocale } from './locale'
 
+const SWISS_APOSTROPHES = /[‘’]/g
+
+function normalizeSwissSeparator(locale: string, value: string): string {
+  return numberLocale(locale) === 'de-CH' ? value.replace(SWISS_APOSTROPHES, "'") : value
+}
+
 /**
  * Returns `true` if the arrays are equal
  *
@@ -44,9 +50,12 @@ export function getDecimalSeparator(locale = 'de-CH'): string {
  * ```
  */
 export function getThousandSeparator(locale = 'de-CH'): string {
-  return Intl.NumberFormat(numberLocale(locale))
-    .format(11111)
-    .replace(/\p{Number}/gu, '')
+  return normalizeSwissSeparator(
+    locale,
+    Intl.NumberFormat(numberLocale(locale))
+      .format(11111)
+      .replace(/\p{Number}/gu, ''),
+  )
 }
 
 /**
@@ -67,7 +76,7 @@ export function formatLocaleNumber(locale = 'de-CH', number: number, minimumFrac
     return ''
   }
 
-  return formattedNumber
+  return normalizeSwissSeparator(locale, formattedNumber)
 }
 
 /**
@@ -80,9 +89,10 @@ export function formatLocaleNumber(locale = 'de-CH', number: number, minimumFrac
 export function parseLocaleNumber(locale = 'de-CH', stringNumber: string): number {
   const thousandSeparator = getThousandSeparator(numberLocale(locale))
   const decimalSeparator = getDecimalSeparator(numberLocale(locale))
+  const normalizedStringNumber = normalizeSwissSeparator(locale, stringNumber).replace(SWISS_APOSTROPHES, "'")
 
   return parseFloat(
-    stringNumber
+    normalizedStringNumber
       .replace(new RegExp('\\' + thousandSeparator, 'g'), '')
       .replace(new RegExp('\\' + decimalSeparator), '.'),
   )

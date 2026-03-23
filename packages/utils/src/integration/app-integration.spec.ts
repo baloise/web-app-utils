@@ -25,17 +25,17 @@ describe('getBaseUrl', () => {
   })
 })
 
-describe('getBaseUrl', () => {
-  test('should determine the integration url for DE standard', () => {
+describe('getIntegrationUrl', () => {
+  test('should determine the integration url for CH standard and lang DE', () => {
     expect(getIntegrationUrl(GERMAN)).toBe('https://www.baloise.ch/app-integration/v2/ch/footer/de.json')
   })
-  test('should determine the integration url for FR standard', () => {
+  test('should determine the integration url for CH standard and lang FR', () => {
     expect(getIntegrationUrl(FRENCH)).toBe('https://www.baloise.ch/app-integration/v2/ch/footer/fr.json')
   })
-  test('should determine the integration url for FR standard', () => {
+  test('should determine the integration url for CH standard and lang IT', () => {
     expect(getIntegrationUrl(ITALIAN)).toBe('https://www.baloise.ch/app-integration/v2/ch/footer/it.json')
   })
-  test('should determine the integration url for EN standard', () => {
+  test('should determine the integration url for CH standard and lang EN', () => {
     expect(getIntegrationUrl(ENGLISH)).toBe('https://www.baloise.ch/app-integration/v2/ch/footer/en.json')
   })
   test('should determine the integration url for region DE and lang DE', () => {
@@ -104,12 +104,12 @@ describe('getBaseUrl', () => {
       'https://www.baloise.ch/app-integration/v3/ch/consent.json',
     )
   })
-  test('should determine the integration url for region CH and type consentmanager and lang DE', () => {
+  test('should determine the integration url for region CH and type consentmanager and lang FR', () => {
     expect(getIntegrationUrl(FRENCH, 'CH', something.IntegrationType.CONSENT_MANAGER)).toBe(
       'https://www.baloise.ch/app-integration/v3/ch/consent.json',
     )
   })
-  test('should determine the integration url for region CH and type consentmanager and lang DE', () => {
+  test('should determine the integration url for region CH and type consentmanager and lang IT', () => {
     expect(getIntegrationUrl(ITALIAN, 'CH', something.IntegrationType.CONSENT_MANAGER)).toBe(
       'https://www.baloise.ch/app-integration/v3/ch/consent.json',
     )
