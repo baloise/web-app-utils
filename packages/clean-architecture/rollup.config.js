@@ -1,4 +1,4 @@
-import baseConfig from '../../rollup.base'
+import baseConfig from '../../rollup.base.js'
 import typescript from 'rollup-plugin-typescript2'
 import clear from 'rollup-plugin-clear';
 

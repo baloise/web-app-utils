@@ -1,9 +1,7 @@
 {
-  "version": "3.17.0",
+  "version": "3.17.2",
   "granularPathspec": false,
-  "packages": [
-    "packages/*"
-  ],
+  "npmClient": "npm",
   "command": {
     "version": {
       "message": "chore(release): publish %s"
@@ -19,5 +17,6 @@
     "**/*.test.ts",
     "**/*.e2e.ts",
     "**/*.md"
-  ]
+  ],
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }

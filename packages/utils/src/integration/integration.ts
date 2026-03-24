@@ -1,21 +1,35 @@
 import { GERMAN, Language, LanguagesOfSwitzerland } from '../language/index'
 import { getIntegrationUrl, IntegrationType, Region } from './app-integration'
 
+const CONSENT_MANAGER_SCRIPT_ATTRIBUTE = 'data-baloise-consent-manager'
+let activeConsentManagerRequestId = 0
+
 export const loadConsentManagerBaloiseSwitzerland = (lang?: Language): Promise<void> => {
-  return loadConsentManager().then((cmsData: ConsentManagerData[]) => {
+  const effectiveLang = LanguagesOfSwitzerland.valueOfOrDefault(lang ? lang.key : undefined)
+  const requestId = ++activeConsentManagerRequestId
+
+  return loadConsentManager(effectiveLang).then((cmsData: ConsentManagerData[]) => {
+    if (requestId !== activeConsentManagerRequestId) {
+      return
+    }
+
     const win = window
     if (win && win.localStorage && win.localStorage.getItem('onetrust_debug_mode') === 'true') {
       return
     }
 
-    const effectiveLang = LanguagesOfSwitzerland.valueOfOrDefault(lang ? lang.key : undefined)
     const consentManagerData = cmsData.find(entry => entry.lang === effectiveLang.key)
     if (consentManagerData) {
-      const consentManagerScript = consentManagerData.script
-      includeScriptsFromString(consentManagerScript)
+      removeInjectedConsentManagerScripts()
+      includeScriptsFromString(consentManagerData.script)
     }
     return
   })
+}
+
+const removeInjectedConsentManagerScripts = (): void => {
+  const scripts = document.querySelectorAll(`script[${CONSENT_MANAGER_SCRIPT_ATTRIBUTE}="true"]`)
+  scripts.forEach(script => script.parentNode?.removeChild(script))
 }
 
 const includeScriptsFromString = (scriptAsString: string): void => {
@@ -27,6 +41,7 @@ const includeScriptsFromString = (scriptAsString: string): void => {
     scriptElement.type = scripts[i].type
     scriptElement.src = scripts[i].src
     scriptElement.innerHTML = scripts[i].innerHTML
+    scriptElement.setAttribute(CONSENT_MANAGER_SCRIPT_ATTRIBUTE, 'true')
     for (let j = 0; j < scripts[i].attributes.length; j++) {
       scriptElement.setAttribute(scripts[i].attributes[j].name, scripts[i].attributes[j].value)
     }
