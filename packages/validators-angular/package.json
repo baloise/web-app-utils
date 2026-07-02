@@ -56,11 +56,23 @@
   "files": [
     "dist/"
   ],
-  "main": "dist/fesm2020/baloise-web-app-validators-angular.mjs",
-  "module": "dist/fesm2015/baloise-web-app-validators-angular.js",
+  "type": "module",
+  "main": "dist/fesm2022/baloise-web-app-validators-angular.mjs",
+  "module": "dist/fesm2022/baloise-web-app-validators-angular.mjs",
   "es2015": "dist/fesm2015/baloise-web-app-validators-angular.mjs",
   "es2020": "dist/fesm2020/baloise-web-app-validators-angular.mjs",
   "esm2020": "dist/esm2020/baloise-web-app-validators-angular.mjs",
   "typings": "dist/index.d.ts",
-  "sideEffects": false
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "esm2022": "./dist/esm2022/baloise-web-app-validators-angular.mjs",
+      "esm": "./dist/esm2022/baloise-web-app-validators-angular.mjs",
+      "default": "./dist/fesm2022/baloise-web-app-validators-angular.mjs"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  }
 }
