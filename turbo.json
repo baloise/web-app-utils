@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "globalDependencies": [".eslintrc.js", ".eslintignore", ".prettierrc"],
+  "globalDependencies": [".eslintrc.js", ".prettierrc"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
