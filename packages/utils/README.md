@@ -93,18 +93,6 @@ LanguagesOfSwitzerland.isValidKey('de') // true
 LanguagesOfSwitzerland.isValidKey('be') // false
 ```
 
-##### `LanguagesOfGermany`
-
-List of german & english with the default language german.
-
-##### `LanguagesOfBelgium`
-
-List of dutch, french, italien & english with the default language dutch.
-
-##### `LanguagesOfLuxembourg`
-
-List of luxembourgish, french & english with the default language luxembourgish.
-
 #### Language
 
 The language object has only one property the `key` which has the language key like `en`.
@@ -263,16 +251,6 @@ export class ConfirmEmailPageComponent implements OnInit {
 
 ## API
 
-### areArraysEqual
-
-`areArraysEqual(a: any, b: any) => boolean`
-
-Returns `true` if the arrays are equal
-
-```typescript
-areArraysEqual(['a', 'b'], ['b', 'a']) // true
-```
-
 ### now
 
 `now() => Date`
@@ -306,17 +284,6 @@ const date = floorTime(new Date())
 // Wed Mar 10 2021 00:00:00 GMT+0100 (Central European Standard Time)
 ```
 
-### ceilTime
-
-`ceilTime(date: Date) => Date`
-
-Returns a JS Date instance with the time set to the possible end
-
-```typescript
-const date = ceilTime(new Date())
-// Wed Mar 10 2021 23:59:59 GMT+0100 (Central European Standard Time)
-```
-
 ### formatDateString
 
 `formatDateString(date: Date) => string`
@@ -337,17 +304,6 @@ Validates if the given date string matches the iso date format.
 ```typescript
 isValidIsoString('2022-02-14')
 // 'true'
-```
-
-### format
-
-`format(locale: any, date: Date) => any`
-
-Formats the dates according to the given locale.
-
-```typescript
-format('de-CH', new Date())
-// '14.2.2022'
 ```
 
 ### parse
@@ -372,86 +328,11 @@ dateSeparator('de-CH')
 // .
 ```
 
-### debounce
-
-`debounce(func: any, wait: any) => any`
-
-The debounce function wait a certain amount of time before running the inner function again.
-This should reduce the number of times a function is called.
-
-```typescript
-const debounceFunction = debounce(function () {
-  // The function's code
-}, 250)
-
-window.addEventListener('resize', debounceFunction)
-```
-
 ### isEmpty
 
 `isEmpty(value: any) => boolean`
 
 Returns `true` if the value is empty
-
-### isEnterKey
-
-`isEnterKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Enter` key
-
-### isSpaceKey
-
-`isSpaceKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Space` key
-
-### isEscapeKey
-
-`isEscapeKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Escape` key
-
-### isBackspaceKey
-
-`isBackspaceKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Backspace` key
-
-### isArrowDownKey
-
-`isArrowDownKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `ArrowDown` key
-
-### isArrowUpKey
-
-`isArrowUpKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `ArrowUp` key
-
-### isArrowLeftKey
-
-`isArrowLeftKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `ArrowLeft` key
-
-### isArrowRightKey
-
-`isArrowRightKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `ArrowRight` key
-
-### isHomeKey
-
-`isHomeKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `Home` key
-
-### isEndKey
-
-`isEndKey(event: KeyboardEvent) => boolean`
-
-Returns `true` if the keyboard event was triggered by the `End` key
 
 ### numberLocale
 
@@ -503,24 +384,4 @@ Returns the thousand separator of the given locale
 
 ```typescript
 getThousandSeparator('de-ch') // '
-```
-
-### formatLocaleNumber
-
-`formatLocaleNumber(locale: any, number: number, minimumFractionDigits: number) => string`
-
-Formats the number into the given locale
-
-```typescript
-formatLocaleNumber('de-ch', 1000.42) // 1'000.42
-```
-
-### parseLocaleNumber
-
-`parseLocaleNumber(locale: any, stringNumber: string) => number`
-
-Parses the locale formatted number into a native number
-
-```typescript
-parseLocaleNumber('de-ch', '1'000.42') // 1000.42
 ```

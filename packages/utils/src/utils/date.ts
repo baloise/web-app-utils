@@ -55,20 +55,6 @@ export function floorTime(date: Date): Date {
 }
 
 /**
- * Returns a JS Date instance with the time set to the possible end
- *
- * ```typescript
- * const date = ceilTime(new Date())
- * // Wed Mar 10 2021 23:59:59 GMT+0100 (Central European Standard Time)
- * ```
- */
-export function ceilTime(date: Date): Date {
-  const result = new Date(date)
-  result.setHours(23, 59, 59, 999)
-  return result
-}
-
-/**
  * Return the formatted date string in ISO 8601 format. Options may be passed to control the parts and notations of the date.
  *
  * ```typescript
@@ -90,18 +76,6 @@ export function formatDateString(date: Date): string {
  */
 export function isValidIsoString(dateString: string | undefined | null) {
   return !!dateString ? isMatch(dateString, ISO_PATTERN) : false
-}
-
-/**
- * Formats the dates according to the given locale.
- *
- * ```typescript
- * format('de-CH', new Date())
- * // '14.2.2022'
- * ```
- */
-export function format(locale = 'de-CH', date?: Date) {
-  return isValid(date) ? intlFormat(dateLocale(locale), date as Date) : ''
 }
 
 /**
@@ -151,11 +125,6 @@ export function dateSeparator(locale = 'de-CH'): string {
 
 function getDatePattern(locale = 'de-CH') {
   return DATE_PATTERN.split('-').join(dateSeparator(locale))
-}
-
-function intlFormat(locale = 'de-CH', date: Date): string {
-  const intl = new Intl.DateTimeFormat(dateLocale(locale))
-  return intl.format(date)
 }
 
 function pad(value: number) {

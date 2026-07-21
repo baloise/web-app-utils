@@ -1,4 +1,4 @@
-import { formatDateString, isValidIsoString, format, parse } from './date'
+import { formatDateString, isValidIsoString, parse } from './date'
 
 describe('date', () => {
   describe('formatDateString', () => {
@@ -17,15 +17,6 @@ describe('date', () => {
       expect(isValidIsoString('2022-00-01')).toBe(false)
       expect(isValidIsoString('')).toBe(false)
       expect(isValidIsoString(undefined)).toBe(false)
-    })
-  })
-
-  describe('format', () => {
-    test('should format the JS Date into the given local format to display', () => {
-      expect(format('de-CH', new Date(2022, 11, 31))).toBe('31.12.2022')
-      expect(format('fr-BE', new Date(2022, 11, 31))).toBe('31/12/2022')
-      expect(format('de-CH', new Date(2022, 0, 1))).toBe('01.01.2022')
-      expect(format('de-CH', undefined)).toBe('')
     })
   })
 
