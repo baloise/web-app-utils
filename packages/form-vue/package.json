@@ -20,7 +20,7 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "eslint --ext .ts,.tsx --no-error-on-unmatched-pattern src/",
+    "lint": "eslint --ext .ts,.tsx --no-error-on-unmatched-pattern --ignore-path ../../.eslintignore src/",
     "banner": "node ../../.build/banner.js form-vue",
     "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
     "build": "npm run banner && rollup --config rollup.config.js"
