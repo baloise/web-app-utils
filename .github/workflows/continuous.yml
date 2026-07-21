@@ -14,12 +14,13 @@ jobs:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Restore lerna
-        uses: actions/cache@v3
+      - name: Restore dependencies and turbo cache
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
             */*/node_modules
+            .turbo
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Update npm registry

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalDependencies": [".eslintrc.js", ".prettierrc"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "!**/*.spec.*", "!**/*.test.*", "!**/*.e2e.*"],
+      "outputs": ["dist/**", "dist-transpiled/**"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "lint": {
+      "outputs": []
+    },
+    "update:registry": {
+      "cache": false
+    }
+  }
+}
