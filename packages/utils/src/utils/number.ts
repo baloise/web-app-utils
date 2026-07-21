@@ -57,4 +57,3 @@ export function getThousandSeparator(locale = 'de-CH'): string {
       .replace(/\p{Number}/gu, ''),
   )
 }
-
