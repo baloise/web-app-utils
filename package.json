@@ -1,7 +1,6 @@
 {
   "name": "root",
   "private": true,
-  "packageManager": "npm@11.9.0",
   "workspaces": [
     "packages/*"
   ],
@@ -18,28 +17,25 @@
   "scripts": {
     "==================== INSTALLATION / SETUP ====================": "",
     "prepare": "husky install",
-    "update:lock": "npm install --package-lock-only",
-    "update:registry": "npm run update:registry --workspaces --if-present && sed -i -e \"s#jfrog.balgroupit.com/artifactory/api/npm/npm#registry.npmjs.org#g\" package-lock.json\n",
+    "update:lock": "lerna exec -- npm install --package-lock-only",
+    "update:registry": "lerna run update:registry && sed -i -e \"s#jfrog.balgroupit.com/artifactory/api/npm/npm#registry.npmjs.org#g\" package-lock.json\n",
     "precommit": "lint-staged --allow-empty",
     "==================== FORMATTER / LINTER ======================": "",
     "format:check": "prettier --check ./packages",
     "format": "prettier --write ./packages",
-    "lint:check": "turbo run lint",
+    "lint:check": "eslint --ext .tsx,.ts packages/",
     "lint": "eslint --ext .tsx,.ts packages/ --fix",
     "==================== BUILD ===================================": "",
-    "build": "turbo run build",
+    "build": "lerna run build",
     "==================== TEST ====================================": "",
-    "test": "turbo run test",
+    "test": "lerna run test",
     "==================== DOCUMENTATION ===========================": "",
     "docs": "node ./.build/docs.js",
     "==================== RELEASE =================================": "",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "changeset publish",
-    "release:canary": "changeset version --snapshot beta && npm run build && changeset publish --tag beta --no-git-tag"
+    "release": "lerna publish --conventional-commits --exact --force-publish --yes",
+    "release:canary": "lerna publish prepatch --canary --preid beta --dist-tag beta --exact --force-publish --yes --no-changelog"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.31.1",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
@@ -52,10 +48,10 @@
     "glob": "^7.1.7",
     "husky": "^7.0.0",
     "jest-environment-jsdom": "^30.3.0",
+    "lerna": "^9.0.7",
     "lint-staged": "^12.1.3",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
-    "turbo": "^2.10.5",
     "typescript": "5.4.5"
   },
   "resolutions": {
