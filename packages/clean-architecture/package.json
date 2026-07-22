@@ -22,7 +22,7 @@
   "scripts": {
     "lint": "eslint --ext .ts,.tsx --no-error-on-unmatched-pattern src/",
     "banner": "node ../../.build/banner.js clean architecture",
-    "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
+    "update:registry": "[ -f package-lock.json ] && sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json || true",
     "build": "npm run banner && rollup --config rollup.config.js"
   },
   "main": "./dist/index.js",

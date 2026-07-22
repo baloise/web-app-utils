@@ -19,7 +19,7 @@
     "==================== INSTALLATION / SETUP ====================": "",
     "prepare": "husky install",
     "update:lock": "npm install --package-lock-only",
-    "update:registry": "npm run update:registry --workspaces --if-present && sed -i -e \"s#jfrog.balgroupit.com/artifactory/api/npm/npm#registry.npmjs.org#g\" package-lock.json\n",
+    "update:registry": "npm run update:registry --workspaces --if-present && ([ -f package-lock.json ] && sed -i -e \"s#jfrog.balgroupit.com/artifactory/api/npm/npm#registry.npmjs.org#g\" package-lock.json || true)",
     "precommit": "lint-staged --allow-empty",
     "==================== FORMATTER / LINTER ======================": "",
     "format:check": "prettier --check ./packages",

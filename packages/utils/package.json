@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint --ext .ts,.tsx --no-error-on-unmatched-pattern src/",
     "banner": "node ../../.build/banner.js utils",
-    "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
+    "update:registry": "[ -f package-lock.json ] && sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json || true",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "npm run banner && npm run build:clean && npm run build:docs && npm run build:index && npm run build:compile && npm run build:bundle",

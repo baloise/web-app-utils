@@ -22,7 +22,7 @@
   "scripts": {
     "lint": "eslint --ext .ts,.tsx --no-error-on-unmatched-pattern src/",
     "banner": "node ../../.build/banner.js validators-angular",
-    "update:registry": "sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json\n",
+    "update:registry": "[ -f package-lock.json ] && sed -i -e \"s#nexus.balgroupit.com/repository/npm#registry.npmjs.org#g\" package-lock.json || true",
     "build": "npm run banner && npm run clean && npm run build:generator && npm run build:compile",
     "build:generator": "node .build/generator.script.cjs",
     "build:compile": "ng-packagr -p ng-package.json",
