@@ -18,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: '0'
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
@@ -40,14 +40,28 @@ jobs:
           git fetch --depth=1 origin +refs/tags/*:refs/tags/*
           git pull
 
-      - name: Install Lerna globally
-        run: npm install lerna --global
-
       - name: Update npm registry
         run: npm run update:registry
 
       - name: Install dependencies
         run: npm ci
+
+      # Fixed versioning: one changeset entry propagates the chosen bump level
+      # to the whole @baloise/web-app-* group. This preserves the manual
+      # one-button patch/minor/major release UX previously handled by lerna.
+      - name: Create release changeset
+        run: |
+          mkdir -p .changeset
+          cat > .changeset/manual-release.md <<EOF
+          ---
+          "@baloise/web-app-utils": ${{ github.event.inputs.version }}
+          ---
+
+          Manual ${{ github.event.inputs.version }} release.
+          EOF
+
+      - name: Version packages
+        run: npx changeset version
 
       - name: Build
         run: npm run build
@@ -55,22 +69,22 @@ jobs:
       - name: Documentation
         run: npm run docs
 
-      - uses: EndBug/add-and-commit@v5
+      - uses: EndBug/add-and-commit@v9
         with:
-          message: 'chore(): update build artifacts'
+          message: 'chore(release): version packages and update build artifacts'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to NPM
-        run: 'lerna publish ${{ github.event.inputs.version }} --yes'
+        run: npx changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Lock files
-        run: 'npm run update:lock'
+        run: npm run update:lock
 
-      - uses: EndBug/add-and-commit@v5
+      - uses: EndBug/add-and-commit@v9
         with:
           message: 'chore(): update lock files'
         env:
