@@ -1,24 +1,10 @@
 import baseConfig from '../../rollup.base.js'
-import vue from 'rollup-plugin-vue'
-import typescript from 'rollup-plugin-typescript2'
-import clear from 'rollup-plugin-clear';
+
+// Externalize all runtime deps (all are peerDependencies) — including yup subpaths
+// like 'yup/lib/locale' — and any @baloise/* package.
+const externals = ['vue', 'yup', 'vee-validate']
 
 export default {
   ...baseConfig,
-  input: 'src/index.ts',
-  external: ['@baloise/web-app-validators', 'vue', 'yup', 'vee-validate', '@baloise/design-system-components-vue'],
-  plugins: [
-    vue(),
-    typescript({
-      tsconfigOverride: {
-        compilerOptions: {
-          declaration: true,
-        },
-        include: null,
-      },
-    }),
-    clear({
-      targets: ['./dist'],
-    })
-  ],
+  external: id => externals.some(m => id === m || id.startsWith(`${m}/`)) || id.startsWith('@baloise/'),
 }

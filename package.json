@@ -1,10 +1,7 @@
 {
   "name": "root",
   "private": true,
-  "packageManager": "npm@11.9.0",
-  "workspaces": [
-    "packages/*"
-  ],
+  "packageManager": "pnpm@11.15.1",
   "bugs": {
     "url": "https://github.com/baloise/web-app-utils/issues"
   },
@@ -18,8 +15,7 @@
   "scripts": {
     "==================== INSTALLATION / SETUP ====================": "",
     "prepare": "husky install",
-    "update:lock": "npm install --package-lock-only",
-    "update:registry": "npm run update:registry --workspaces --if-present && sed -i -e \"s#jfrog.balgroupit.com/artifactory/api/npm/npm#registry.npmjs.org#g\" package-lock.json\n",
+    "update:lock": "pnpm install --lockfile-only",
     "precommit": "lint-staged --allow-empty",
     "==================== FORMATTER / LINTER ======================": "",
     "format:check": "prettier --check ./packages",
@@ -36,7 +32,7 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "changeset publish",
-    "release:canary": "changeset version --snapshot beta && npm run build && changeset publish --tag beta --no-git-tag"
+    "release:canary": "changeset version --snapshot beta && pnpm run build && changeset publish --tag beta --no-git-tag"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.1",
@@ -57,8 +53,5 @@
     "rimraf": "^3.0.2",
     "turbo": "^2.10.5",
     "typescript": "5.4.5"
-  },
-  "resolutions": {
-    "tar": ">=4.4.18"
   }
 }

@@ -7,36 +7,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
 
       - uses: actions/setup-node@v4
         with:
           node-version: '24.x'
           registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
 
-      - name: Restore dependencies and turbo cache
+      - name: Restore turbo cache
         uses: actions/cache@v4
         with:
-          path: |
-            node_modules
-            */*/node_modules
-            .turbo
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Update npm registry
-        run: npm run update:registry
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Format
-        run: npm run format:check
+        run: pnpm run format:check
 
       - name: Lint
-        run: npm run lint:check
+        run: pnpm run lint:check
 
       - name: Test
-        run: npm run test
+        run: pnpm run test
