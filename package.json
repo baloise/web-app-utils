@@ -13,10 +13,6 @@
     "lazaki (https://github.com/lazaki)"
   ],
   "scripts": {
-    "==================== INSTALLATION / SETUP ====================": "",
-    "prepare": "husky install",
-    "update:lock": "pnpm install --lockfile-only",
-    "precommit": "lint-staged --allow-empty",
     "==================== FORMATTER / LINTER ======================": "",
     "format:check": "prettier --check ./packages",
     "format": "prettier --write ./packages",
@@ -46,7 +42,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "figlet": "^1.5.2",
     "glob": "^7.1.7",
-    "husky": "^7.0.0",
     "jest-environment-jsdom": "^30.3.0",
     "lint-staged": "^12.1.3",
     "prettier": "^2.5.1",

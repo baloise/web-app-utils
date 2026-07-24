@@ -114,9 +114,6 @@ dist-transpiled
 /templates
 .vscode
 
-# Husky
-.husky/_/
-
 # Design System
 packages/*/CHANGELOG.md
 package-lock.json-e
