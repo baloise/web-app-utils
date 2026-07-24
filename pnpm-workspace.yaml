@@ -1,0 +1,19 @@
+packages:
+  - 'packages/*'
+
+# pnpm settings (kept here, not in .npmrc, because .npmrc is gitignored in this repo)
+nodeLinker: hoisted
+linkWorkspacePackages: true
+
+# Dependencies allowed to run install/postinstall build scripts (pnpm blocks these by
+# default). esbuild fetches its platform binary (needed by ng-packagr); @parcel/watcher
+# builds its native file-watcher binding.
+allowBuilds:
+  esbuild: true
+  '@parcel/watcher': true
+
+# Dependency version overrides (pnpm 11 reads these from here, not package.json).
+overrides:
+  tar: '>=4.4.18'
+  # TS 5.4.5 can't parse @types/node >= 22.7 (IteratorObject / BuiltinIteratorReturn).
+  '@types/node': '^20'

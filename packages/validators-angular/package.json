@@ -1,0 +1,78 @@
+{
+  "name": "@baloise/web-app-validators-angular",
+  "version": "3.17.5",
+  "description": "Utilities for Baloise Web Applications",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baloise/web-app-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baloise/web-app-utils/issues"
+  },
+  "homepage": "https://github.com/baloise/web-app-utils",
+  "contributors": [
+    "Gery Hirschfeld <gerhard.hirschfeld@baloise.ch> (https://github.com/hirsch88)",
+    "Yannick Holzenkamp <yannick.holzenkamp@baloise.ch> (https://github.com/yannickholzenkamp)",
+    "Petar Nobilo <petar.nobilo@baloise.ch> (https://github.com/nobilo)",
+    "lazaki (https://github.com/lazaki)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --ext .ts,.tsx --no-error-on-unmatched-pattern src/",
+    "banner": "node ../../.build/banner.js validators-angular",
+    "build": "npm run banner && npm run clean && npm run build:generator && npm run build:compile",
+    "build:generator": "node .build/generator.script.cjs",
+    "build:compile": "ng-packagr -p ng-package.json",
+    "clean": "rimraf src/validators.ts && rimraf dist"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@baloise/web-app-validators": "^3.17.4",
+    "tslib": "^2.2.0"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0",
+    "@angular/forms": ">=17.0.0",
+    "@angular/platform-browser": ">=17.0.0",
+    "zone.js": ">=0.14.0"
+  },
+  "gitHead": "6bc39fcc60a2294d11940527d9a051f21ca01e42",
+  "devDependencies": {
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "fast-uri": "^3.1.0",
+    "ng-packagr": "^17.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "5.4.5",
+    "zone.js": "^0.14.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "type": "module",
+  "main": "dist/fesm2022/baloise-web-app-validators-angular.mjs",
+  "module": "dist/fesm2022/baloise-web-app-validators-angular.mjs",
+  "es2015": "dist/fesm2015/baloise-web-app-validators-angular.mjs",
+  "es2020": "dist/fesm2020/baloise-web-app-validators-angular.mjs",
+  "esm2020": "dist/esm2020/baloise-web-app-validators-angular.mjs",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "esm2022": "./dist/esm2022/baloise-web-app-validators-angular.mjs",
+      "esm": "./dist/esm2022/baloise-web-app-validators-angular.mjs",
+      "default": "./dist/fesm2022/baloise-web-app-validators-angular.mjs"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  }
+}

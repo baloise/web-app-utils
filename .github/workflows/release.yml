@@ -1,0 +1,91 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: choice
+        description: 'Version level'
+        required: true
+        default: 'patch'
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  Publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+
+      - name: Git Identity
+        run: |
+          git config --global user.name 'baopso'
+          git config --global user.email 'Group.CH_Open-Source@baloise.ch'
+          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch all Tags and Pull
+        run: |
+          git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+          git pull
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Fixed versioning: one changeset entry propagates the chosen bump level
+      # to the whole @baloise/web-app-* group. This preserves the manual
+      # one-button patch/minor/major release UX previously handled by lerna.
+      - name: Create release changeset
+        run: |
+          mkdir -p .changeset
+          cat > .changeset/manual-release.md <<EOF
+          ---
+          "@baloise/web-app-utils": ${{ github.event.inputs.version }}
+          ---
+
+          Manual ${{ github.event.inputs.version }} release.
+          EOF
+
+      - name: Version packages
+        run: npx changeset version
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Documentation
+        run: pnpm run docs
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'chore(release): version packages and update build artifacts'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to NPM
+        run: npx changeset publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update Lock files
+        run: pnpm install --lockfile-only
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'chore(): update lock files'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

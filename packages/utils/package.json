@@ -1,0 +1,75 @@
+{
+  "name": "@baloise/web-app-utils",
+  "version": "3.17.4",
+  "description": "Utilities for Baloise Web Applications",
+  "scripts": {
+    "lint": "eslint --ext .ts,.tsx --no-error-on-unmatched-pattern src/",
+    "banner": "node ../../.build/banner.js utils",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "npm run banner && npm run build:clean && npm run build:docs && npm run build:index && npm run build:compile && npm run build:bundle",
+    "build:clean": "rimraf dist && rimraf dist-transpiled",
+    "build:compile": "tsc -p .",
+    "build:bundle": "rollup --config rollup.config.js",
+    "build:index": "node .build/utils.index.js",
+    "build:docs": "node .build/utils.docs.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baloise/web-app-utils.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    "Gery Hirschfeld <gerhard.hirschfeld@baloise.ch> (https://github.com/hirsch88)",
+    "Yannick Holzenkamp <yannick.holzenkamp@baloise.ch> (https://github.com/yannickholzenkamp)",
+    "Petar Nobilo <petar.nobilo@baloise.ch> (https://github.com/nobilo)",
+    "lazaki (https://github.com/lazaki)"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/baloise/web-app-utils/issues"
+  },
+  "homepage": "https://github.com/baloise/web-app-utils",
+  "dependencies": {
+    "date-fns": "^2.28.0",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.isboolean": "^3.0.3",
+    "lodash.isdate": "^4.0.1",
+    "lodash.isequal": "^4.5.0",
+    "lodash.isnan": "^3.0.2",
+    "lodash.isnil": "^4.0.0",
+    "lodash.isnumber": "^3.0.3",
+    "lodash.isobject": "^3.0.2",
+    "lodash.isstring": "^4.0.1",
+    "lodash.padstart": "^4.6.1",
+    "lodash.upperfirst": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/lodash.camelcase": "^4.3.6",
+    "@types/lodash.isboolean": "^3.0.6",
+    "@types/lodash.isdate": "^4.0.6",
+    "@types/lodash.isequal": "^4.5.5",
+    "@types/lodash.isnan": "^3.0.6",
+    "@types/lodash.isnil": "^4.0.6",
+    "@types/lodash.isnumber": "^3.0.6",
+    "@types/lodash.isobject": "^3.0.6",
+    "@types/lodash.isstring": "^4.0.6",
+    "@types/lodash.padstart": "^4.6.6",
+    "@types/lodash.upperfirst": "^4.3.6",
+    "jest": "^29.7.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.58.0",
+    "ts-jest": "^29.1.5",
+    "typescript": "5.4.5"
+  },
+  "gitHead": "6bc39fcc60a2294d11940527d9a051f21ca01e42"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [
+    [
+      "@baloise/web-app-utils",
+      "@baloise/web-app-pipes",
+      "@baloise/web-app-pipes-angular",
+      "@baloise/web-app-validators",
+      "@baloise/web-app-validators-angular"
+    ]
+  ],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "master",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

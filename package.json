@@ -1,0 +1,52 @@
+{
+  "name": "root",
+  "private": true,
+  "packageManager": "pnpm@11.15.1",
+  "bugs": {
+    "url": "https://github.com/baloise/web-app-utils/issues"
+  },
+  "homepage": "https://github.com/baloise/web-app-utils",
+  "contributors": [
+    "Gery Hirschfeld <gerhard.hirschfeld@baloise.ch> (https://github.com/hirsch88)",
+    "Yannick Holzenkamp <yannick.holzenkamp@baloise.ch> (https://github.com/yannickholzenkamp)",
+    "Petar Nobilo <petar.nobilo@baloise.ch> (https://github.com/nobilo)",
+    "lazaki (https://github.com/lazaki)"
+  ],
+  "scripts": {
+    "==================== FORMATTER / LINTER ======================": "",
+    "format:check": "prettier --check ./packages",
+    "format": "prettier --write ./packages",
+    "lint:check": "turbo run lint",
+    "lint": "eslint --ext .tsx,.ts packages/ --fix",
+    "==================== BUILD ===================================": "",
+    "build": "turbo run build",
+    "==================== TEST ====================================": "",
+    "test": "turbo run test",
+    "==================== DOCUMENTATION ===========================": "",
+    "docs": "node ./.build/docs.js",
+    "==================== RELEASE =================================": "",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish",
+    "release:canary": "changeset version --snapshot beta && pnpm run build && changeset publish --tag beta --no-git-tag"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.1",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "chalk": "^4.1.2",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "figlet": "^1.5.2",
+    "glob": "^7.1.7",
+    "jest-environment-jsdom": "^30.3.0",
+    "lint-staged": "^12.1.3",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "turbo": "^2.10.5",
+    "typescript": "5.4.5"
+  }
+}
