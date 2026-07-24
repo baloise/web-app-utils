@@ -1,3 +1,0 @@
-{
-  "packages/**/*.{ts,tsx,md}": ["eslint --ext .tsx,.ts packages/ --fix", "prettier --write"]
-}

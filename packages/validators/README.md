@@ -19,7 +19,6 @@ npm install @baloise/web-app-validators
 ## Usage
 
 - [Angular usage of validators](../validators-angular/README.md)
-- [Vue usage of validators](../validators-vue/README.md)
 
 <!-- generated content -->
 
