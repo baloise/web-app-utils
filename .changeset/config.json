@@ -6,14 +6,9 @@
     [
       "@baloise/web-app-utils",
       "@baloise/web-app-pipes",
-      "@baloise/web-app-pipes-vue",
       "@baloise/web-app-pipes-angular",
       "@baloise/web-app-validators",
-      "@baloise/web-app-validators-vue",
-      "@baloise/web-app-validators-angular",
-      "@baloise/web-app-form-vue",
-      "@baloise/web-app-clean-architecture",
-      "@baloise/web-app-unsupported-browsers"
+      "@baloise/web-app-validators-angular"
     ]
   ],
   "linked": [],
